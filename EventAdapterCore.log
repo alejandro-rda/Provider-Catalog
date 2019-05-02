@@ -2559,3 +2559,54 @@ Caused by: java.net.UnknownHostException: cdb-ms-prod-eastus1-fd19.documents.azu
 2019-05-02 17:07:26  INFO - Opened connection [connectionId{localValue:107, serverValue:1431807841}] to cdb-ms-prod-eastus1-fd19.documents.azure.com:10255 - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
 2019-05-02 17:07:27  INFO - Monitor thread successfully connected to server with description ServerDescription{address=cdb-ms-prod-eastus1-fd19.documents.azure.com:10255, type=REPLICA_SET_PRIMARY, state=CONNECTED, ok=true, version=ServerVersion{versionList=[3, 2, 0]}, minWireVersion=0, maxWireVersion=2, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=null, roundTripTimeNanos=224296143, setName='globaldb', canonicalAddress=cdb-ms-prod-eastus1-fd19.documents.azure.com:10255, hosts=[cdb-ms-prod-eastus1-fd19.documents.azure.com:10255], passives=[], arbiters=[], primary='cdb-ms-prod-eastus1-fd19.documents.azure.com:10255', tagSet=TagSet{[]}, electionId=null, setVersion=1, lastWriteDate=null, lastUpdateTimeNanos=180414406326128} - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
 2019-05-02 17:07:27  INFO - Discovered replica set primary cdb-ms-prod-eastus1-fd19.documents.azure.com:10255 - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-02 17:20:53  INFO - Into preHandle - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-02 17:20:53  INFO - Into createProvider(ProviderDto request) - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-02 17:20:53  INFO - Into createProvider(ProviderDto providerDto) - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-02 17:20:53  INFO - Into assemblerProvider(ProviderDto providerDto) - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-02 17:20:53  INFO - Closed connection [connectionId{localValue:3, serverValue:-744693720}] to cdb-ms-prod-eastus1-fd19.documents.azure.com:10255 because there was a socket exception raised on another connection from this pool. - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-02 17:21:05  INFO - Closed connection [connectionId{localValue:108}] to cdb-ms-prod-eastus1-fd19.documents.azure.com:10255 because there was a socket exception raised by this connection. - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-02 17:21:05  INFO - General exception - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-02 17:21:06  INFO - Discovered replica set primary cdb-ms-prod-eastus1-fd19.documents.azure.com:10255 - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-02 17:21:14  INFO - Into preHandle - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-02 17:21:14  INFO - Into createProvider(ProviderDto request) - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-02 17:21:14  INFO - Into createProvider(ProviderDto providerDto) - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-02 17:21:14  INFO - Into assemblerProvider(ProviderDto providerDto) - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-02 17:21:14  INFO - Closed connection [connectionId{localValue:109}] to cdb-ms-prod-eastus1-fd19.documents.azure.com:10255 because there was a socket exception raised by this connection. - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-02 17:21:14  INFO - General exception - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-02 17:21:14  INFO - Discovered replica set primary cdb-ms-prod-eastus1-fd19.documents.azure.com:10255 - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-02 17:21:16  INFO - Into preHandle - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-02 17:21:16  INFO - Into createProvider(ProviderDto request) - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-02 17:21:16  INFO - Into createProvider(ProviderDto providerDto) - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-02 17:21:16  INFO - Into assemblerProvider(ProviderDto providerDto) - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-02 17:21:19  INFO - Opened connection [connectionId{localValue:110, serverValue:238603873}] to cdb-ms-prod-eastus1-fd19.documents.azure.com:10255 - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-02 17:21:27  INFO - Into preHandle - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-02 17:21:27  INFO - Into createProvider(ProviderDto request) - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-02 17:21:27  INFO - Into createProvider(ProviderDto providerDto) - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-02 17:21:27  INFO - Into assemblerProvider(ProviderDto providerDto) - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-02 17:29:26  INFO - Into preHandle - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-02 17:29:26  INFO - Into createProvider(ProviderDto request) - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-02 17:29:26  INFO - Into createProvider(ProviderDto providerDto) - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-02 17:29:26  INFO - Into assemblerProvider(ProviderDto providerDto) - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-02 17:29:32  INFO - Into preHandle - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-02 17:29:32  INFO - Into createProvider(ProviderDto request) - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-02 17:29:32  INFO - Into createProvider(ProviderDto providerDto) - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-02 17:29:32  INFO - Into assemblerProvider(ProviderDto providerDto) - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-02 17:29:34  INFO - Into preHandle - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-02 17:29:34  INFO - Into createProvider(ProviderDto request) - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-02 17:29:34  INFO - Into createProvider(ProviderDto providerDto) - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-02 17:29:34  INFO - Into assemblerProvider(ProviderDto providerDto) - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-02 17:31:10  INFO - Into preHandle - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-02 17:31:10  INFO - Into createProvider(ProviderDto request) - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-02 17:31:10  INFO - Into createProvider(ProviderDto providerDto) - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-02 17:31:10  INFO - Into assemblerProvider(ProviderDto providerDto) - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-02 17:31:28  INFO - Into preHandle - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-02 17:31:28  INFO - Into createProvider(ProviderDto request) - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-02 17:31:28  INFO - Into createProvider(ProviderDto providerDto) - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-02 17:31:28  INFO - Into assemblerProvider(ProviderDto providerDto) - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-02 17:31:33  INFO - Into preHandle - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-02 17:31:33  INFO - Into createProvider(ProviderDto request) - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-02 17:31:33  INFO - Into createProvider(ProviderDto providerDto) - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-02 17:31:33  INFO - Into assemblerProvider(ProviderDto providerDto) - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-02 17:32:17  INFO - Application shutdown requested. - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-02 17:32:17  INFO - Shutting down ExecutorService 'applicationTaskExecutor' - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-02 17:32:17  INFO - Closed connection [connectionId{localValue:110, serverValue:238603873}] to cdb-ms-prod-eastus1-fd19.documents.azure.com:10255 because the pool has been closed. - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 

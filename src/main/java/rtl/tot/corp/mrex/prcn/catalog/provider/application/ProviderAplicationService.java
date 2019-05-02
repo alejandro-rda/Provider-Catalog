@@ -58,7 +58,7 @@ public class ProviderAplicationService {
   private Notification createValidationFunctional(Provider provider) {
     Notification notification = new Notification();
     Provider prov = providerRepository.getProviderByRut(provider.getRut());
-    if(Objects.isNull(prov)) {
+    if(Objects.nonNull(prov)) {
       notification.addError("Provider is already exists");
     }
     return notification;
