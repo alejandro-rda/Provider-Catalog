@@ -30,4 +30,4 @@ HELP.md
 .vscode/
 
 #LOG
-EventAdapterCore.log
+/EventAdapterCore.log
