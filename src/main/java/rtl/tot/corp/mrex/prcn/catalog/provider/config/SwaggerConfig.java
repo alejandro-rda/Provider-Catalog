@@ -19,7 +19,7 @@ public class SwaggerConfig {
   public Docket api() {
     return new Docket(DocumentationType.SWAGGER_2)
         .select()
-        .apis(RequestHandlerSelectors.basePackage("rtl.tot.corp.mrex.prcn.price.catalog.cmd"))
+        .apis(RequestHandlerSelectors.basePackage("rtl.tot.corp.mrex.prcn.catalog.provider"))
         .paths(PathSelectors.any())
         .build()
         .apiInfo(metaData());

@@ -26,8 +26,6 @@ public class ProviderController {
   @Autowired
   private ProviderAplicationService providerAplicationService;
   
-
-  
   @Autowired
   private ResponseHandler responseHandler;
   

@@ -4,11 +4,17 @@ plugins {
 }
 
 apply plugin: 'io.spring.dependency-management'
+apply plugin: 'checkstyle'
+
+
 
 group = 'rtl.tot.corp.mrex.prcn.catalog.provider'
 version = '0.0.1-SNAPSHOT'
 sourceCompatibility = '1.8'
 
+checkstyle {
+    configFile = new File(rootDir, "checkstyle.xml")
+}
 repositories {
     mavenCentral()
     maven {
