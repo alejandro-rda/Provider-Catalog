@@ -11,25 +11,25 @@ sourceCompatibility = '1.8'
 
 repositories {
     mavenCentral()
-        maven {
+    maven {
         url project.property("repository.releases.url")
         credentials {
             username project.property("repository.username")
             password project.property("repository.password")
         }
+   }
 }
-
 dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-web'
     implementation 'org.springframework.boot:spring-boot-starter-data-mongodb'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
     
     implementation 'corp.falabella.event:event-adapter-azureservicebus-support:0.0.1'
-    
+    implementation 'corp.falabella.response:falabella-rest-response:1.0.0'
     implementation group: 'io.springfox', name: 'springfox-swagger2',   version: '2.9.2'
     implementation group: 'io.springfox', name: 'springfox-swagger-ui', version: '2.9.2'
 
     compileOnly 'org.projectlombok:lombok'
     annotationProcessor 'org.projectlombok:lombok'
-}
+
 }

@@ -4,14 +4,15 @@ import java.util.Objects;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
+import corp.falabella.api.response.common.application.Notification;
 import lombok.extern.slf4j.Slf4j;
 import rtl.tot.corp.mrex.prcn.catalog.provider.application.dto.ProviderDto;
-import rtl.tot.corp.mrex.prcn.catalog.provider.common.application.Notification;
+//import rtl.tot.corp.mrex.prcn.catalog.provider.common.application.Notification;
 import rtl.tot.corp.mrex.prcn.catalog.provider.domain.command.CommandBus;
 import rtl.tot.corp.mrex.prcn.catalog.provider.domain.entity.Provider;
 import rtl.tot.corp.mrex.prcn.catalog.provider.domain.exception.IncompleteCommandException;
 import rtl.tot.corp.mrex.prcn.catalog.provider.domain.repository.ProviderRepository;
+//import falabella.rest.response.*;
 
 @Service
 @Slf4j

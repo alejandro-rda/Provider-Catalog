@@ -8,7 +8,8 @@ import org.springframework.stereotype.Component;
 import org.springframework.web.servlet.HandlerInterceptor;
 
 import lombok.extern.slf4j.Slf4j;
-import rtl.tot.corp.mrex.prcn.catalog.provider.common.application.EventProperties;
+//import rtl.tot.corp.mrex.prcn.catalog.provider.common.application.EventProperties;
+import corp.falabella.api.response.common.application.EventProperties;
 
 @Component
 @Slf4j

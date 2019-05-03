@@ -13,7 +13,8 @@ import corp.falabella.arq.event.EventBuilder;
 import corp.falabella.arq.event.provider.EventPublisher;
 import corp.falabella.arq.infra.exception.InvalidParameterException;
 import lombok.extern.slf4j.Slf4j;
-import rtl.tot.corp.mrex.prcn.catalog.provider.common.application.EventProperties;
+//import rtl.tot.corp.mrex.prcn.catalog.provider.common.application.EventProperties;
+import corp.falabella.api.response.common.application.EventProperties;
 import rtl.tot.corp.mrex.prcn.catalog.provider.domain.entity.Provider;
 
 @Slf4j
