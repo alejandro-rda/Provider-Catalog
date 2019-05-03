@@ -38,6 +38,6 @@ public class SwaggerConfig {
             );
     
     return apiInfo;
-}
+  }
   
 }

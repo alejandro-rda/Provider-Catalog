@@ -26,17 +26,17 @@ public class ProviderAplicationService {
 
   public void createProvider(ProviderDto providerDto) throws IncompleteCommandException, Exception {
     log.info("Into createProvider(ProviderDto providerDto)");
-    Notification notification = this.createValidation( providerDto);
+    Notification notification = this.createValidation(providerDto);
     if (notification.hasErrors()) {
       throw new IllegalArgumentException(notification.errorMessage());
     }
     Provider provider = assemblerProvider( providerDto );
     notification = this.createValidationFunctional( provider );
-    if ( notification.hasErrors()) {
+    if (notification.hasErrors()) {
       throw new IllegalArgumentException(notification.errorMessage());
     }
     boolean isCreated = commandBus.execute(provider);
-    if (!isCreated) {
+    if ( !isCreated ) {
       throw new IncompleteCommandException();
     }
     log.info("Sucessful Operation");
