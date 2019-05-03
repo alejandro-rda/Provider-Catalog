@@ -32,11 +32,11 @@ public class ProviderAplicationService {
     }
     Provider provider = assemblerProvider( providerDto );
     notification = this.createValidationFunctional( provider );
-    if( notification.hasErrors()) {
+    if ( notification.hasErrors()) {
       throw new IllegalArgumentException(notification.errorMessage());
     }
     boolean isCreated = commandBus.execute(provider);
-    if(!isCreated) {
+    if (!isCreated) {
       throw new IncompleteCommandException();
     }
     log.info("Sucessful Operation");
@@ -59,7 +59,7 @@ public class ProviderAplicationService {
   private Notification createValidationFunctional(Provider provider) {
     Notification notification = new Notification();
     Provider prov = providerRepository.getProviderByRut(provider.getRut());
-    if(Objects.nonNull(prov)) {
+    if (Objects.nonNull(prov)) {
       notification.addError("Provider is already exists");
     }
     return notification;

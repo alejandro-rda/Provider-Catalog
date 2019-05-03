@@ -8,7 +8,7 @@ import org.springframework.stereotype.Repository;
 import rtl.tot.corp.mrex.prcn.catalog.provider.domain.entity.Provider;
 
  @Repository
-public interface ProviderDocumentRepository extends MongoRepository<Provider, ObjectId>{
+public interface ProviderDocumentRepository extends MongoRepository<Provider, ObjectId> {
   
   @Query("{'rut': ?0}")
   public Provider getByRut(String rut);
