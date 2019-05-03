@@ -335,3 +335,32 @@ Consider defining a bean of type 'corp.falabella.api.response.common.api.control
 2019-05-03 11:10:14  INFO - Into getEntityType() - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
 2019-05-03 11:10:14  INFO - Into getMetadata() - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
 2019-05-03 11:10:14  INFO - Sucessful Operation - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-03 11:20:14  WARN - Send link to 'topic-product' closed. Failing all pending send requests. - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-03 11:25:14  WARN - Internal send link of requestresponselink to '$cbs' closed with error. - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+com.microsoft.azure.servicebus.primitives.ServiceBusException: Error{condition=amqp:connection:forced, description='The connection was inactive for more than the allowed 300000 milliseconds and is closed by container 'LinkTracker'. TrackingId:7ff88301d8d048868945f24b202bcca8_G55, SystemTracker:gateway7, Timestamp:2019-05-03T16:25:16', info=null}
+	at com.microsoft.azure.servicebus.primitives.ExceptionUtil.toException(ExceptionUtil.java:113)
+	at com.microsoft.azure.servicebus.primitives.RequestResponseLink$InternalSender.onClose(RequestResponseLink.java:837)
+	at com.microsoft.azure.servicebus.amqp.BaseLinkHandler.processOnClose(BaseLinkHandler.java:68)
+	at com.microsoft.azure.servicebus.amqp.BaseLinkHandler.onLinkRemoteClose(BaseLinkHandler.java:42)
+	at org.apache.qpid.proton.engine.BaseHandler.handle(BaseHandler.java:176)
+	at org.apache.qpid.proton.engine.impl.EventImpl.dispatch(EventImpl.java:108)
+	at org.apache.qpid.proton.reactor.impl.ReactorImpl.dispatch(ReactorImpl.java:309)
+	at org.apache.qpid.proton.reactor.impl.ReactorImpl.process(ReactorImpl.java:276)
+	at com.microsoft.azure.servicebus.primitives.MessagingFactory$RunReactor.run(MessagingFactory.java:481)
+	at java.lang.Thread.run(Unknown Source)
+2019-05-03 11:25:14  WARN - Completing all pending requests with exception in request response link to $cbs - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-03 11:25:14  WARN - Internal receive link of requestresponselink to '$cbs' closed with error. - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+com.microsoft.azure.servicebus.primitives.ServiceBusException: Error{condition=amqp:connection:forced, description='The connection was inactive for more than the allowed 300000 milliseconds and is closed by container 'LinkTracker'. TrackingId:7ff88301d8d048868945f24b202bcca8_G55, SystemTracker:gateway7, Timestamp:2019-05-03T16:25:16', info=null}
+	at com.microsoft.azure.servicebus.primitives.ExceptionUtil.toException(ExceptionUtil.java:113)
+	at com.microsoft.azure.servicebus.primitives.RequestResponseLink$InternalReceiver.onClose(RequestResponseLink.java:630)
+	at com.microsoft.azure.servicebus.amqp.BaseLinkHandler.processOnClose(BaseLinkHandler.java:68)
+	at com.microsoft.azure.servicebus.amqp.BaseLinkHandler.onLinkRemoteClose(BaseLinkHandler.java:42)
+	at org.apache.qpid.proton.engine.BaseHandler.handle(BaseHandler.java:176)
+	at org.apache.qpid.proton.engine.impl.EventImpl.dispatch(EventImpl.java:108)
+	at org.apache.qpid.proton.reactor.impl.ReactorImpl.dispatch(ReactorImpl.java:309)
+	at org.apache.qpid.proton.reactor.impl.ReactorImpl.process(ReactorImpl.java:276)
+	at com.microsoft.azure.servicebus.primitives.MessagingFactory$RunReactor.run(MessagingFactory.java:481)
+	at java.lang.Thread.run(Unknown Source)
+2019-05-03 11:25:14  WARN - Completing all pending requests with exception in request response link to $cbs - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-03 11:25:14 ERROR - Connection error. 'Error{condition=amqp:connection:forced, description='The connection was inactive for more than the allowed 300000 milliseconds and is closed by container 'LinkTracker'. TrackingId:7ff88301d8d048868945f24b202bcca8_G55, SystemTracker:gateway7, Timestamp:2019-05-03T16:25:16', info=null}' - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-03 11:25:14  INFO - Closing connection to host - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 

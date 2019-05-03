@@ -22,7 +22,7 @@ import corp.falabella.api.response.common.api.controller.ResponseHandler;
 @RequestMapping("/mrex/pctm/v1")
 @Slf4j
 public class ProviderController {
-
+  
   @Autowired
   private ProviderAplicationService providerAplicationService;
   
