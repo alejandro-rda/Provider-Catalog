@@ -364,3 +364,6 @@ com.microsoft.azure.servicebus.primitives.ServiceBusException: Error{condition=a
 2019-05-03 11:25:14  WARN - Completing all pending requests with exception in request response link to $cbs - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
 2019-05-03 11:25:14 ERROR - Connection error. 'Error{condition=amqp:connection:forced, description='The connection was inactive for more than the allowed 300000 milliseconds and is closed by container 'LinkTracker'. TrackingId:7ff88301d8d048868945f24b202bcca8_G55, SystemTracker:gateway7, Timestamp:2019-05-03T16:25:16', info=null}' - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
 2019-05-03 11:25:14  INFO - Closing connection to host - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-03 11:47:16  INFO - Application shutdown requested. - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-03 11:47:16  INFO - Shutting down ExecutorService 'applicationTaskExecutor' - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-03 11:47:16  INFO - Closed connection [connectionId{localValue:3, serverValue:906477958}] to cdb-ms-prod-eastus1-fd19.documents.azure.com:10255 because the pool has been closed. - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
