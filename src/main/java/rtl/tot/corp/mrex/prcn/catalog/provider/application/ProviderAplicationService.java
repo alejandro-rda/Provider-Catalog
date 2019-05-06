@@ -3,10 +3,12 @@ package rtl.tot.corp.mrex.prcn.catalog.provider.application;
 import java.util.Objects;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 import corp.falabella.api.response.common.application.Notification;
 import lombok.extern.slf4j.Slf4j;
 import rtl.tot.corp.mrex.prcn.catalog.provider.application.dto.ProviderDto;
+import rtl.tot.corp.mrex.prcn.catalog.provider.config.ApplicationProperties;
 //import rtl.tot.corp.mrex.prcn.catalog.provider.common.application.Notification;
 import rtl.tot.corp.mrex.prcn.catalog.provider.domain.command.CommandBus;
 import rtl.tot.corp.mrex.prcn.catalog.provider.domain.entity.Provider;
@@ -34,18 +36,24 @@ import rtl.tot.corp.mrex.prcn.catalog.provider.domain.repository.ProviderReposit
 @Service
 @Slf4j
 public class ProviderAplicationService {
-
+  
+  
   @Autowired
   private CommandBus commandBus;
   
   @Autowired
   private ProviderRepository providerRepository;
   
+  @Autowired
+  @Qualifier("env")
+  private ApplicationProperties env;
+  
   /**
    * Registra proveedor.
    *
    * @param providerDto ProviderDto
    */
+  
   public void createProvider(ProviderDto providerDto) throws IncompleteCommandException, Exception {
     log.info("Into createProvider(ProviderDto providerDto)");
     Notification notification = this.createValidation(providerDto);
@@ -66,15 +74,28 @@ public class ProviderAplicationService {
 
   private Notification createValidation(ProviderDto providerDto) {
     Notification notification = new Notification();
-    if (Objects.isNull(providerDto.getCountry()) || providerDto.getCountry().isEmpty()) {
-      notification.addError("Country can not be null or empty");
-    }
-    if (Objects.isNull(providerDto.getNameVendor()) || providerDto.getNameVendor().isEmpty()) {
-      notification.addError("Name can not be null or empty");
-    }
     if (Objects.isNull(providerDto.getRut()) || providerDto.getRut().isEmpty()) {
       notification.addError("Rut can not be null or empty");
     }
+    
+    if (Objects.nonNull(providerDto.getRut()) && providerDto.getRut().length() > env.getLenghtProviderRut()) {
+      notification.addError("Lenght RUT can not be more lenght that " + env.getLenghtProviderRut());
+    }
+    
+    if (Objects.isNull(providerDto.getDvRut()) || providerDto.getDvRut().isEmpty()) {
+      notification.addError("dvRut can not be null or empty");
+    }
+    
+    //    if (Objects.nonNull(providerDto.getDvRut()) && providerDto.getDvRut().length() > env.getLenghtDvRut()) {
+    //      notification.addError("Lenght dvRut can not be more lenght that " + env.getLenghtDvRut());
+    //    }
+    //    if (Objects.isNull(providerDto.getCountry()) || providerDto.getCountry().isEmpty()) {
+    //      notification.addError("Country can not be null or empty");
+    //    }
+    //    if (Objects.isNull(providerDto.getNameVendor()) || providerDto.getNameVendor().isEmpty()) {
+    //      notification.addError("nameVendor can not be null or empty");
+    //    }
+
     return notification;
   }
   

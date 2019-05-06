@@ -1,0 +1,30 @@
+server:
+  port: 8282
+
+spring:
+  application:
+    name: proveedor-catalog
+  data:
+    mongodb:
+      uri: mongodb://cosmosdbsf:lHEVlSpr8jkT8QSWjTEHbwgVx9bbPQ2BpypBK54F61vcCKP0sjnBzON2Z1eHZLBwKKoCPOkfrykR2kZwDQv91A==@cosmosdbsf.documents.azure.com:10255/?ssl=true&replicaSet=globaldb
+      database: falabellaData
+  autoconfigure:
+    exclude: org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration
+publisher:
+  #endpoint: Endpoint=sb://tot-corp-orion-int-qa.servicebus.windows.net/;SharedAccessKeyName=totorionadm;SharedAccessKey=+uHMYKcSeBfapKNgfqLkXuQe8fgpz2GR4GGKkChZB4s=;EntityPath=tot-corp-orion-pricechanges-topic-mid
+  endpoint: Endpoint=sb://ttotus-bus.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=/pktePJ8YZk3jyyaxtExbDbn9+V5fEOPPxIXPEkO9rI=;EntityPath=topic-product
+  azure-service-bus:
+    #topic: tot-corp-orion-pricechanges-topic-mid
+    topic: topic-product
+
+provider:
+  param:
+    rut:
+      lenght: 20
+    dvRut:
+      lenght :3
+  
+  
+  
+  
+  
