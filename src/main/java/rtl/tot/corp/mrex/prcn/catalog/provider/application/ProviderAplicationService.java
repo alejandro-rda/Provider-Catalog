@@ -69,7 +69,7 @@ public class ProviderAplicationService {
     if (Objects.isNull(providerDto.getCountry()) || providerDto.getCountry().isEmpty()) {
       notification.addError("Country can not be null or empty");
     }
-    if (Objects.isNull(providerDto.getName()) || providerDto.getName().isEmpty()) {
+    if (Objects.isNull(providerDto.getNameVendor()) || providerDto.getNameVendor().isEmpty()) {
       notification.addError("Name can not be null or empty");
     }
     if (Objects.isNull(providerDto.getRut()) || providerDto.getRut().isEmpty()) {
@@ -89,7 +89,11 @@ public class ProviderAplicationService {
 
   private Provider assemblerProvider(ProviderDto providerDto) {
     log.info("Into assemblerProvider(ProviderDto providerDto)");
-    return Provider.builder().rut(providerDto.getRut()).country(providerDto.getCountry()).name(providerDto.getName())
+    return 
+        Provider.builder()
+        .rut(providerDto.getRut())
+        .country(providerDto.getCountry())
+        .name(providerDto.getNameVendor())
         .build();
   }
 

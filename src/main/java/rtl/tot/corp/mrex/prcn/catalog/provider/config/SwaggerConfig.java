@@ -23,6 +23,7 @@ public class SwaggerConfig {
   @Bean
   public Docket api() {
     return new Docket(DocumentationType.SWAGGER_2)
+        .useDefaultResponseMessages(false)
         .select()
         .apis(RequestHandlerSelectors.basePackage("rtl.tot.corp.mrex.prcn.catalog.provider"))
         .paths(PathSelectors.any())
