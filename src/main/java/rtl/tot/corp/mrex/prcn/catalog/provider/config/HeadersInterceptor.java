@@ -22,9 +22,9 @@ public class HeadersInterceptor implements HandlerInterceptor {
   public boolean preHandle(HttpServletRequest request, 
       HttpServletResponse response, Object handler) throws Exception {
     log.info("Into preHandle");
-    eventProperties.setChannel( request.getHeader("Channel"));
+    eventProperties.setChannel(request.getHeader("Channel"));
     eventProperties.setCommerce(request.getHeader("Commerce"));
-    eventProperties.setCountry( request.getHeader("Country"));
+    eventProperties.setCountry(request.getHeader("Country"));
     eventProperties.setMimeType(request.getHeader("Content-Type"));
     eventProperties.setVersion("1.0");
     return true;

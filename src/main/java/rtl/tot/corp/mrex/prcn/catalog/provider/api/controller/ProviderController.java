@@ -17,6 +17,26 @@ import rtl.tot.corp.mrex.prcn.catalog.provider.application.dto.ProviderDto;
 import rtl.tot.corp.mrex.prcn.catalog.provider.domain.exception.IncompleteCommandException;
 import corp.falabella.api.response.common.api.controller.ResponseHandler;
 
+/**
+ * Clase que expondra los servicios Rest correspondientes al
+ * mantenimiento de proveedores.<br/>
+ * <b>Class</b>: ProviderController<br/>
+ * <b>Copyright</b>: &copy; 2018 Saga Falabella del Peru;.<br/>
+ * <b>Company</b>: Saga Falabella del Peru.<br/>
+ * 
+ * @author jlozanoportillo <br/>
+ *         <u>Service Provider</u>: kruger <br/>
+ *         <u>Developed by</u>: <br/>
+ *         <ul>
+ *         <li>Jose Lozano</li>
+ *         </ul>
+ *         <u>Changes</u>:<br/>
+ *         <ul>
+ *         <li>May 03, 2019 Creaci&oacute;n de Clase.</li>
+ *         </ul>
+ * @version 1.0
+ */
+
 @RestController
 @Api(tags = "Provider", description = "Provider")
 @RequestMapping("/mrex/pctm/v1")
@@ -28,6 +48,16 @@ public class ProviderController {
   
   @Autowired
   private ResponseHandler responseHandler;
+  
+  
+  /**
+   * Servicio para registrar proveedor nuevo.
+   *
+   * @param request
+   *          informacion del proveedor a registrar.
+   * @return ResponseCommandDto Informacion de la confirmacion del registro.
+   */
+  
   
   @PostMapping(
       value = "/provider", 

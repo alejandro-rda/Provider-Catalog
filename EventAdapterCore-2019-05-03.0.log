@@ -1,0 +1,369 @@
+2019-05-03 10:50:29  INFO - Starting PriceCacheApplication on JoseCarlos-PC with PID 8408 (C:\Users\JoseCarlos\Desktop\trabajo\tottus\workspace\proveedor-catalog\bin\main started by JoseCarlos in C:\Users\JoseCarlos\Desktop\trabajo\tottus\workspace\proveedor-catalog) - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-03 10:50:29  INFO - No active profile set, falling back to default profiles: default - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-03 10:50:31  INFO - Bootstrapping Spring Data repositories in DEFAULT mode. - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-03 10:50:31  INFO - Finished Spring Data repository scanning in 93ms. Found 1 repository interfaces. - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-03 10:50:32  INFO - Tomcat initialized with port(s): 8282 (http) - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-03 10:50:32  INFO - Initializing ProtocolHandler ["http-nio-8282"] - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-03 10:50:32  INFO - Starting service [Tomcat] - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-03 10:50:32  INFO - Starting Servlet engine: [Apache Tomcat/9.0.17] - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-03 10:50:32  INFO - Initializing Spring embedded WebApplicationContext - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-03 10:50:32  INFO - Root WebApplicationContext: initialization completed in 3635 ms - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-03 10:50:33  INFO - Creating MessagingFactory to namespace 'sb://ttotus-bus.servicebus.windows.net/' - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-03 10:50:33  INFO - Creating messaging factory from namespace endpoint uri 'sb://ttotus-bus.servicebus.windows.net/' - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-03 10:50:33  INFO - Creating and starting reactor - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-03 10:50:33  INFO - starting reactor instance. - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-03 10:50:33  INFO - Started reactor - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-03 10:50:33  INFO - Creating connection to host 'ttotus-bus.servicebus.windows.net:5671' - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-03 10:50:36  INFO - MessagingFactory opened. - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-03 10:50:36  INFO - Connection opened to host. - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-03 10:50:36  INFO - Created MessagingFactory to namespace 'sb://ttotus-bus.servicebus.windows.net/' - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-03 10:50:36  INFO - Creating MessageSender to entity 'topic-product' - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-03 10:50:36  INFO - Creating CBS link to $cbs - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-03 10:50:36  INFO - Creating core message sender to 'topic-product' - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-03 10:50:36  INFO - Opened requestresponselink to $cbs - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-03 10:50:36  INFO - Created CBS link to $cbs - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-03 10:50:37  INFO - Creating send link to 'topic-product' - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-03 10:50:37  INFO - Opened send link to 'topic-product' - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-03 10:50:37  INFO - Created MessageSender to entity 'topic-product' - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-03 10:50:37  INFO - Created topic client to connection string 'Endpoint=sb://ttotus-bus.servicebus.windows.net/;EntityPath=topic-product;' - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-03 10:50:37  WARN - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'providerController': Unsatisfied dependency expressed through field 'providerAplicationService'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'providerAplicationService': Unsatisfied dependency expressed through field 'commandBus'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'createProviderCommandBus': Unsatisfied dependency expressed through field 'publisher'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'eventPublisherService': Unsatisfied dependency expressed through field 'eventProperties'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'corp.falabella.api.response.common.application.EventProperties' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)} - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-03 10:50:37  INFO - Stopping service [Tomcat] - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-03 10:50:37  INFO - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled. - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-03 10:50:37 ERROR - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Field eventProperties in rtl.tot.corp.mrex.prcn.catalog.provider.domain.publisher.EventPublisherService required a bean of type 'corp.falabella.api.response.common.application.EventProperties' that could not be found.
+
+The injection point has the following annotations:
+	- @org.springframework.beans.factory.annotation.Autowired(required=true)
+
+
+Action:
+
+Consider defining a bean of type 'corp.falabella.api.response.common.application.EventProperties' in your configuration.
+ - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-03 10:56:03  INFO - Starting PriceCacheApplication on JoseCarlos-PC with PID 3008 (C:\Users\JoseCarlos\Desktop\trabajo\tottus\workspace\proveedor-catalog\bin\main started by JoseCarlos in C:\Users\JoseCarlos\Desktop\trabajo\tottus\workspace\proveedor-catalog) - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-03 10:56:03  INFO - No active profile set, falling back to default profiles: default - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-03 10:56:04  INFO - Bootstrapping Spring Data repositories in DEFAULT mode. - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-03 10:56:04  INFO - Finished Spring Data repository scanning in 91ms. Found 1 repository interfaces. - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-03 10:56:05  INFO - Tomcat initialized with port(s): 8282 (http) - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-03 10:56:05  INFO - Initializing ProtocolHandler ["http-nio-8282"] - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-03 10:56:05  INFO - Starting service [Tomcat] - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-03 10:56:05  INFO - Starting Servlet engine: [Apache Tomcat/9.0.17] - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-03 10:56:06  INFO - Initializing Spring embedded WebApplicationContext - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-03 10:56:06  INFO - Root WebApplicationContext: initialization completed in 2741 ms - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-03 10:56:06  INFO - Creating MessagingFactory to namespace 'sb://ttotus-bus.servicebus.windows.net/' - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-03 10:56:06  INFO - Creating messaging factory from namespace endpoint uri 'sb://ttotus-bus.servicebus.windows.net/' - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-03 10:56:06  INFO - Creating and starting reactor - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-03 10:56:06  INFO - starting reactor instance. - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-03 10:56:06  INFO - Started reactor - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-03 10:56:06  INFO - Creating connection to host 'ttotus-bus.servicebus.windows.net:5671' - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-03 10:56:08  INFO - MessagingFactory opened. - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-03 10:56:08  INFO - Created MessagingFactory to namespace 'sb://ttotus-bus.servicebus.windows.net/' - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-03 10:56:08  INFO - Connection opened to host. - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-03 10:56:08  INFO - Creating MessageSender to entity 'topic-product' - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-03 10:56:08  INFO - Creating CBS link to $cbs - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-03 10:56:08  INFO - Creating core message sender to 'topic-product' - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-03 10:56:08  INFO - Opened requestresponselink to $cbs - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-03 10:56:08  INFO - Created CBS link to $cbs - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-03 10:56:09  INFO - Creating send link to 'topic-product' - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-03 10:56:09  INFO - Opened send link to 'topic-product' - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-03 10:56:09  INFO - Created MessageSender to entity 'topic-product' - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-03 10:56:09  INFO - Created topic client to connection string 'Endpoint=sb://ttotus-bus.servicebus.windows.net/;EntityPath=topic-product;' - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-03 10:56:09  WARN - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'providerController': Unsatisfied dependency expressed through field 'providerAplicationService'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'providerAplicationService': Unsatisfied dependency expressed through field 'commandBus'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'createProviderCommandBus': Unsatisfied dependency expressed through field 'publisher'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'eventPublisherService': Unsatisfied dependency expressed through field 'eventProperties'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'corp.falabella.api.response.common.application.EventProperties' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)} - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-03 10:56:09  INFO - Stopping service [Tomcat] - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-03 10:56:09  INFO - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled. - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-03 10:56:09 ERROR - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Field eventProperties in rtl.tot.corp.mrex.prcn.catalog.provider.domain.publisher.EventPublisherService required a bean of type 'corp.falabella.api.response.common.application.EventProperties' that could not be found.
+
+The injection point has the following annotations:
+	- @org.springframework.beans.factory.annotation.Autowired(required=true)
+
+
+Action:
+
+Consider defining a bean of type 'corp.falabella.api.response.common.application.EventProperties' in your configuration.
+ - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-03 10:57:31  INFO - Starting PriceCacheApplication on JoseCarlos-PC with PID 14568 (C:\Users\JoseCarlos\Desktop\trabajo\tottus\workspace\proveedor-catalog\bin\main started by JoseCarlos in C:\Users\JoseCarlos\Desktop\trabajo\tottus\workspace\proveedor-catalog) - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-03 10:57:31  INFO - No active profile set, falling back to default profiles: default - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-03 10:57:32  INFO - Bootstrapping Spring Data repositories in DEFAULT mode. - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-03 10:57:32  INFO - Finished Spring Data repository scanning in 92ms. Found 1 repository interfaces. - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-03 10:57:33  INFO - Tomcat initialized with port(s): 8282 (http) - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-03 10:57:33  INFO - Initializing ProtocolHandler ["http-nio-8282"] - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-03 10:57:33  INFO - Starting service [Tomcat] - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-03 10:57:33  INFO - Starting Servlet engine: [Apache Tomcat/9.0.17] - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-03 10:57:33  INFO - Initializing Spring embedded WebApplicationContext - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-03 10:57:33  INFO - Root WebApplicationContext: initialization completed in 2810 ms - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-03 10:57:34  INFO - Creating MessagingFactory to namespace 'sb://ttotus-bus.servicebus.windows.net/' - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-03 10:57:34  INFO - Creating messaging factory from namespace endpoint uri 'sb://ttotus-bus.servicebus.windows.net/' - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-03 10:57:34  INFO - Creating and starting reactor - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-03 10:57:34  INFO - starting reactor instance. - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-03 10:57:34  INFO - Started reactor - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-03 10:57:34  INFO - Creating connection to host 'ttotus-bus.servicebus.windows.net:5671' - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-03 10:57:37  INFO - MessagingFactory opened. - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-03 10:57:37  INFO - Connection opened to host. - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-03 10:57:37  INFO - Created MessagingFactory to namespace 'sb://ttotus-bus.servicebus.windows.net/' - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-03 10:57:37  INFO - Creating MessageSender to entity 'topic-product' - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-03 10:57:37  INFO - Creating CBS link to $cbs - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-03 10:57:37  INFO - Creating core message sender to 'topic-product' - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-03 10:57:38  INFO - Opened requestresponselink to $cbs - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-03 10:57:38  INFO - Created CBS link to $cbs - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-03 10:57:38  INFO - Creating send link to 'topic-product' - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-03 10:57:39  INFO - Opened send link to 'topic-product' - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-03 10:57:39  INFO - Created MessageSender to entity 'topic-product' - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-03 10:57:39  INFO - Created topic client to connection string 'Endpoint=sb://ttotus-bus.servicebus.windows.net/;EntityPath=topic-product;' - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-03 10:57:39  WARN - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'providerController': Unsatisfied dependency expressed through field 'providerAplicationService'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'providerAplicationService': Unsatisfied dependency expressed through field 'commandBus'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'createProviderCommandBus': Unsatisfied dependency expressed through field 'publisher'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'eventPublisherService' defined in file [C:\Users\JoseCarlos\Desktop\trabajo\tottus\workspace\proveedor-catalog\bin\main\rtl\tot\corp\mrex\prcn\catalog\provider\domain\publisher\EventPublisherService.class]: Unsatisfied dependency expressed through constructor parameter 1; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'corp.falabella.api.response.common.application.EventProperties' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {} - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-03 10:57:39  INFO - Stopping service [Tomcat] - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-03 10:57:39  INFO - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled. - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-03 10:57:39 ERROR - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Parameter 1 of constructor in rtl.tot.corp.mrex.prcn.catalog.provider.domain.publisher.EventPublisherService required a bean of type 'corp.falabella.api.response.common.application.EventProperties' that could not be found.
+
+The injection point has the following annotations:
+	- @org.springframework.beans.factory.annotation.Autowired(required=true)
+
+
+Action:
+
+Consider defining a bean of type 'corp.falabella.api.response.common.application.EventProperties' in your configuration.
+ - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-03 11:06:02  INFO - Starting PriceCacheApplication on JoseCarlos-PC with PID 17948 (C:\Users\JoseCarlos\Desktop\trabajo\tottus\workspace\proveedor-catalog\bin\main started by JoseCarlos in C:\Users\JoseCarlos\Desktop\trabajo\tottus\workspace\proveedor-catalog) - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-03 11:06:02  INFO - No active profile set, falling back to default profiles: default - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-03 11:06:04  INFO - Bootstrapping Spring Data repositories in DEFAULT mode. - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-03 11:06:04  INFO - Finished Spring Data repository scanning in 95ms. Found 1 repository interfaces. - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-03 11:06:05  INFO - Tomcat initialized with port(s): 8282 (http) - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-03 11:06:05  INFO - Initializing ProtocolHandler ["http-nio-8282"] - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-03 11:06:05  INFO - Starting service [Tomcat] - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-03 11:06:05  INFO - Starting Servlet engine: [Apache Tomcat/9.0.17] - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-03 11:06:05  INFO - Initializing Spring embedded WebApplicationContext - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-03 11:06:05  INFO - Root WebApplicationContext: initialization completed in 3632 ms - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-03 11:06:06  INFO - Creating MessagingFactory to namespace 'sb://ttotus-bus.servicebus.windows.net/' - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-03 11:06:06  INFO - Creating messaging factory from namespace endpoint uri 'sb://ttotus-bus.servicebus.windows.net/' - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-03 11:06:06  INFO - Creating and starting reactor - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-03 11:06:06  INFO - starting reactor instance. - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-03 11:06:06  INFO - Started reactor - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-03 11:06:06  INFO - Creating connection to host 'ttotus-bus.servicebus.windows.net:5671' - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-03 11:06:08  INFO - MessagingFactory opened. - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-03 11:06:08  INFO - Connection opened to host. - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-03 11:06:08  INFO - Creating CBS link to $cbs - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-03 11:06:08  INFO - Created MessagingFactory to namespace 'sb://ttotus-bus.servicebus.windows.net/' - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-03 11:06:08  INFO - Creating MessageSender to entity 'topic-product' - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-03 11:06:08  INFO - Creating core message sender to 'topic-product' - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-03 11:06:08  INFO - Opened requestresponselink to $cbs - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-03 11:06:08  INFO - Created CBS link to $cbs - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-03 11:06:09  INFO - Creating send link to 'topic-product' - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-03 11:06:09  INFO - Opened send link to 'topic-product' - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-03 11:06:09  INFO - Created MessageSender to entity 'topic-product' - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-03 11:06:09  INFO - Created topic client to connection string 'Endpoint=sb://ttotus-bus.servicebus.windows.net/;EntityPath=topic-product;' - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-03 11:06:09  INFO - Cluster created with settings {hosts=[cosmosdbsf.documents.azure.com:10255], mode=MULTIPLE, requiredClusterType=REPLICA_SET, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500, requiredReplicaSetName='globaldb'} - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-03 11:06:09  INFO - Adding discovered server cosmosdbsf.documents.azure.com:10255 to client view of cluster - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-03 11:06:10  WARN - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'providerController': Unsatisfied dependency expressed through field 'responseHandler'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'corp.falabella.api.response.common.api.controller.ResponseHandler' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)} - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-03 11:06:10  INFO - Stopping service [Tomcat] - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-03 11:06:10  INFO - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled. - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-03 11:06:10 ERROR - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Field responseHandler in rtl.tot.corp.mrex.prcn.catalog.provider.api.controller.ProviderController required a bean of type 'corp.falabella.api.response.common.api.controller.ResponseHandler' that could not be found.
+
+The injection point has the following annotations:
+	- @org.springframework.beans.factory.annotation.Autowired(required=true)
+
+
+Action:
+
+Consider defining a bean of type 'corp.falabella.api.response.common.api.controller.ResponseHandler' in your configuration.
+ - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-03 11:07:58  INFO - Starting PriceCacheApplication on JoseCarlos-PC with PID 18176 (C:\Users\JoseCarlos\Desktop\trabajo\tottus\workspace\proveedor-catalog\bin\main started by JoseCarlos in C:\Users\JoseCarlos\Desktop\trabajo\tottus\workspace\proveedor-catalog) - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-03 11:07:58  INFO - No active profile set, falling back to default profiles: default - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-03 11:07:59  INFO - Bootstrapping Spring Data repositories in DEFAULT mode. - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-03 11:07:59  INFO - Finished Spring Data repository scanning in 90ms. Found 1 repository interfaces. - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-03 11:08:00  INFO - Tomcat initialized with port(s): 8282 (http) - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-03 11:08:00  INFO - Initializing ProtocolHandler ["http-nio-8282"] - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-03 11:08:00  INFO - Starting service [Tomcat] - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-03 11:08:00  INFO - Starting Servlet engine: [Apache Tomcat/9.0.17] - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-03 11:08:00  INFO - Initializing Spring embedded WebApplicationContext - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-03 11:08:00  INFO - Root WebApplicationContext: initialization completed in 2481 ms - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-03 11:08:01  INFO - Creating MessagingFactory to namespace 'sb://ttotus-bus.servicebus.windows.net/' - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-03 11:08:01  INFO - Creating messaging factory from namespace endpoint uri 'sb://ttotus-bus.servicebus.windows.net/' - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-03 11:08:01  INFO - Creating and starting reactor - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-03 11:08:01  INFO - starting reactor instance. - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-03 11:08:01  INFO - Started reactor - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-03 11:08:01  INFO - Creating connection to host 'ttotus-bus.servicebus.windows.net:5671' - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-03 11:08:03  INFO - MessagingFactory opened. - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-03 11:08:03  INFO - Connection opened to host. - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-03 11:08:03  INFO - Created MessagingFactory to namespace 'sb://ttotus-bus.servicebus.windows.net/' - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-03 11:08:03  INFO - Creating MessageSender to entity 'topic-product' - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-03 11:08:03  INFO - Creating CBS link to $cbs - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-03 11:08:03  INFO - Creating core message sender to 'topic-product' - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-03 11:08:03  INFO - Opened requestresponselink to $cbs - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-03 11:08:03  INFO - Created CBS link to $cbs - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-03 11:08:04  INFO - Creating send link to 'topic-product' - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-03 11:08:04  INFO - Opened send link to 'topic-product' - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-03 11:08:04  INFO - Created MessageSender to entity 'topic-product' - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-03 11:08:04  INFO - Created topic client to connection string 'Endpoint=sb://ttotus-bus.servicebus.windows.net/;EntityPath=topic-product;' - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-03 11:08:05  INFO - Cluster created with settings {hosts=[cosmosdbsf.documents.azure.com:10255], mode=MULTIPLE, requiredClusterType=REPLICA_SET, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500, requiredReplicaSetName='globaldb'} - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-03 11:08:05  INFO - Adding discovered server cosmosdbsf.documents.azure.com:10255 to client view of cluster - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-03 11:08:05  INFO - Mapped URL path [/v2/api-docs] onto method [public org.springframework.http.ResponseEntity<springfox.documentation.spring.web.json.Json> springfox.documentation.swagger2.web.Swagger2Controller.getDocumentation(java.lang.String,javax.servlet.http.HttpServletRequest)] - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-03 11:08:06  INFO - Initializing ExecutorService 'applicationTaskExecutor' - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-03 11:08:06  INFO - Context refreshed - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-03 11:08:06  INFO - Found 1 custom documentation plugin(s) - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-03 11:08:06  INFO - Scanning for api listing references - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-03 11:08:06  INFO - Starting ProtocolHandler ["http-nio-8282"] - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-03 11:08:06  INFO - Tomcat started on port(s): 8282 (http) with context path '' - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-03 11:08:06  INFO - Started PriceCacheApplication in 8.68 seconds (JVM running for 10.165) - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-03 11:08:06  INFO - Opened connection [connectionId{localValue:1, serverValue:1578983015}] to cosmosdbsf.documents.azure.com:10255 - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-03 11:08:06  INFO - Monitor thread successfully connected to server with description ServerDescription{address=cosmosdbsf.documents.azure.com:10255, type=REPLICA_SET_PRIMARY, state=CONNECTED, ok=true, version=ServerVersion{versionList=[3, 2, 0]}, minWireVersion=0, maxWireVersion=2, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=null, roundTripTimeNanos=167098846, setName='globaldb', canonicalAddress=cdb-ms-prod-eastus1-fd19.documents.azure.com:10255, hosts=[cdb-ms-prod-eastus1-fd19.documents.azure.com:10255], passives=[], arbiters=[], primary='cdb-ms-prod-eastus1-fd19.documents.azure.com:10255', tagSet=TagSet{[]}, electionId=null, setVersion=1, lastWriteDate=null, lastUpdateTimeNanos=245251962498573} - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-03 11:08:07  INFO - Adding discovered server cdb-ms-prod-eastus1-fd19.documents.azure.com:10255 to client view of cluster - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-03 11:08:07  INFO - Server cosmosdbsf.documents.azure.com:10255 is no longer a member of the replica set.  Removing from client view of cluster. - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-03 11:08:07  INFO - Canonical address cdb-ms-prod-eastus1-fd19.documents.azure.com:10255 does not match server address.  Removing cosmosdbsf.documents.azure.com:10255 from client view of cluster - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-03 11:08:08  INFO - Opened connection [connectionId{localValue:2, serverValue:-1938283223}] to cdb-ms-prod-eastus1-fd19.documents.azure.com:10255 - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-03 11:08:08  INFO - Monitor thread successfully connected to server with description ServerDescription{address=cdb-ms-prod-eastus1-fd19.documents.azure.com:10255, type=REPLICA_SET_PRIMARY, state=CONNECTED, ok=true, version=ServerVersion{versionList=[3, 2, 0]}, minWireVersion=0, maxWireVersion=2, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=null, roundTripTimeNanos=165067857, setName='globaldb', canonicalAddress=cdb-ms-prod-eastus1-fd19.documents.azure.com:10255, hosts=[cdb-ms-prod-eastus1-fd19.documents.azure.com:10255], passives=[], arbiters=[], primary='cdb-ms-prod-eastus1-fd19.documents.azure.com:10255', tagSet=TagSet{[]}, electionId=null, setVersion=1, lastWriteDate=null, lastUpdateTimeNanos=245253515893202} - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-03 11:08:08  INFO - Setting max set version to 1 from replica set primary cdb-ms-prod-eastus1-fd19.documents.azure.com:10255 - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-03 11:08:08  INFO - Discovered replica set primary cdb-ms-prod-eastus1-fd19.documents.azure.com:10255 - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-03 11:09:52  INFO - Initializing Spring DispatcherServlet 'dispatcherServlet' - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-03 11:09:52  INFO - Initializing Servlet 'dispatcherServlet' - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-03 11:09:52  INFO - Completed initialization in 8 ms - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-03 11:09:52  INFO - Into preHandle - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-03 11:09:52  INFO - Into createProvider(ProviderDto request) - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-03 11:09:52  INFO - Into createProvider(ProviderDto providerDto) - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-03 11:09:52  INFO - Into assemblerProvider(ProviderDto providerDto) - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-03 11:09:54  INFO - Opened connection [connectionId{localValue:3, serverValue:906477958}] to cdb-ms-prod-eastus1-fd19.documents.azure.com:10255 - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-03 11:09:55  INFO - Into execute(Provider provider) - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-03 11:09:55  INFO - Into publish(EventType eventType, EventDomain eventDomain) - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-03 11:09:55  INFO - Into getEntityId() - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-03 11:09:55  INFO - Into getEntityType() - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-03 11:09:55  INFO - Into getMetadata() - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-03 11:09:55  INFO - Sucessful Operation - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-03 11:09:58  INFO - Into preHandle - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-03 11:09:58  INFO - Into createProvider(ProviderDto request) - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-03 11:09:58  INFO - Into createProvider(ProviderDto providerDto) - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-03 11:09:58  INFO - Into assemblerProvider(ProviderDto providerDto) - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-03 11:09:59  INFO - Into execute(Provider provider) - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-03 11:09:59  INFO - Into publish(EventType eventType, EventDomain eventDomain) - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-03 11:09:59  INFO - Into getEntityId() - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-03 11:09:59  INFO - Into getEntityType() - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-03 11:09:59  INFO - Into getMetadata() - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-03 11:09:59  INFO - Sucessful Operation - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-03 11:10:00  INFO - Into preHandle - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-03 11:10:00  INFO - Into createProvider(ProviderDto request) - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-03 11:10:00  INFO - Into createProvider(ProviderDto providerDto) - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-03 11:10:00  INFO - Into assemblerProvider(ProviderDto providerDto) - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-03 11:10:00  INFO - Into execute(Provider provider) - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-03 11:10:00  INFO - Into publish(EventType eventType, EventDomain eventDomain) - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-03 11:10:00  INFO - Into getEntityId() - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-03 11:10:00  INFO - Into getEntityType() - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-03 11:10:00  INFO - Into getMetadata() - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-03 11:10:00  INFO - Sucessful Operation - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-03 11:10:05  INFO - Into preHandle - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-03 11:10:05  INFO - Into createProvider(ProviderDto request) - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-03 11:10:05  INFO - Into createProvider(ProviderDto providerDto) - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-03 11:10:05  INFO - Into assemblerProvider(ProviderDto providerDto) - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-03 11:10:05  INFO - Into execute(Provider provider) - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-03 11:10:05  INFO - Into publish(EventType eventType, EventDomain eventDomain) - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-03 11:10:05  INFO - Into getEntityId() - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-03 11:10:05  INFO - Into getEntityType() - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-03 11:10:05  INFO - Into getMetadata() - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-03 11:10:05  INFO - Sucessful Operation - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-03 11:10:07  INFO - Into preHandle - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-03 11:10:07  INFO - Into createProvider(ProviderDto request) - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-03 11:10:07  INFO - Into createProvider(ProviderDto providerDto) - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-03 11:10:07  INFO - Into assemblerProvider(ProviderDto providerDto) - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-03 11:10:07  INFO - Into execute(Provider provider) - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-03 11:10:07  INFO - Into publish(EventType eventType, EventDomain eventDomain) - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-03 11:10:07  INFO - Into getEntityId() - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-03 11:10:07  INFO - Into getEntityType() - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-03 11:10:07  INFO - Into getMetadata() - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-03 11:10:07  INFO - Sucessful Operation - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-03 11:10:10  INFO - Into preHandle - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-03 11:10:10  INFO - Into createProvider(ProviderDto request) - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-03 11:10:10  INFO - Into createProvider(ProviderDto providerDto) - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-03 11:10:10  INFO - Into assemblerProvider(ProviderDto providerDto) - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-03 11:10:11  INFO - Into execute(Provider provider) - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-03 11:10:11  INFO - Into publish(EventType eventType, EventDomain eventDomain) - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-03 11:10:11  INFO - Into getEntityId() - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-03 11:10:11  INFO - Into getEntityType() - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-03 11:10:11  INFO - Into getMetadata() - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-03 11:10:11  INFO - Sucessful Operation - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-03 11:10:12  INFO - Into preHandle - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-03 11:10:12  INFO - Into createProvider(ProviderDto request) - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-03 11:10:12  INFO - Into createProvider(ProviderDto providerDto) - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-03 11:10:12  INFO - Into assemblerProvider(ProviderDto providerDto) - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-03 11:10:12  INFO - Into execute(Provider provider) - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-03 11:10:12  INFO - Into publish(EventType eventType, EventDomain eventDomain) - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-03 11:10:12  INFO - Into getEntityId() - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-03 11:10:12  INFO - Into getEntityType() - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-03 11:10:12  INFO - Into getMetadata() - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-03 11:10:13  INFO - Sucessful Operation - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-03 11:10:13  INFO - Into preHandle - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-03 11:10:13  INFO - Into createProvider(ProviderDto request) - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-03 11:10:13  INFO - Into createProvider(ProviderDto providerDto) - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-03 11:10:13  INFO - Into assemblerProvider(ProviderDto providerDto) - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-03 11:10:13  INFO - Into execute(Provider provider) - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-03 11:10:13  INFO - Into publish(EventType eventType, EventDomain eventDomain) - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-03 11:10:14  INFO - Into getEntityId() - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-03 11:10:14  INFO - Into getEntityType() - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-03 11:10:14  INFO - Into getMetadata() - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-03 11:10:14  INFO - Sucessful Operation - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-03 11:20:14  WARN - Send link to 'topic-product' closed. Failing all pending send requests. - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-03 11:25:14  WARN - Internal send link of requestresponselink to '$cbs' closed with error. - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+com.microsoft.azure.servicebus.primitives.ServiceBusException: Error{condition=amqp:connection:forced, description='The connection was inactive for more than the allowed 300000 milliseconds and is closed by container 'LinkTracker'. TrackingId:7ff88301d8d048868945f24b202bcca8_G55, SystemTracker:gateway7, Timestamp:2019-05-03T16:25:16', info=null}
+	at com.microsoft.azure.servicebus.primitives.ExceptionUtil.toException(ExceptionUtil.java:113)
+	at com.microsoft.azure.servicebus.primitives.RequestResponseLink$InternalSender.onClose(RequestResponseLink.java:837)
+	at com.microsoft.azure.servicebus.amqp.BaseLinkHandler.processOnClose(BaseLinkHandler.java:68)
+	at com.microsoft.azure.servicebus.amqp.BaseLinkHandler.onLinkRemoteClose(BaseLinkHandler.java:42)
+	at org.apache.qpid.proton.engine.BaseHandler.handle(BaseHandler.java:176)
+	at org.apache.qpid.proton.engine.impl.EventImpl.dispatch(EventImpl.java:108)
+	at org.apache.qpid.proton.reactor.impl.ReactorImpl.dispatch(ReactorImpl.java:309)
+	at org.apache.qpid.proton.reactor.impl.ReactorImpl.process(ReactorImpl.java:276)
+	at com.microsoft.azure.servicebus.primitives.MessagingFactory$RunReactor.run(MessagingFactory.java:481)
+	at java.lang.Thread.run(Unknown Source)
+2019-05-03 11:25:14  WARN - Completing all pending requests with exception in request response link to $cbs - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-03 11:25:14  WARN - Internal receive link of requestresponselink to '$cbs' closed with error. - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+com.microsoft.azure.servicebus.primitives.ServiceBusException: Error{condition=amqp:connection:forced, description='The connection was inactive for more than the allowed 300000 milliseconds and is closed by container 'LinkTracker'. TrackingId:7ff88301d8d048868945f24b202bcca8_G55, SystemTracker:gateway7, Timestamp:2019-05-03T16:25:16', info=null}
+	at com.microsoft.azure.servicebus.primitives.ExceptionUtil.toException(ExceptionUtil.java:113)
+	at com.microsoft.azure.servicebus.primitives.RequestResponseLink$InternalReceiver.onClose(RequestResponseLink.java:630)
+	at com.microsoft.azure.servicebus.amqp.BaseLinkHandler.processOnClose(BaseLinkHandler.java:68)
+	at com.microsoft.azure.servicebus.amqp.BaseLinkHandler.onLinkRemoteClose(BaseLinkHandler.java:42)
+	at org.apache.qpid.proton.engine.BaseHandler.handle(BaseHandler.java:176)
+	at org.apache.qpid.proton.engine.impl.EventImpl.dispatch(EventImpl.java:108)
+	at org.apache.qpid.proton.reactor.impl.ReactorImpl.dispatch(ReactorImpl.java:309)
+	at org.apache.qpid.proton.reactor.impl.ReactorImpl.process(ReactorImpl.java:276)
+	at com.microsoft.azure.servicebus.primitives.MessagingFactory$RunReactor.run(MessagingFactory.java:481)
+	at java.lang.Thread.run(Unknown Source)
+2019-05-03 11:25:14  WARN - Completing all pending requests with exception in request response link to $cbs - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-03 11:25:14 ERROR - Connection error. 'Error{condition=amqp:connection:forced, description='The connection was inactive for more than the allowed 300000 milliseconds and is closed by container 'LinkTracker'. TrackingId:7ff88301d8d048868945f24b202bcca8_G55, SystemTracker:gateway7, Timestamp:2019-05-03T16:25:16', info=null}' - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-03 11:25:14  INFO - Closing connection to host - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-03 11:47:16  INFO - Application shutdown requested. - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-03 11:47:16  INFO - Shutting down ExecutorService 'applicationTaskExecutor' - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-03 11:47:16  INFO - Closed connection [connectionId{localValue:3, serverValue:906477958}] to cdb-ms-prod-eastus1-fd19.documents.azure.com:10255 because the pool has been closed. - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
