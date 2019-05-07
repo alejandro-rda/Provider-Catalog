@@ -1,10 +1,13 @@
 package rtl.tot.corp.mrex.prcn.catalog.provider.application;
 
 import java.util.Objects;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
+
 import corp.falabella.api.response.common.application.Notification;
 import lombok.extern.slf4j.Slf4j;
 import rtl.tot.corp.mrex.prcn.catalog.provider.application.dto.ProviderDto;
@@ -71,32 +74,131 @@ public class ProviderAplicationService {
     }
     log.info("Sucessful Operation");
   }
+  
+  /**
+   * Actualiza informacion de proveedor.
+   *
+   * @param providerDto ProviderDto
+   */
+  public void updateProvider(ProviderDto providerDto) {
+    log.info("Into updateProvider(ProviderDto providerDto)");
+    Notification notification = this.createValidation(providerDto);
+    if (notification.hasErrors()) {
+      throw new IllegalArgumentException(notification.errorMessage());
+    }
+    Provider provider = assemblerProvider(providerDto);
+
+  }
+  
+  
+  
+  
 
   private Notification createValidation(ProviderDto providerDto) {
     Notification notification = new Notification();
     if (Objects.isNull(providerDto.getRut()) || providerDto.getRut().isEmpty()) {
-      notification.addError("Rut can not be null or empty");
+      notification.addError("'rut' can not be null or empty");
     }
-    
-    if (Objects.nonNull(providerDto.getRut()) && providerDto.getRut().length() > env.getLenghtProviderRut()) {
-      notification.addError("Lenght RUT can not be more lenght that " + env.getLenghtProviderRut());
-    }
-    
-    if (Objects.isNull(providerDto.getDvRut()) || providerDto.getDvRut().isEmpty()) {
-      notification.addError("dvRut can not be null or empty");
-    }
-    
-    //    if (Objects.nonNull(providerDto.getDvRut()) && providerDto.getDvRut().length() > env.getLenghtDvRut()) {
-    //      notification.addError("Lenght dvRut can not be more lenght that " + env.getLenghtDvRut());
-    //    }
-    //    if (Objects.isNull(providerDto.getCountry()) || providerDto.getCountry().isEmpty()) {
-    //      notification.addError("Country can not be null or empty");
-    //    }
-    //    if (Objects.isNull(providerDto.getNameVendor()) || providerDto.getNameVendor().isEmpty()) {
-    //      notification.addError("nameVendor can not be null or empty");
-    //    }
 
+    if (Objects.nonNull(providerDto.getRut()) && providerDto.getRut().length() > env.getMaxLenghtProviderRut()) {
+      notification.addError("Lenght 'rut' can not be more lenght that " + env.getMaxLenghtProviderRut());
+    }
+
+    if (Objects.isNull(providerDto.getDvRut()) || providerDto.getDvRut().isEmpty()) {
+      notification.addError("'dvRut' can not be null or empty");
+    }
+
+    if (Objects.nonNull(providerDto.getDvRut()) && providerDto.getDvRut().length() > env.getMaxLenghtDvRut()) {
+      notification.addError("Lenght 'dvRut' can not be more lenght that " + env.getMaxLenghtDvRut());
+    }
+
+    if (Objects.isNull(providerDto.getNameVendor()) || providerDto.getNameVendor().isEmpty()) {
+      notification.addError("'nameVendor' can not be null or empty");
+    }
+
+    if (Objects.isNull(providerDto.getNameVendor())
+        || providerDto.getNameVendor().length() > env.getMaxLenghtNameVendor()) {
+      notification.addError("Lenght 'nameVendor' can not be more lenght that " + env.getMaxLenghtNameVendor());
+    }
+
+    if (Objects.isNull(providerDto.getAddress()) || providerDto.getAddress().isEmpty()) {
+      notification.addError("'address' can not be null or empty");
+    }
+
+    if (Objects.isNull(providerDto.getAddress()) || providerDto.getAddress().length() > env.getMaxLenghtNameVendor()) {
+      notification.addError("Lenght 'address' can not be more lenght that " + env.getMaxLenghtNameVendor());
+    }
+
+    if (Objects.isNull(providerDto.getCurrencyCode()) || providerDto.getCurrencyCode().isEmpty()) {
+      notification.addError("'currencyCode' can not be null or empty");
+    }
+
+    if (Objects.isNull(providerDto.getCurrencyCode())
+        || providerDto.getCurrencyCode().length() > env.getMaxLenghtCurrencyCode()) {
+      notification.addError("Lenght 'currencyCode' can not be more lenght that " + env.getMaxLenghtCurrencyCode());
+    }
+
+    if (Objects.nonNull(providerDto.getCity()) && providerDto.getCity().length() > env.getMaxLenghtCity()) {
+      notification.addError("Lenght 'city' can not be more lenght that " + env.getMaxLenghtCity());
+    }
+
+    if (Objects.isNull(providerDto.getCountry()) || providerDto.getCountry().isEmpty()) {
+      notification.addError("'country' can not be null or empty");
+    }
+
+    if (Objects.isNull(providerDto.getCountry()) || providerDto.getCountry().length() > env.getMaxLenghtCountry()) {
+      notification.addError("Lenght 'country' can not be more lenght that " + env.getMaxLenghtCountry());
+    }
+
+    if (Objects.isNull(providerDto.getCountryCode()) || providerDto.getCountryCode().isEmpty()) {
+      notification.addError("'countryCode' can not be null or empty");
+    }
+
+    if (Objects.isNull(providerDto.getCountryCode())
+        || providerDto.getCountryCode().length() > env.getMaxLenghtCountryCode()) {
+      notification.addError("Lenght 'countryCode' can not be more lenght that " + env.getMaxLenghtCountryCode());
+    }
+
+    if (Objects.nonNull(providerDto.getPhoneAreaCode())
+        && providerDto.getPhoneAreaCode().length() > env.getMaxLenghtPhoneAreaCode()) {
+      notification.addError("Lenght 'phoneAreaCode' can not be more lenght that " + env.getMaxLenghtPhoneAreaCode());
+    }
+
+    if (Objects.nonNull(providerDto.getPhoneNumber())
+        && providerDto.getPhoneNumber().length() > env.getMaxLenghtPhoneNumber()) {
+      notification.addError("Lenght 'phoneNumber' can not be more lenght that " + env.getMaxLenghtPhoneNumber());
+    }
+
+    if (Objects.nonNull(providerDto.getFaxNumber())
+        && providerDto.getFaxNumber().length() > env.getMaxLenghtFaxNumber()) {
+      notification.addError("Lenght 'faxNumber' can not be more lenght that " + env.getMaxLenghtFaxNumber());
+    }
+
+    if (Objects.nonNull(providerDto.getZipCode()) && providerDto.getZipCode().length() > env.getMaxLenghtZipCode()) {
+      notification.addError("Lenght 'zipCode' can not be more lenght that " + env.getMaxLenghtZipCode());
+    }
+
+    if (Objects.isNull(providerDto.getEmail()) || providerDto.getEmail().isEmpty()) {
+      notification.addError("'email' can not be null or empty");
+    }
+
+    if (Objects.isNull(providerDto.getEmail()) || providerDto.getEmail().length() > env.getMaxLenghtEmail()) {
+      notification.addError("Lenght 'email' can not be more lenght that " + env.getMaxLenghtEmail());
+    }
+    
+    if (Objects.nonNull(providerDto.getEmail()) 
+        && !this.validatePattern(env.getFormatEmail(), providerDto.getEmail())) {
+      notification.addError("the 'email' format has to be " + env.getFormatEmail());
+    }
     return notification;
+  }
+  
+  private boolean validatePattern(String regex, String pivot) {
+    log.info("Into validatePattern(String regex, String pivot)");
+    log.info("PATTNER" + regex);
+    Pattern pattern = Pattern.compile(regex, Pattern.CASE_INSENSITIVE);
+    Matcher matcher = pattern .matcher(pivot);
+    return matcher.find();
   }
   
   private Notification createValidationFunctional(Provider provider) {
@@ -113,9 +215,26 @@ public class ProviderAplicationService {
     return 
         Provider.builder()
         .rut(providerDto.getRut())
+        .dvRut(providerDto.getDvRut())
+        .nameVendor(providerDto.getNameVendor())
+        .address(providerDto.getAddress())
+        .currencyCode(providerDto.getCurrencyCode())
+        .city(providerDto.getCity())
         .country(providerDto.getCountry())
-        .name(providerDto.getNameVendor())
+        .countryCode(providerDto.getCountryCode())
+        .phoneAreaCode(providerDto.getPhoneAreaCode())
+        .phoneNumber(providerDto.getPhoneNumber())
+        .faxNumber(providerDto.getFaxNumber())
+        .zipCode(providerDto.getZipCode())
+        .email(providerDto.getEmail())
+        .comuna(providerDto.getComuna())
+        .typeVendor(providerDto.getTypeVendor())
         .build();
+    
+    
+    
+    
+    
   }
 
 }

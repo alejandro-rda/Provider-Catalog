@@ -5,6 +5,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -63,35 +64,14 @@ public class ProviderController {
       value = "/provider", 
       produces = { MediaType.APPLICATION_JSON_UTF8_VALUE }, 
       consumes = { MediaType.APPLICATION_JSON_UTF8_VALUE })
-  @ApiResponses({ @ApiResponse(code = 200, response = String.class, message = "Producto created"),
-      @ApiResponse(
-          code = 201, 
-          response = String.class, 
-          message = "Producto created"),
-      @ApiResponse(
-          code = 400, 
-          response = ResponseErrorDto.class, 
-          message = "Bad Request"),
-      @ApiResponse(
-          code = 401, 
-          response = ResponseErrorDto.class, 
-          message = "Unauthorized"),
-      @ApiResponse(
-          code = 403, 
-          response = ResponseErrorDto.class, 
-          message = "Forbidden"),
-      @ApiResponse(
-          code = 406, 
-          response = ResponseErrorDto.class, 
-          message = "The provifrt entered already exists"),
-      @ApiResponse(
-          code = 500, 
-          response = ResponseErrorDto.class, 
-          message = "Internal Server Error"),
-      @ApiResponse(
-          code = 501, 
-          response = ResponseErrorDto.class, 
-          message = "Not Implemented")})
+  
+  @ApiResponses({ @ApiResponse(code = 201, response = String.class, message = "Producto created"),
+      @ApiResponse(code = 400, response = ResponseErrorDto.class, message = "Bad Request"),
+      @ApiResponse(code = 401, response = ResponseErrorDto.class, message = "Unauthorized"),
+      @ApiResponse(code = 403, response = ResponseErrorDto.class, message = "Forbidden"),
+      @ApiResponse(code = 406, response = ResponseErrorDto.class, message = "The provifrt entered already exists"),
+      @ApiResponse(code = 500, response = ResponseErrorDto.class, message = "Internal Server Error"),
+      @ApiResponse(code = 501, response = ResponseErrorDto.class, message = "Not Implemented") })
   public ResponseEntity<Object> createProvider(@RequestBody ProviderDto request) {
     log.info("Into createProvider(ProviderDto request)");
     try {
@@ -107,5 +87,36 @@ public class ProviderController {
     }
 
   }
+  
+  /**
+   * Servicio para actualiza proveedor nuevo.
+   *
+   * @param request informacion del proveedor a actualizar.
+   * @return ResponseCommandDto Informacion de la confirmacion de la actualizacion.
+   */
+  @PutMapping(value = "/provider", produces = { MediaType.APPLICATION_JSON_UTF8_VALUE }, consumes = {
+      MediaType.APPLICATION_JSON_UTF8_VALUE })
+  @ApiResponses({ @ApiResponse(code = 202, response = String.class, message = "Provider successfully updated"),
+      @ApiResponse(code = 400, response = ResponseErrorDto.class, message = "Bad Request"),
+      @ApiResponse(code = 401, response = ResponseErrorDto.class, message = "Unauthorized"),
+      @ApiResponse(code = 403, response = ResponseErrorDto.class, message = "Forbidden"),
+      @ApiResponse(code = 404, response = ResponseErrorDto.class, message = "Provider not found"),
+      @ApiResponse(code = 406, response = ResponseErrorDto.class, message = "The provifrt entered already exists"),
+      @ApiResponse(code = 500, response = ResponseErrorDto.class, message = "Internal Server Error"),
+      @ApiResponse(code = 501, response = ResponseErrorDto.class, message = "Not Implemented") })
+  public ResponseEntity<Object> updateProvider(@RequestBody ProviderDto request) {
+    log.info("Into createProvider(ProviderDto request)");
+    // try {
+    // providerAplicationService.createProvider(request);
+    return responseHandler.getCommandResponse(HttpStatus.ACCEPTED, "provider created");
+    //
+    // } catch (IncompleteCommandException | IllegalArgumentException e) {
+    // return responseHandler.getAppCustomErrorResponse(e.getMessage());
+    //
+    // } catch (Exception e) {
+    // log.info("General exception");
+    // return responseHandler.getAppExceptionResponse();
+    // }
 
+  }
 }

@@ -21,10 +21,22 @@ public class Provider {
   @Id
   private ObjectId _id;
 
-  private String name;
-
   private String rut;
-
+  private String dvRut;
+  private String nameVendor;
+  private String address;
+  private String currencyCode;
+  private String city;
   private String country;
+  private String countryCode;
+  private String phoneAreaCode;
+  private String phoneNumber;
+  private String faxNumber;
+  private String zipCode;
+  private String email;
+  private String comuna;
+  private String typeVendor;
+  
+  
 
 }

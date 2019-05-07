@@ -20,9 +20,57 @@ publisher:
 provider:
   param:
     rut:
-      lenght: 20
+      max-lenght: 20
     dvRut:
-      lenght :3
+      max-lenght: 3
+    nameVendor:
+      max-lenght: 80
+    address:
+      max-lenght: 200
+    currencycode:
+      max-lenght: 10
+    city:
+      max-lenght: 50
+    country:
+      max-lenght: 50
+    country-code:
+      max-lenght: 50
+    phone-area-code:
+      max-lenght: 10
+    phone-number:
+      max-lenght: 20
+    fax-number:
+      max-lenght: 30
+    zip-code:
+      max-lenght: 30
+    email:
+      max-lenght: 50
+      format: "^[A-Z0-9._%+-]+@[A-Z0-9.-]+\\.[A-Z]{2,6}$"
+    comuna:
+      max-lenght: 30
+    type-vendor:
+      max-lenght: 20
+    
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
   
   
   

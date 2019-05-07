@@ -34,11 +34,57 @@ import lombok.Setter;
 @Getter
 public class ApplicationProperties {
   
-  @Value("${provider.param.rut.lenght}")
-  private int lenghtProviderRut;
+  @Value("${provider.param.rut.max-lenght}")
+  private int maxLenghtProviderRut;
   
-//  @Value("${provider.param.dvRut.lenght}")
-//  private int lenghtDvRut;
+  @Value("${provider.param.dvRut.max-lenght}")
+  private int maxLenghtDvRut;
   
-
+  @Value("${provider.param.nameVendor.max-lenght}")
+  private int maxLenghtNameVendor;
+  
+  @Value("${provider.param.address.max-lenght}")
+  private int maxLenghtAddress;
+    
+  @Value("${provider.param.currencycode.max-lenght}")
+  private int maxLenghtCurrencyCode;
+  
+  @Value("${provider.param.city.max-lenght}")
+  private int maxLenghtCity;
+  
+  @Value("${provider.param.country.max-lenght}")
+  private int maxLenghtCountry;
+  
+  @Value("${provider.param.country-code.max-lenght}")
+  private int maxLenghtCountryCode;
+  
+  @Value("${provider.param.phone-area-code.max-lenght}")
+  private int maxLenghtPhoneAreaCode;
+  
+  @Value("${provider.param.phone-number.max-lenght}")
+  private int maxLenghtPhoneNumber;
+  
+  @Value("${provider.param.fax-number.max-lenght}")
+  private int maxLenghtFaxNumber;
+  
+  @Value("${provider.param.zip-code.max-lenght}")
+  private int maxLenghtZipCode;
+  
+  @Value("${provider.param.email.max-lenght}")
+  private int maxLenghtEmail;
+  
+  @Value("${provider.param.email.format}")
+  private String formatEmail;
+  
+  @Value("${provider.param.comuna.max-lenght}")
+  private int maxLenghtComuna;
+  
+  @Value("${provider.param.type-vendor.max-lenght}")
+  private int maxLenghtTypeVendor;
+  
+  
+  
+  
+  
+  
 }
