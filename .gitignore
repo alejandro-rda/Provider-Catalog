@@ -3,7 +3,7 @@ HELP.md
 /build/
 /bin/
 !gradle/wrapper/gradle-wrapper.jar
-
+/bin
 ### STS ###
 .apt_generated
 .classpath
@@ -32,3 +32,4 @@ HELP.md
 
 #LOG
 /EventAdapterCore.log
+*.log

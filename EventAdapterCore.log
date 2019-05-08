@@ -7892,3 +7892,480 @@ Caused by: java.net.UnknownHostException: cdb-ms-prod-eastus1-fd19.documents.azu
 	... 5 common frames omitted
 2019-05-08 15:03:53  INFO - Opened connection [connectionId{localValue:10, serverValue:1757700259}] to cdb-ms-prod-eastus1-fd19.documents.azure.com:10255 - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
 2019-05-08 15:03:54  INFO - Monitor thread successfully connected to server with description ServerDescription{address=cdb-ms-prod-eastus1-fd19.documents.azure.com:10255, type=REPLICA_SET_PRIMARY, state=CONNECTED, ok=true, version=ServerVersion{versionList=[3, 2, 0]}, minWireVersion=0, maxWireVersion=2, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=null, roundTripTimeNanos=163876893, setName='globaldb', canonicalAddress=cdb-ms-prod-eastus1-fd19.documents.azure.com:10255, hosts=[cdb-ms-prod-eastus1-fd19.documents.azure.com:10255], passives=[], arbiters=[], primary='cdb-ms-prod-eastus1-fd19.documents.azure.com:10255', tagSet=TagSet{[]}, electionId=null, setVersion=1, lastWriteDate=null, lastUpdateTimeNanos=192204206259316} - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-08 15:03:54  INFO - Discovered replica set primary cdb-ms-prod-eastus1-fd19.documents.azure.com:10255 - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-08 15:08:49  INFO - Exception in monitor thread while connecting to server cdb-ms-prod-eastus1-fd19.documents.azure.com:10255 - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+com.mongodb.MongoSocketException: cdb-ms-prod-eastus1-fd19.documents.azure.com
+	at com.mongodb.ServerAddress.getSocketAddress(ServerAddress.java:188)
+	at com.mongodb.internal.connection.SocketStreamHelper.initialize(SocketStreamHelper.java:64)
+	at com.mongodb.internal.connection.SocketStream.open(SocketStream.java:62)
+	at com.mongodb.internal.connection.InternalStreamConnection.open(InternalStreamConnection.java:126)
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitorRunnable.run(DefaultServerMonitor.java:131)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: java.net.UnknownHostException: cdb-ms-prod-eastus1-fd19.documents.azure.com
+	at java.net.Inet6AddressImpl.lookupAllHostAddr(Native Method)
+	at java.net.InetAddress$2.lookupAllHostAddr(Unknown Source)
+	at java.net.InetAddress.getAddressesFromNameService(Unknown Source)
+	at java.net.InetAddress.getAllByName0(Unknown Source)
+	at java.net.InetAddress.getAllByName(Unknown Source)
+	at java.net.InetAddress.getAllByName(Unknown Source)
+	at java.net.InetAddress.getByName(Unknown Source)
+	at com.mongodb.ServerAddress.getSocketAddress(ServerAddress.java:186)
+	... 5 common frames omitted
+2019-05-08 15:09:20  INFO - Exception in monitor thread while connecting to server cdb-ms-prod-eastus1-fd19.documents.azure.com:10255 - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+com.mongodb.MongoSocketOpenException: Exception opening socket
+	at com.mongodb.internal.connection.SocketStream.open(SocketStream.java:67)
+	at com.mongodb.internal.connection.InternalStreamConnection.open(InternalStreamConnection.java:126)
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitorRunnable.run(DefaultServerMonitor.java:117)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: java.net.SocketTimeoutException: connect timed out
+	at java.net.DualStackPlainSocketImpl.waitForConnect(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketConnect(Unknown Source)
+	at java.net.AbstractPlainSocketImpl.doConnect(Unknown Source)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(Unknown Source)
+	at java.net.AbstractPlainSocketImpl.connect(Unknown Source)
+	at java.net.PlainSocketImpl.connect(Unknown Source)
+	at java.net.SocksSocketImpl.connect(Unknown Source)
+	at java.net.Socket.connect(Unknown Source)
+	at sun.security.ssl.SSLSocketImpl.connect(Unknown Source)
+	at com.mongodb.internal.connection.SocketStreamHelper.initialize(SocketStreamHelper.java:64)
+	at com.mongodb.internal.connection.SocketStream.open(SocketStream.java:62)
+	... 3 common frames omitted
+2019-05-08 15:09:31  INFO - Opened connection [connectionId{localValue:13, serverValue:-969694088}] to cdb-ms-prod-eastus1-fd19.documents.azure.com:10255 - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-08 15:09:31  INFO - Monitor thread successfully connected to server with description ServerDescription{address=cdb-ms-prod-eastus1-fd19.documents.azure.com:10255, type=REPLICA_SET_PRIMARY, state=CONNECTED, ok=true, version=ServerVersion{versionList=[3, 2, 0]}, minWireVersion=0, maxWireVersion=2, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=null, roundTripTimeNanos=184113595, setName='globaldb', canonicalAddress=cdb-ms-prod-eastus1-fd19.documents.azure.com:10255, hosts=[cdb-ms-prod-eastus1-fd19.documents.azure.com:10255], passives=[], arbiters=[], primary='cdb-ms-prod-eastus1-fd19.documents.azure.com:10255', tagSet=TagSet{[]}, electionId=null, setVersion=1, lastWriteDate=null, lastUpdateTimeNanos=192541712091729} - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-08 15:09:31  INFO - Discovered replica set primary cdb-ms-prod-eastus1-fd19.documents.azure.com:10255 - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-08 15:11:54  INFO - Neither @ContextConfiguration nor @ContextHierarchy found for test class [rtl.tot.corp.mrex.vndm.provider.ProviderCatalogApplicationTest], using SpringBootContextLoader - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-08 15:11:54  INFO - Could not detect default resource locations for test class [rtl.tot.corp.mrex.vndm.provider.ProviderCatalogApplicationTest]: no resource found for suffixes {-context.xml, Context.groovy}. - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-08 15:11:54  INFO - Could not detect default configuration classes for test class [rtl.tot.corp.mrex.vndm.provider.ProviderCatalogApplicationTest]: ProviderCatalogApplicationTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration. - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-08 15:11:54  INFO - Found @SpringBootConfiguration rtl.tot.corp.mrex.vndm.provider.ProviderCatalogApplication for test class rtl.tot.corp.mrex.vndm.provider.ProviderCatalogApplicationTest - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-08 15:11:54  INFO - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener] - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-08 15:11:54  INFO - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@d6e9ece, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@77c1d967, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@4ffb4f11, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@59158d1a, org.springframework.test.context.support.DirtiesContextTestExecutionListener@2074e018, org.springframework.test.context.transaction.TransactionalTestExecutionListener@59070f90, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@4c914066, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@399969b3, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@3e6a3ab8, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@5f70d96a, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@19242092, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@6b0206f4] - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-08 15:11:55  WARN - 
+
+Found multiple occurrences of org.json.JSONObject on the class path:
+
+	jar:file:/C:/Users/JoseCarlos/.gradle/caches/modules-2/files-2.1/com.vaadin.external.google/android-json/0.0.20131108.vaadin1/fa26d351fe62a6a17f5cda1287c1c6110dec413f/android-json-0.0.20131108.vaadin1.jar!/org/json/JSONObject.class
+	jar:file:/C:/Users/JoseCarlos/.gradle/caches/modules-2/files-2.1/org.json/json/20171018/36ced462c97f0845b4a7b266a25cebe95d18baa3/json-20171018.jar!/org/json/JSONObject.class
+
+You may wish to exclude one of them to ensure predictable runtime behavior
+ - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-08 15:11:55  INFO - Starting ProviderCatalogApplicationTest on JoseCarlos-PC with PID 12876 (started by JoseCarlos in C:\Users\JoseCarlos\git\provider-catalog) - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-08 15:11:55  INFO - The following profiles are active: dev - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-08 15:11:58  INFO - Bootstrapping Spring Data repositories in DEFAULT mode. - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-08 15:11:58  INFO - Finished Spring Data repository scanning in 161ms. Found 1 repository interfaces. - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-08 15:11:59  INFO - Creating MessagingFactory to namespace 'sb://ttotus-bus.servicebus.windows.net/' - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-08 15:11:59  INFO - Creating messaging factory from namespace endpoint uri 'sb://ttotus-bus.servicebus.windows.net/' - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-08 15:11:59  INFO - Creating and starting reactor - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-08 15:11:59  INFO - starting reactor instance. - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-08 15:11:59  INFO - Started reactor - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-08 15:11:59  INFO - Creating connection to host 'ttotus-bus.servicebus.windows.net:5671' - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-08 15:12:21  WARN - Connection.onTransportError: hostname:ttotus-bus.servicebus.windows.net:5671, error:connection aborted - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-08 15:12:21 ERROR - Connection error. 'Error{condition=amqp:connection:framing-error, description='connection aborted', info=null}' - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-08 15:12:21  INFO - Connection to host closed. - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-08 15:12:21  WARN - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'providerController': Unsatisfied dependency expressed through field 'providerAplicationService'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'providerAplicationService': Unsatisfied dependency expressed through field 'commandBus'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'createProviderCommandBus': Unsatisfied dependency expressed through field 'publisher'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'eventPublisherService': Unsatisfied dependency expressed through field 'eventPublisher'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'asbPublisher': Invocation of init method failed; nested exception is com.microsoft.azure.servicebus.primitives.ServiceBusException: Error{condition=amqp:connection:framing-error, description='connection aborted', info=null} - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-08 15:12:21  INFO - Gracefully releasing reactor thread as messaging factory is closed - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-08 15:12:21  INFO - Stopping reactor - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-08 15:12:21  INFO - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled. - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-08 15:12:21 ERROR - Application run failed - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'providerController': Unsatisfied dependency expressed through field 'providerAplicationService'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'providerAplicationService': Unsatisfied dependency expressed through field 'commandBus'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'createProviderCommandBus': Unsatisfied dependency expressed through field 'publisher'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'eventPublisherService': Unsatisfied dependency expressed through field 'eventPublisher'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'asbPublisher': Invocation of init method failed; nested exception is com.microsoft.azure.servicebus.primitives.ServiceBusException: Error{condition=amqp:connection:framing-error, description='connection aborted', info=null}
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:596)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:90)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:374)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1411)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:592)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:515)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:320)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:318)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:849)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:877)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:549)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:775)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:316)
+	at org.springframework.boot.test.context.SpringBootContextLoader.loadContext(SpringBootContextLoader.java:127)
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContextInternal(DefaultCacheAwareContextLoaderDelegate.java:99)
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:117)
+	at org.springframework.test.context.support.DefaultTestContext.getApplicationContext(DefaultTestContext.java:108)
+	at org.springframework.test.context.web.ServletTestExecutionListener.setUpRequestContextIfNecessary(ServletTestExecutionListener.java:190)
+	at org.springframework.test.context.web.ServletTestExecutionListener.prepareTestInstance(ServletTestExecutionListener.java:132)
+	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:246)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.createTest(SpringJUnit4ClassRunner.java:227)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner$1.runReflectiveCall(SpringJUnit4ClassRunner.java:289)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.methodBlock(SpringJUnit4ClassRunner.java:291)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:246)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:97)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61)
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:70)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:190)
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.runTestClass(JUnitTestClassExecutor.java:110)
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.execute(JUnitTestClassExecutor.java:58)
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.execute(JUnitTestClassExecutor.java:38)
+	at org.gradle.api.internal.tasks.testing.junit.AbstractJUnitTestClassProcessor.processTestClass(AbstractJUnitTestClassProcessor.java:62)
+	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.processTestClass(SuiteTestClassProcessor.java:51)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:35)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
+	at org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:32)
+	at org.gradle.internal.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:93)
+	at com.sun.proxy.$Proxy2.processTestClass(Unknown Source)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.processTestClass(TestWorker.java:118)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:35)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
+	at org.gradle.internal.remote.internal.hub.MessageHubBackedObjectConnection$DispatchWrapper.dispatch(MessageHubBackedObjectConnection.java:175)
+	at org.gradle.internal.remote.internal.hub.MessageHubBackedObjectConnection$DispatchWrapper.dispatch(MessageHubBackedObjectConnection.java:157)
+	at org.gradle.internal.remote.internal.hub.MessageHub$Handler.run(MessageHub.java:404)
+	at org.gradle.internal.concurrent.ExecutorPolicy$CatchAndRecordFailures.onExecute(ExecutorPolicy.java:63)
+	at org.gradle.internal.concurrent.ManagedExecutorImpl$1.run(ManagedExecutorImpl.java:46)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.gradle.internal.concurrent.ThreadFactoryImpl$ManagedThreadRunnable.run(ThreadFactoryImpl.java:55)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'providerAplicationService': Unsatisfied dependency expressed through field 'commandBus'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'createProviderCommandBus': Unsatisfied dependency expressed through field 'publisher'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'eventPublisherService': Unsatisfied dependency expressed through field 'eventPublisher'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'asbPublisher': Invocation of init method failed; nested exception is com.microsoft.azure.servicebus.primitives.ServiceBusException: Error{condition=amqp:connection:framing-error, description='connection aborted', info=null}
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:596)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:90)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:374)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1411)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:592)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:515)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:320)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:318)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:277)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1247)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1167)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:593)
+	... 67 common frames omitted
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'createProviderCommandBus': Unsatisfied dependency expressed through field 'publisher'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'eventPublisherService': Unsatisfied dependency expressed through field 'eventPublisher'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'asbPublisher': Invocation of init method failed; nested exception is com.microsoft.azure.servicebus.primitives.ServiceBusException: Error{condition=amqp:connection:framing-error, description='connection aborted', info=null}
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:596)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:90)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:374)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1411)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:592)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:515)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:320)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:318)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:277)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1247)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1167)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:593)
+	... 80 common frames omitted
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'eventPublisherService': Unsatisfied dependency expressed through field 'eventPublisher'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'asbPublisher': Invocation of init method failed; nested exception is com.microsoft.azure.servicebus.primitives.ServiceBusException: Error{condition=amqp:connection:framing-error, description='connection aborted', info=null}
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:596)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:90)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:374)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1411)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:592)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:515)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:320)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:318)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:277)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1247)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1167)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:593)
+	... 93 common frames omitted
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'asbPublisher': Invocation of init method failed; nested exception is com.microsoft.azure.servicebus.primitives.ServiceBusException: Error{condition=amqp:connection:framing-error, description='connection aborted', info=null}
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor.postProcessBeforeInitialization(InitDestroyAnnotationBeanPostProcessor.java:139)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyBeanPostProcessorsBeforeInitialization(AbstractAutowireCapableBeanFactory.java:414)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1770)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:593)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:515)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:320)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:318)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:277)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1247)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1167)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:593)
+	... 106 common frames omitted
+Caused by: com.microsoft.azure.servicebus.primitives.ServiceBusException: Error{condition=amqp:connection:framing-error, description='connection aborted', info=null}
+	at com.microsoft.azure.servicebus.primitives.ExceptionUtil.toException(ExceptionUtil.java:113)
+	at com.microsoft.azure.servicebus.primitives.MessagingFactory.onConnectionError(MessagingFactory.java:293)
+	at com.microsoft.azure.servicebus.amqp.ConnectionHandler.onTransportError(ConnectionHandler.java:84)
+	at org.apache.qpid.proton.engine.BaseHandler.handle(BaseHandler.java:191)
+	at org.apache.qpid.proton.engine.impl.EventImpl.dispatch(EventImpl.java:108)
+	at org.apache.qpid.proton.reactor.impl.ReactorImpl.dispatch(ReactorImpl.java:309)
+	at org.apache.qpid.proton.reactor.impl.ReactorImpl.process(ReactorImpl.java:276)
+	at com.microsoft.azure.servicebus.primitives.MessagingFactory$RunReactor.run(MessagingFactory.java:481)
+	... 1 common frames omitted
+2019-05-08 15:12:21 ERROR - Caught exception while allowing TestExecutionListener [org.springframework.test.context.web.ServletTestExecutionListener@d6e9ece] to prepare test instance [rtl.tot.corp.mrex.vndm.provider.ProviderCatalogApplicationTest@591bb314] - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+java.lang.IllegalStateException: Failed to load ApplicationContext
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:125)
+	at org.springframework.test.context.support.DefaultTestContext.getApplicationContext(DefaultTestContext.java:108)
+	at org.springframework.test.context.web.ServletTestExecutionListener.setUpRequestContextIfNecessary(ServletTestExecutionListener.java:190)
+	at org.springframework.test.context.web.ServletTestExecutionListener.prepareTestInstance(ServletTestExecutionListener.java:132)
+	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:246)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.createTest(SpringJUnit4ClassRunner.java:227)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner$1.runReflectiveCall(SpringJUnit4ClassRunner.java:289)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.methodBlock(SpringJUnit4ClassRunner.java:291)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:246)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:97)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61)
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:70)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:190)
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.runTestClass(JUnitTestClassExecutor.java:110)
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.execute(JUnitTestClassExecutor.java:58)
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.execute(JUnitTestClassExecutor.java:38)
+	at org.gradle.api.internal.tasks.testing.junit.AbstractJUnitTestClassProcessor.processTestClass(AbstractJUnitTestClassProcessor.java:62)
+	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.processTestClass(SuiteTestClassProcessor.java:51)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:35)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
+	at org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:32)
+	at org.gradle.internal.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:93)
+	at com.sun.proxy.$Proxy2.processTestClass(Unknown Source)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.processTestClass(TestWorker.java:118)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:35)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
+	at org.gradle.internal.remote.internal.hub.MessageHubBackedObjectConnection$DispatchWrapper.dispatch(MessageHubBackedObjectConnection.java:175)
+	at org.gradle.internal.remote.internal.hub.MessageHubBackedObjectConnection$DispatchWrapper.dispatch(MessageHubBackedObjectConnection.java:157)
+	at org.gradle.internal.remote.internal.hub.MessageHub$Handler.run(MessageHub.java:404)
+	at org.gradle.internal.concurrent.ExecutorPolicy$CatchAndRecordFailures.onExecute(ExecutorPolicy.java:63)
+	at org.gradle.internal.concurrent.ManagedExecutorImpl$1.run(ManagedExecutorImpl.java:46)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.gradle.internal.concurrent.ThreadFactoryImpl$ManagedThreadRunnable.run(ThreadFactoryImpl.java:55)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'providerController': Unsatisfied dependency expressed through field 'providerAplicationService'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'providerAplicationService': Unsatisfied dependency expressed through field 'commandBus'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'createProviderCommandBus': Unsatisfied dependency expressed through field 'publisher'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'eventPublisherService': Unsatisfied dependency expressed through field 'eventPublisher'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'asbPublisher': Invocation of init method failed; nested exception is com.microsoft.azure.servicebus.primitives.ServiceBusException: Error{condition=amqp:connection:framing-error, description='connection aborted', info=null}
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:596)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:90)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:374)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1411)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:592)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:515)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:320)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:318)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:849)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:877)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:549)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:775)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:316)
+	at org.springframework.boot.test.context.SpringBootContextLoader.loadContext(SpringBootContextLoader.java:127)
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContextInternal(DefaultCacheAwareContextLoaderDelegate.java:99)
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:117)
+	... 49 common frames omitted
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'providerAplicationService': Unsatisfied dependency expressed through field 'commandBus'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'createProviderCommandBus': Unsatisfied dependency expressed through field 'publisher'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'eventPublisherService': Unsatisfied dependency expressed through field 'eventPublisher'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'asbPublisher': Invocation of init method failed; nested exception is com.microsoft.azure.servicebus.primitives.ServiceBusException: Error{condition=amqp:connection:framing-error, description='connection aborted', info=null}
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:596)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:90)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:374)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1411)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:592)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:515)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:320)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:318)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:277)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1247)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1167)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:593)
+	... 67 common frames omitted
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'createProviderCommandBus': Unsatisfied dependency expressed through field 'publisher'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'eventPublisherService': Unsatisfied dependency expressed through field 'eventPublisher'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'asbPublisher': Invocation of init method failed; nested exception is com.microsoft.azure.servicebus.primitives.ServiceBusException: Error{condition=amqp:connection:framing-error, description='connection aborted', info=null}
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:596)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:90)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:374)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1411)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:592)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:515)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:320)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:318)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:277)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1247)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1167)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:593)
+	... 80 common frames omitted
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'eventPublisherService': Unsatisfied dependency expressed through field 'eventPublisher'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'asbPublisher': Invocation of init method failed; nested exception is com.microsoft.azure.servicebus.primitives.ServiceBusException: Error{condition=amqp:connection:framing-error, description='connection aborted', info=null}
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:596)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:90)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:374)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1411)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:592)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:515)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:320)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:318)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:277)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1247)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1167)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:593)
+	... 93 common frames omitted
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'asbPublisher': Invocation of init method failed; nested exception is com.microsoft.azure.servicebus.primitives.ServiceBusException: Error{condition=amqp:connection:framing-error, description='connection aborted', info=null}
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor.postProcessBeforeInitialization(InitDestroyAnnotationBeanPostProcessor.java:139)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyBeanPostProcessorsBeforeInitialization(AbstractAutowireCapableBeanFactory.java:414)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1770)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:593)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:515)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:320)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:318)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:277)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1247)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1167)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:593)
+	... 106 common frames omitted
+Caused by: com.microsoft.azure.servicebus.primitives.ServiceBusException: Error{condition=amqp:connection:framing-error, description='connection aborted', info=null}
+	at com.microsoft.azure.servicebus.primitives.ExceptionUtil.toException(ExceptionUtil.java:113)
+	at com.microsoft.azure.servicebus.primitives.MessagingFactory.onConnectionError(MessagingFactory.java:293)
+	at com.microsoft.azure.servicebus.amqp.ConnectionHandler.onTransportError(ConnectionHandler.java:84)
+	at org.apache.qpid.proton.engine.BaseHandler.handle(BaseHandler.java:191)
+	at org.apache.qpid.proton.engine.impl.EventImpl.dispatch(EventImpl.java:108)
+	at org.apache.qpid.proton.reactor.impl.ReactorImpl.dispatch(ReactorImpl.java:309)
+	at org.apache.qpid.proton.reactor.impl.ReactorImpl.process(ReactorImpl.java:276)
+	at com.microsoft.azure.servicebus.primitives.MessagingFactory$RunReactor.run(MessagingFactory.java:481)
+	... 1 common frames omitted
+2019-05-08 15:12:45  INFO - Application shutdown requested. - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-08 15:12:45  INFO - Shutting down ExecutorService 'applicationTaskExecutor' - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-08 15:12:45  INFO - Closed connection [connectionId{localValue:8, serverValue:-732135475}] to cdb-ms-prod-eastus1-fd19.documents.azure.com:10255 because there was a socket exception raised on another connection from this pool. - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-08 15:13:13  INFO - Neither @ContextConfiguration nor @ContextHierarchy found for test class [rtl.tot.corp.mrex.vndm.provider.ProviderCatalogApplicationTest], using SpringBootContextLoader - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-08 15:13:13  INFO - Could not detect default resource locations for test class [rtl.tot.corp.mrex.vndm.provider.ProviderCatalogApplicationTest]: no resource found for suffixes {-context.xml, Context.groovy}. - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-08 15:13:13  INFO - Could not detect default configuration classes for test class [rtl.tot.corp.mrex.vndm.provider.ProviderCatalogApplicationTest]: ProviderCatalogApplicationTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration. - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-08 15:13:14  INFO - Found @SpringBootConfiguration rtl.tot.corp.mrex.vndm.provider.ProviderCatalogApplication for test class rtl.tot.corp.mrex.vndm.provider.ProviderCatalogApplicationTest - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-08 15:13:14  INFO - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener] - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-08 15:13:14  INFO - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@1ff4f222, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@18e22d6f, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@79a93081, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@49758295, org.springframework.test.context.support.DirtiesContextTestExecutionListener@71280c7b, org.springframework.test.context.transaction.TransactionalTestExecutionListener@7828de64, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@4835d4d8, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@2db18661, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@1ccb1c78, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@22ae3a7b, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@445ba9e2, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@6578bd86] - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-08 15:13:15  WARN - 
+
+Found multiple occurrences of org.json.JSONObject on the class path:
+
+	jar:file:/C:/Users/JoseCarlos/.gradle/caches/modules-2/files-2.1/com.vaadin.external.google/android-json/0.0.20131108.vaadin1/fa26d351fe62a6a17f5cda1287c1c6110dec413f/android-json-0.0.20131108.vaadin1.jar!/org/json/JSONObject.class
+	jar:file:/C:/Users/JoseCarlos/.gradle/caches/modules-2/files-2.1/org.json/json/20171018/36ced462c97f0845b4a7b266a25cebe95d18baa3/json-20171018.jar!/org/json/JSONObject.class
+
+You may wish to exclude one of them to ensure predictable runtime behavior
+ - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-08 15:13:15  INFO - Starting ProviderCatalogApplicationTest on JoseCarlos-PC with PID 10788 (started by JoseCarlos in C:\Users\JoseCarlos\git\provider-catalog) - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-08 15:13:15  INFO - The following profiles are active: dev - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-08 15:13:17  INFO - Bootstrapping Spring Data repositories in DEFAULT mode. - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-08 15:13:17  INFO - Finished Spring Data repository scanning in 154ms. Found 1 repository interfaces. - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-08 15:13:19  INFO - Creating MessagingFactory to namespace 'sb://ttotus-bus.servicebus.windows.net/' - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-08 15:13:19  INFO - Creating messaging factory from namespace endpoint uri 'sb://ttotus-bus.servicebus.windows.net/' - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-08 15:13:19  INFO - Creating and starting reactor - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-08 15:13:19  INFO - starting reactor instance. - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-08 15:13:19  INFO - Started reactor - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-08 15:13:19  INFO - Creating connection to host 'ttotus-bus.servicebus.windows.net:5671' - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-08 15:13:21  INFO - MessagingFactory opened. - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-08 15:13:21  INFO - Connection opened to host. - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-08 15:13:21  INFO - Creating CBS link to $cbs - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-08 15:13:21  INFO - Created MessagingFactory to namespace 'sb://ttotus-bus.servicebus.windows.net/' - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-08 15:13:21  INFO - Creating MessageSender to entity 'topic-product' - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-08 15:13:21  INFO - Creating core message sender to 'topic-product' - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-08 15:13:21  INFO - Opened requestresponselink to $cbs - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-08 15:13:21  INFO - Created CBS link to $cbs - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-08 15:13:22  INFO - Creating send link to 'topic-product' - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-08 15:13:22  INFO - Opened send link to 'topic-product' - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-08 15:13:22  INFO - Created MessageSender to entity 'topic-product' - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-08 15:13:22  INFO - Created topic client to connection string 'Endpoint=sb://ttotus-bus.servicebus.windows.net/;EntityPath=topic-product;' - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-08 15:13:23  INFO - Cluster created with settings {hosts=[cosmosdbsf.documents.azure.com:10255], mode=MULTIPLE, requiredClusterType=REPLICA_SET, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500, requiredReplicaSetName='globaldb'} - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-08 15:13:23  INFO - Adding discovered server cosmosdbsf.documents.azure.com:10255 to client view of cluster - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-08 15:13:25  INFO - Opened connection [connectionId{localValue:1, serverValue:1415086382}] to cosmosdbsf.documents.azure.com:10255 - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-08 15:13:25  INFO - Mapped URL path [/v2/api-docs] onto method [public org.springframework.http.ResponseEntity<springfox.documentation.spring.web.json.Json> springfox.documentation.swagger2.web.Swagger2Controller.getDocumentation(java.lang.String,javax.servlet.http.HttpServletRequest)] - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-08 15:13:25  INFO - Monitor thread successfully connected to server with description ServerDescription{address=cosmosdbsf.documents.azure.com:10255, type=REPLICA_SET_PRIMARY, state=CONNECTED, ok=true, version=ServerVersion{versionList=[3, 2, 0]}, minWireVersion=0, maxWireVersion=2, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=null, roundTripTimeNanos=397214473, setName='globaldb', canonicalAddress=cdb-ms-prod-eastus1-fd19.documents.azure.com:10255, hosts=[cdb-ms-prod-eastus1-fd19.documents.azure.com:10255], passives=[], arbiters=[], primary='cdb-ms-prod-eastus1-fd19.documents.azure.com:10255', tagSet=TagSet{[]}, electionId=null, setVersion=1, lastWriteDate=null, lastUpdateTimeNanos=192775760860496} - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-08 15:13:25  INFO - Adding discovered server cdb-ms-prod-eastus1-fd19.documents.azure.com:10255 to client view of cluster - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-08 15:13:25  INFO - Server cosmosdbsf.documents.azure.com:10255 is no longer a member of the replica set.  Removing from client view of cluster. - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-08 15:13:25  INFO - Canonical address cdb-ms-prod-eastus1-fd19.documents.azure.com:10255 does not match server address.  Removing cosmosdbsf.documents.azure.com:10255 from client view of cluster - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-08 15:13:26  INFO - Initializing ExecutorService 'applicationTaskExecutor' - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-08 15:13:27  INFO - Opened connection [connectionId{localValue:2, serverValue:-485533757}] to cdb-ms-prod-eastus1-fd19.documents.azure.com:10255 - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-08 15:13:27  INFO - Monitor thread successfully connected to server with description ServerDescription{address=cdb-ms-prod-eastus1-fd19.documents.azure.com:10255, type=REPLICA_SET_PRIMARY, state=CONNECTED, ok=true, version=ServerVersion{versionList=[3, 2, 0]}, minWireVersion=0, maxWireVersion=2, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=null, roundTripTimeNanos=179953838, setName='globaldb', canonicalAddress=cdb-ms-prod-eastus1-fd19.documents.azure.com:10255, hosts=[cdb-ms-prod-eastus1-fd19.documents.azure.com:10255], passives=[], arbiters=[], primary='cdb-ms-prod-eastus1-fd19.documents.azure.com:10255', tagSet=TagSet{[]}, electionId=null, setVersion=1, lastWriteDate=null, lastUpdateTimeNanos=192777383169710} - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-08 15:13:27  INFO - Setting max set version to 1 from replica set primary cdb-ms-prod-eastus1-fd19.documents.azure.com:10255 - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-08 15:13:27  INFO - Discovered replica set primary cdb-ms-prod-eastus1-fd19.documents.azure.com:10255 - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-08 15:13:27  INFO - Context refreshed - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-08 15:13:27  INFO - Found 1 custom documentation plugin(s) - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-08 15:13:27  INFO - Scanning for api listing references - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-08 15:13:27  INFO - Started ProviderCatalogApplicationTest in 13.204 seconds (JVM running for 15.885) - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-08 15:13:28  INFO - Shutting down ExecutorService 'applicationTaskExecutor' - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-08 15:14:34  INFO - Neither @ContextConfiguration nor @ContextHierarchy found for test class [rtl.tot.corp.mrex.vndm.provider.ProviderCatalogApplicationTest], using SpringBootContextLoader - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-08 15:14:34  INFO - Could not detect default resource locations for test class [rtl.tot.corp.mrex.vndm.provider.ProviderCatalogApplicationTest]: no resource found for suffixes {-context.xml, Context.groovy}. - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-08 15:14:34  INFO - Could not detect default configuration classes for test class [rtl.tot.corp.mrex.vndm.provider.ProviderCatalogApplicationTest]: ProviderCatalogApplicationTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration. - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-08 15:14:35  INFO - Found @SpringBootConfiguration rtl.tot.corp.mrex.vndm.provider.ProviderCatalogApplication for test class rtl.tot.corp.mrex.vndm.provider.ProviderCatalogApplicationTest - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-08 15:14:35  INFO - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener] - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-08 15:14:35  INFO - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@1ff4f222, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@18e22d6f, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@79a93081, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@49758295, org.springframework.test.context.support.DirtiesContextTestExecutionListener@71280c7b, org.springframework.test.context.transaction.TransactionalTestExecutionListener@7828de64, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@4835d4d8, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@2db18661, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@1ccb1c78, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@22ae3a7b, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@445ba9e2, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@6578bd86] - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-08 15:14:36  WARN - 
+
+Found multiple occurrences of org.json.JSONObject on the class path:
+
+	jar:file:/C:/Users/JoseCarlos/.gradle/caches/modules-2/files-2.1/com.vaadin.external.google/android-json/0.0.20131108.vaadin1/fa26d351fe62a6a17f5cda1287c1c6110dec413f/android-json-0.0.20131108.vaadin1.jar!/org/json/JSONObject.class
+	jar:file:/C:/Users/JoseCarlos/.gradle/caches/modules-2/files-2.1/org.json/json/20171018/36ced462c97f0845b4a7b266a25cebe95d18baa3/json-20171018.jar!/org/json/JSONObject.class
+
+You may wish to exclude one of them to ensure predictable runtime behavior
+ - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-08 15:14:36  INFO - Starting ProviderCatalogApplicationTest on JoseCarlos-PC with PID 10768 (started by JoseCarlos in C:\Users\JoseCarlos\git\provider-catalog) - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-08 15:14:36  INFO - The following profiles are active: dev - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-08 15:14:38  INFO - Bootstrapping Spring Data repositories in DEFAULT mode. - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-08 15:14:38  INFO - Finished Spring Data repository scanning in 159ms. Found 1 repository interfaces. - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-08 15:14:40  INFO - Creating MessagingFactory to namespace 'sb://ttotus-bus.servicebus.windows.net/' - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-08 15:14:40  INFO - Creating messaging factory from namespace endpoint uri 'sb://ttotus-bus.servicebus.windows.net/' - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-08 15:14:40  INFO - Creating and starting reactor - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-08 15:14:40  INFO - starting reactor instance. - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-08 15:14:40  INFO - Started reactor - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-08 15:14:40  INFO - Creating connection to host 'ttotus-bus.servicebus.windows.net:5671' - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-08 15:14:42  INFO - MessagingFactory opened. - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-08 15:14:42  INFO - Connection opened to host. - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-08 15:14:42  INFO - Creating CBS link to $cbs - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-08 15:14:42  INFO - Created MessagingFactory to namespace 'sb://ttotus-bus.servicebus.windows.net/' - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-08 15:14:42  INFO - Creating MessageSender to entity 'topic-product' - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-08 15:14:42  INFO - Creating core message sender to 'topic-product' - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-08 15:14:42  INFO - Opened requestresponselink to $cbs - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-08 15:14:42  INFO - Created CBS link to $cbs - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-08 15:14:43  INFO - Creating send link to 'topic-product' - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-08 15:14:43  INFO - Opened send link to 'topic-product' - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-08 15:14:43  INFO - Created MessageSender to entity 'topic-product' - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-08 15:14:43  INFO - Created topic client to connection string 'Endpoint=sb://ttotus-bus.servicebus.windows.net/;EntityPath=topic-product;' - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-08 15:14:44  INFO - Cluster created with settings {hosts=[cosmosdbsf.documents.azure.com:10255], mode=MULTIPLE, requiredClusterType=REPLICA_SET, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500, requiredReplicaSetName='globaldb'} - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-08 15:14:44  INFO - Adding discovered server cosmosdbsf.documents.azure.com:10255 to client view of cluster - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-08 15:14:46  INFO - Opened connection [connectionId{localValue:1, serverValue:76570560}] to cosmosdbsf.documents.azure.com:10255 - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-08 15:14:46  INFO - Monitor thread successfully connected to server with description ServerDescription{address=cosmosdbsf.documents.azure.com:10255, type=REPLICA_SET_PRIMARY, state=CONNECTED, ok=true, version=ServerVersion{versionList=[3, 2, 0]}, minWireVersion=0, maxWireVersion=2, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=null, roundTripTimeNanos=164917134, setName='globaldb', canonicalAddress=cdb-ms-prod-eastus1-fd19.documents.azure.com:10255, hosts=[cdb-ms-prod-eastus1-fd19.documents.azure.com:10255], passives=[], arbiters=[], primary='cdb-ms-prod-eastus1-fd19.documents.azure.com:10255', tagSet=TagSet{[]}, electionId=null, setVersion=1, lastWriteDate=null, lastUpdateTimeNanos=192856573484300} - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-08 15:14:46  INFO - Adding discovered server cdb-ms-prod-eastus1-fd19.documents.azure.com:10255 to client view of cluster - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-08 15:14:46  INFO - Server cosmosdbsf.documents.azure.com:10255 is no longer a member of the replica set.  Removing from client view of cluster. - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-08 15:14:46  INFO - Canonical address cdb-ms-prod-eastus1-fd19.documents.azure.com:10255 does not match server address.  Removing cosmosdbsf.documents.azure.com:10255 from client view of cluster - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-08 15:14:46  INFO - Mapped URL path [/v2/api-docs] onto method [public org.springframework.http.ResponseEntity<springfox.documentation.spring.web.json.Json> springfox.documentation.swagger2.web.Swagger2Controller.getDocumentation(java.lang.String,javax.servlet.http.HttpServletRequest)] - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-08 15:14:47  INFO - Opened connection [connectionId{localValue:2, serverValue:650677112}] to cdb-ms-prod-eastus1-fd19.documents.azure.com:10255 - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-08 15:14:48  INFO - Monitor thread successfully connected to server with description ServerDescription{address=cdb-ms-prod-eastus1-fd19.documents.azure.com:10255, type=REPLICA_SET_PRIMARY, state=CONNECTED, ok=true, version=ServerVersion{versionList=[3, 2, 0]}, minWireVersion=0, maxWireVersion=2, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=null, roundTripTimeNanos=181608081, setName='globaldb', canonicalAddress=cdb-ms-prod-eastus1-fd19.documents.azure.com:10255, hosts=[cdb-ms-prod-eastus1-fd19.documents.azure.com:10255], passives=[], arbiters=[], primary='cdb-ms-prod-eastus1-fd19.documents.azure.com:10255', tagSet=TagSet{[]}, electionId=null, setVersion=1, lastWriteDate=null, lastUpdateTimeNanos=192858154857043} - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-08 15:14:48  INFO - Setting max set version to 1 from replica set primary cdb-ms-prod-eastus1-fd19.documents.azure.com:10255 - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-08 15:14:48  INFO - Discovered replica set primary cdb-ms-prod-eastus1-fd19.documents.azure.com:10255 - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-08 15:14:48  INFO - Initializing ExecutorService 'applicationTaskExecutor' - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-08 15:14:48  INFO - Context refreshed - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-08 15:14:48  INFO - Found 1 custom documentation plugin(s) - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-08 15:14:48  INFO - Scanning for api listing references - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-08 15:14:48  INFO - Started ProviderCatalogApplicationTest in 13.497 seconds (JVM running for 16.195) - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-08 15:14:49  INFO - Shutting down ExecutorService 'applicationTaskExecutor' - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
