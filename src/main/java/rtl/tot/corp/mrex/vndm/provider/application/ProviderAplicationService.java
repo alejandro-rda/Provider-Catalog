@@ -79,7 +79,7 @@ public class ProviderAplicationService {
    *
    * @param providerDto ProviderDto
    */
-  public void updateProvider(ProviderDto providerDto) {
+  public void updateProvider(ProviderDto providerDto) throws IncompleteCommandException, Exception {
     log.info("Into updateProvider(ProviderDto providerDto)");
     Notification notification = this.createValidation(providerDto);
     if (notification.hasErrors()) {
@@ -91,10 +91,12 @@ public class ProviderAplicationService {
       throw new IllegalArgumentException(notification.errorMessage());
     }
     boolean isUpdate = commandBus.executeUpdate(provider);
+    if (!isUpdate) {
+      throw new IncompleteCommandException();
+    }
     
-    
+    log.info("Sucessful Operation");
   }
-  
   
   
   
@@ -216,6 +218,7 @@ public class ProviderAplicationService {
   }
   
   private Notification updateValidationFunctional(Provider provider) {
+    log.info("Into updateValidationFunctional(Provider provider)");
     Notification notification = new Notification();
     Provider prov = providerRepository.getProviderByRut(provider.getRut());
     if (Objects.isNull(prov)) {

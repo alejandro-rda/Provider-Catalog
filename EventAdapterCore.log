@@ -7638,3 +7638,257 @@ Caused by: java.net.UnknownHostException: cdb-ms-prod-eastus1-fd19.documents.azu
 2019-05-08 14:12:37  INFO - Into createProvider(ProviderDto request) - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
 2019-05-08 14:12:43  INFO - Opened connection [connectionId{localValue:15, serverValue:-902844177}] to cdb-ms-prod-eastus1-fd19.documents.azure.com:10255 - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
 2019-05-08 14:12:43  INFO - Monitor thread successfully connected to server with description ServerDescription{address=cdb-ms-prod-eastus1-fd19.documents.azure.com:10255, type=REPLICA_SET_PRIMARY, state=CONNECTED, ok=true, version=ServerVersion{versionList=[3, 2, 0]}, minWireVersion=0, maxWireVersion=2, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=null, roundTripTimeNanos=165038486, setName='globaldb', canonicalAddress=cdb-ms-prod-eastus1-fd19.documents.azure.com:10255, hosts=[cdb-ms-prod-eastus1-fd19.documents.azure.com:10255], passives=[], arbiters=[], primary='cdb-ms-prod-eastus1-fd19.documents.azure.com:10255', tagSet=TagSet{[]}, electionId=null, setVersion=1, lastWriteDate=null, lastUpdateTimeNanos=189133687118097} - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-08 14:12:43  INFO - Discovered replica set primary cdb-ms-prod-eastus1-fd19.documents.azure.com:10255 - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-08 14:17:38  INFO - Exception in monitor thread while connecting to server cdb-ms-prod-eastus1-fd19.documents.azure.com:10255 - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+com.mongodb.MongoSocketException: cdb-ms-prod-eastus1-fd19.documents.azure.com
+	at com.mongodb.ServerAddress.getSocketAddress(ServerAddress.java:188)
+	at com.mongodb.internal.connection.SocketStreamHelper.initialize(SocketStreamHelper.java:64)
+	at com.mongodb.internal.connection.SocketStream.open(SocketStream.java:62)
+	at com.mongodb.internal.connection.InternalStreamConnection.open(InternalStreamConnection.java:126)
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitorRunnable.run(DefaultServerMonitor.java:131)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: java.net.UnknownHostException: cdb-ms-prod-eastus1-fd19.documents.azure.com
+	at java.net.Inet6AddressImpl.lookupAllHostAddr(Native Method)
+	at java.net.InetAddress$2.lookupAllHostAddr(Unknown Source)
+	at java.net.InetAddress.getAddressesFromNameService(Unknown Source)
+	at java.net.InetAddress.getAllByName0(Unknown Source)
+	at java.net.InetAddress.getAllByName(Unknown Source)
+	at java.net.InetAddress.getAllByName(Unknown Source)
+	at java.net.InetAddress.getByName(Unknown Source)
+	at com.mongodb.ServerAddress.getSocketAddress(ServerAddress.java:186)
+	... 5 common frames omitted
+2019-05-08 14:17:50  INFO - Opened connection [connectionId{localValue:17, serverValue:31815158}] to cdb-ms-prod-eastus1-fd19.documents.azure.com:10255 - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-08 14:17:50  INFO - Monitor thread successfully connected to server with description ServerDescription{address=cdb-ms-prod-eastus1-fd19.documents.azure.com:10255, type=REPLICA_SET_PRIMARY, state=CONNECTED, ok=true, version=ServerVersion{versionList=[3, 2, 0]}, minWireVersion=0, maxWireVersion=2, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=null, roundTripTimeNanos=162087413, setName='globaldb', canonicalAddress=cdb-ms-prod-eastus1-fd19.documents.azure.com:10255, hosts=[cdb-ms-prod-eastus1-fd19.documents.azure.com:10255], passives=[], arbiters=[], primary='cdb-ms-prod-eastus1-fd19.documents.azure.com:10255', tagSet=TagSet{[]}, electionId=null, setVersion=1, lastWriteDate=null, lastUpdateTimeNanos=189440400799470} - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-08 14:17:50  INFO - Discovered replica set primary cdb-ms-prod-eastus1-fd19.documents.azure.com:10255 - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-08 14:22:45  INFO - Exception in monitor thread while connecting to server cdb-ms-prod-eastus1-fd19.documents.azure.com:10255 - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+com.mongodb.MongoSocketException: cdb-ms-prod-eastus1-fd19.documents.azure.com
+	at com.mongodb.ServerAddress.getSocketAddress(ServerAddress.java:188)
+	at com.mongodb.internal.connection.SocketStreamHelper.initialize(SocketStreamHelper.java:64)
+	at com.mongodb.internal.connection.SocketStream.open(SocketStream.java:62)
+	at com.mongodb.internal.connection.InternalStreamConnection.open(InternalStreamConnection.java:126)
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitorRunnable.run(DefaultServerMonitor.java:131)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: java.net.UnknownHostException: cdb-ms-prod-eastus1-fd19.documents.azure.com
+	at java.net.Inet6AddressImpl.lookupAllHostAddr(Native Method)
+	at java.net.InetAddress$2.lookupAllHostAddr(Unknown Source)
+	at java.net.InetAddress.getAddressesFromNameService(Unknown Source)
+	at java.net.InetAddress.getAllByName0(Unknown Source)
+	at java.net.InetAddress.getAllByName(Unknown Source)
+	at java.net.InetAddress.getAllByName(Unknown Source)
+	at java.net.InetAddress.getByName(Unknown Source)
+	at com.mongodb.ServerAddress.getSocketAddress(ServerAddress.java:186)
+	... 5 common frames omitted
+2019-05-08 14:22:56  INFO - Opened connection [connectionId{localValue:19, serverValue:-1956551854}] to cdb-ms-prod-eastus1-fd19.documents.azure.com:10255 - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-08 14:22:56  INFO - Monitor thread successfully connected to server with description ServerDescription{address=cdb-ms-prod-eastus1-fd19.documents.azure.com:10255, type=REPLICA_SET_PRIMARY, state=CONNECTED, ok=true, version=ServerVersion{versionList=[3, 2, 0]}, minWireVersion=0, maxWireVersion=2, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=null, roundTripTimeNanos=166231472, setName='globaldb', canonicalAddress=cdb-ms-prod-eastus1-fd19.documents.azure.com:10255, hosts=[cdb-ms-prod-eastus1-fd19.documents.azure.com:10255], passives=[], arbiters=[], primary='cdb-ms-prod-eastus1-fd19.documents.azure.com:10255', tagSet=TagSet{[]}, electionId=null, setVersion=1, lastWriteDate=null, lastUpdateTimeNanos=189746916381651} - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-08 14:22:56  INFO - Discovered replica set primary cdb-ms-prod-eastus1-fd19.documents.azure.com:10255 - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-08 14:27:51  INFO - Exception in monitor thread while connecting to server cdb-ms-prod-eastus1-fd19.documents.azure.com:10255 - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+com.mongodb.MongoSocketException: cdb-ms-prod-eastus1-fd19.documents.azure.com
+	at com.mongodb.ServerAddress.getSocketAddress(ServerAddress.java:188)
+	at com.mongodb.internal.connection.SocketStreamHelper.initialize(SocketStreamHelper.java:64)
+	at com.mongodb.internal.connection.SocketStream.open(SocketStream.java:62)
+	at com.mongodb.internal.connection.InternalStreamConnection.open(InternalStreamConnection.java:126)
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitorRunnable.run(DefaultServerMonitor.java:131)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: java.net.UnknownHostException: cdb-ms-prod-eastus1-fd19.documents.azure.com
+	at java.net.Inet6AddressImpl.lookupAllHostAddr(Native Method)
+	at java.net.InetAddress$2.lookupAllHostAddr(Unknown Source)
+	at java.net.InetAddress.getAddressesFromNameService(Unknown Source)
+	at java.net.InetAddress.getAllByName0(Unknown Source)
+	at java.net.InetAddress.getAllByName(Unknown Source)
+	at java.net.InetAddress.getAllByName(Unknown Source)
+	at java.net.InetAddress.getByName(Unknown Source)
+	at com.mongodb.ServerAddress.getSocketAddress(ServerAddress.java:186)
+	... 5 common frames omitted
+2019-05-08 14:28:03  INFO - Opened connection [connectionId{localValue:21, serverValue:1729508014}] to cdb-ms-prod-eastus1-fd19.documents.azure.com:10255 - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-08 14:28:03  INFO - Monitor thread successfully connected to server with description ServerDescription{address=cdb-ms-prod-eastus1-fd19.documents.azure.com:10255, type=REPLICA_SET_PRIMARY, state=CONNECTED, ok=true, version=ServerVersion{versionList=[3, 2, 0]}, minWireVersion=0, maxWireVersion=2, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=null, roundTripTimeNanos=171371096, setName='globaldb', canonicalAddress=cdb-ms-prod-eastus1-fd19.documents.azure.com:10255, hosts=[cdb-ms-prod-eastus1-fd19.documents.azure.com:10255], passives=[], arbiters=[], primary='cdb-ms-prod-eastus1-fd19.documents.azure.com:10255', tagSet=TagSet{[]}, electionId=null, setVersion=1, lastWriteDate=null, lastUpdateTimeNanos=190053448579917} - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-08 14:28:03  INFO - Discovered replica set primary cdb-ms-prod-eastus1-fd19.documents.azure.com:10255 - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-08 14:32:58  INFO - Exception in monitor thread while connecting to server cdb-ms-prod-eastus1-fd19.documents.azure.com:10255 - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+com.mongodb.MongoSocketException: cdb-ms-prod-eastus1-fd19.documents.azure.com
+	at com.mongodb.ServerAddress.getSocketAddress(ServerAddress.java:188)
+	at com.mongodb.internal.connection.SocketStreamHelper.initialize(SocketStreamHelper.java:64)
+	at com.mongodb.internal.connection.SocketStream.open(SocketStream.java:62)
+	at com.mongodb.internal.connection.InternalStreamConnection.open(InternalStreamConnection.java:126)
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitorRunnable.run(DefaultServerMonitor.java:131)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: java.net.UnknownHostException: cdb-ms-prod-eastus1-fd19.documents.azure.com
+	at java.net.Inet6AddressImpl.lookupAllHostAddr(Native Method)
+	at java.net.InetAddress$2.lookupAllHostAddr(Unknown Source)
+	at java.net.InetAddress.getAddressesFromNameService(Unknown Source)
+	at java.net.InetAddress.getAllByName0(Unknown Source)
+	at java.net.InetAddress.getAllByName(Unknown Source)
+	at java.net.InetAddress.getAllByName(Unknown Source)
+	at java.net.InetAddress.getByName(Unknown Source)
+	at com.mongodb.ServerAddress.getSocketAddress(ServerAddress.java:186)
+	... 5 common frames omitted
+2019-05-08 14:33:10  INFO - Opened connection [connectionId{localValue:23, serverValue:-960430004}] to cdb-ms-prod-eastus1-fd19.documents.azure.com:10255 - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-08 14:33:10  INFO - Monitor thread successfully connected to server with description ServerDescription{address=cdb-ms-prod-eastus1-fd19.documents.azure.com:10255, type=REPLICA_SET_PRIMARY, state=CONNECTED, ok=true, version=ServerVersion{versionList=[3, 2, 0]}, minWireVersion=0, maxWireVersion=2, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=null, roundTripTimeNanos=163347415, setName='globaldb', canonicalAddress=cdb-ms-prod-eastus1-fd19.documents.azure.com:10255, hosts=[cdb-ms-prod-eastus1-fd19.documents.azure.com:10255], passives=[], arbiters=[], primary='cdb-ms-prod-eastus1-fd19.documents.azure.com:10255', tagSet=TagSet{[]}, electionId=null, setVersion=1, lastWriteDate=null, lastUpdateTimeNanos=190360334781902} - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-08 14:33:10  INFO - Discovered replica set primary cdb-ms-prod-eastus1-fd19.documents.azure.com:10255 - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-08 14:33:37  INFO - Application shutdown requested. - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-08 14:33:37  INFO - Shutting down ExecutorService 'applicationTaskExecutor' - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-08 14:33:37  INFO - Closed connection [connectionId{localValue:3, serverValue:-1343320130}] to cdb-ms-prod-eastus1-fd19.documents.azure.com:10255 because there was a socket exception raised on another connection from this pool. - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-08 14:51:25  INFO - Starting ProviderCatalogApplication on JoseCarlos-PC with PID 13708 (C:\Users\JoseCarlos\git\provider-catalog\bin\main started by JoseCarlos in C:\Users\JoseCarlos\git\provider-catalog) - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-08 14:51:25  INFO - The following profiles are active: dev - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-08 14:51:27  INFO - Bootstrapping Spring Data repositories in DEFAULT mode. - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-08 14:51:27  INFO - Finished Spring Data repository scanning in 91ms. Found 1 repository interfaces. - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-08 14:51:28  INFO - Tomcat initialized with port(s): 8282 (http) - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-08 14:51:28  INFO - Initializing ProtocolHandler ["http-nio-8282"] - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-08 14:51:28  INFO - Starting service [Tomcat] - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-08 14:51:28  INFO - Starting Servlet engine: [Apache Tomcat/9.0.17] - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-08 14:51:28  INFO - Initializing Spring embedded WebApplicationContext - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-08 14:51:28  INFO - Root WebApplicationContext: initialization completed in 2853 ms - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-08 14:51:28  INFO - Creating MessagingFactory to namespace 'sb://ttotus-bus.servicebus.windows.net/' - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-08 14:51:28  INFO - Creating messaging factory from namespace endpoint uri 'sb://ttotus-bus.servicebus.windows.net/' - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-08 14:51:28  INFO - Creating and starting reactor - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-08 14:51:28  INFO - starting reactor instance. - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-08 14:51:28  INFO - Started reactor - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-08 14:51:28  INFO - Creating connection to host 'ttotus-bus.servicebus.windows.net:5671' - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-08 14:51:31  INFO - MessagingFactory opened. - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-08 14:51:31  INFO - Connection opened to host. - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-08 14:51:31  INFO - Creating CBS link to $cbs - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-08 14:51:31  INFO - Created MessagingFactory to namespace 'sb://ttotus-bus.servicebus.windows.net/' - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-08 14:51:31  INFO - Creating MessageSender to entity 'topic-product' - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-08 14:51:31  INFO - Creating core message sender to 'topic-product' - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-08 14:51:31  INFO - Opened requestresponselink to $cbs - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-08 14:51:31  INFO - Created CBS link to $cbs - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-08 14:51:32  INFO - Creating send link to 'topic-product' - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-08 14:51:32  INFO - Opened send link to 'topic-product' - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-08 14:51:32  INFO - Created MessageSender to entity 'topic-product' - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-08 14:51:32  INFO - Created topic client to connection string 'Endpoint=sb://ttotus-bus.servicebus.windows.net/;EntityPath=topic-product;' - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-08 14:51:32  INFO - Cluster created with settings {hosts=[cosmosdbsf.documents.azure.com:10255], mode=MULTIPLE, requiredClusterType=REPLICA_SET, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500, requiredReplicaSetName='globaldb'} - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-08 14:51:32  INFO - Adding discovered server cosmosdbsf.documents.azure.com:10255 to client view of cluster - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-08 14:51:33  INFO - Mapped URL path [/v2/api-docs] onto method [public org.springframework.http.ResponseEntity<springfox.documentation.spring.web.json.Json> springfox.documentation.swagger2.web.Swagger2Controller.getDocumentation(java.lang.String,javax.servlet.http.HttpServletRequest)] - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-08 14:51:34  INFO - Initializing ExecutorService 'applicationTaskExecutor' - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-08 14:51:34  INFO - Context refreshed - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-08 14:51:34  INFO - Found 1 custom documentation plugin(s) - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-08 14:51:34  INFO - Scanning for api listing references - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-08 14:51:34  INFO - Starting ProtocolHandler ["http-nio-8282"] - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-08 14:51:34  INFO - Tomcat started on port(s): 8282 (http) with context path '' - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-08 14:51:34  INFO - Started ProviderCatalogApplication in 9.693 seconds (JVM running for 11.256) - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-08 14:51:34  INFO - Opened connection [connectionId{localValue:1, serverValue:-228812500}] to cosmosdbsf.documents.azure.com:10255 - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-08 14:51:35  INFO - Monitor thread successfully connected to server with description ServerDescription{address=cosmosdbsf.documents.azure.com:10255, type=REPLICA_SET_PRIMARY, state=CONNECTED, ok=true, version=ServerVersion{versionList=[3, 2, 0]}, minWireVersion=0, maxWireVersion=2, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=null, roundTripTimeNanos=168587863, setName='globaldb', canonicalAddress=cdb-ms-prod-eastus1-fd19.documents.azure.com:10255, hosts=[cdb-ms-prod-eastus1-fd19.documents.azure.com:10255], passives=[], arbiters=[], primary='cdb-ms-prod-eastus1-fd19.documents.azure.com:10255', tagSet=TagSet{[]}, electionId=null, setVersion=1, lastWriteDate=null, lastUpdateTimeNanos=191465155873739} - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-08 14:51:35  INFO - Adding discovered server cdb-ms-prod-eastus1-fd19.documents.azure.com:10255 to client view of cluster - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-08 14:51:35  INFO - Server cosmosdbsf.documents.azure.com:10255 is no longer a member of the replica set.  Removing from client view of cluster. - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-08 14:51:35  INFO - Canonical address cdb-ms-prod-eastus1-fd19.documents.azure.com:10255 does not match server address.  Removing cosmosdbsf.documents.azure.com:10255 from client view of cluster - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-08 14:51:36  INFO - Opened connection [connectionId{localValue:2, serverValue:-993577788}] to cdb-ms-prod-eastus1-fd19.documents.azure.com:10255 - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-08 14:51:36  INFO - Monitor thread successfully connected to server with description ServerDescription{address=cdb-ms-prod-eastus1-fd19.documents.azure.com:10255, type=REPLICA_SET_PRIMARY, state=CONNECTED, ok=true, version=ServerVersion{versionList=[3, 2, 0]}, minWireVersion=0, maxWireVersion=2, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=null, roundTripTimeNanos=183767652, setName='globaldb', canonicalAddress=cdb-ms-prod-eastus1-fd19.documents.azure.com:10255, hosts=[cdb-ms-prod-eastus1-fd19.documents.azure.com:10255], passives=[], arbiters=[], primary='cdb-ms-prod-eastus1-fd19.documents.azure.com:10255', tagSet=TagSet{[]}, electionId=null, setVersion=1, lastWriteDate=null, lastUpdateTimeNanos=191466919346610} - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-08 14:51:36  INFO - Setting max set version to 1 from replica set primary cdb-ms-prod-eastus1-fd19.documents.azure.com:10255 - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-08 14:51:36  INFO - Discovered replica set primary cdb-ms-prod-eastus1-fd19.documents.azure.com:10255 - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-08 14:51:43  INFO - Initializing Spring DispatcherServlet 'dispatcherServlet' - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-08 14:51:43  INFO - Initializing Servlet 'dispatcherServlet' - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-08 14:51:43  INFO - Completed initialization in 9 ms - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-08 14:51:43  INFO - Into preHandle - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-08 14:51:43  INFO - Into createProvider(ProviderDto request) - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-08 14:51:43  INFO - Into updateProvider(ProviderDto providerDto) - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-08 14:51:43  INFO - Into validatePattern(String regex, String pivot) - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-08 14:51:43  INFO - PATTNER^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,6}$ - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-08 14:51:43  INFO - Into assemblerProvider(ProviderDto providerDto) - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-08 14:51:43  INFO - Into updateValidationFunctional(Provider provider) - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-08 14:51:45  INFO - Opened connection [connectionId{localValue:3, serverValue:-1093811464}] to cdb-ms-prod-eastus1-fd19.documents.azure.com:10255 - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-08 14:51:45  INFO - ES NULLO - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-08 14:51:45  INFO - MANTENIMIENTO - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-08 14:53:28  WARN - Connection.onTransportError: hostname:ttotus-bus.servicebus.windows.net:5671, error:connection aborted - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-08 14:53:28 ERROR - Connection error. 'Error{condition=amqp:connection:framing-error, description='connection aborted', info=null}' - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-08 14:53:28  INFO - Closing connection to host - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-08 14:53:28  WARN - Internal send link of requestresponselink to '$cbs' closed with error. - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+com.microsoft.azure.servicebus.primitives.ServiceBusException: Error{condition=amqp:connection:framing-error, description='connection aborted', info=null}
+	at com.microsoft.azure.servicebus.primitives.ExceptionUtil.toException(ExceptionUtil.java:113)
+	at com.microsoft.azure.servicebus.primitives.RequestResponseLink$InternalSender.onClose(RequestResponseLink.java:837)
+	at com.microsoft.azure.servicebus.amqp.BaseLinkHandler.processOnClose(BaseLinkHandler.java:68)
+	at com.microsoft.azure.servicebus.primitives.MessagingFactory.closeConnection(MessagingFactory.java:373)
+	at com.microsoft.azure.servicebus.primitives.MessagingFactory.onConnectionError(MessagingFactory.java:298)
+	at com.microsoft.azure.servicebus.amqp.ConnectionHandler.onTransportError(ConnectionHandler.java:84)
+	at org.apache.qpid.proton.engine.BaseHandler.handle(BaseHandler.java:191)
+	at org.apache.qpid.proton.engine.impl.EventImpl.dispatch(EventImpl.java:108)
+	at org.apache.qpid.proton.reactor.impl.ReactorImpl.dispatch(ReactorImpl.java:309)
+	at org.apache.qpid.proton.reactor.impl.ReactorImpl.process(ReactorImpl.java:276)
+	at com.microsoft.azure.servicebus.primitives.MessagingFactory$RunReactor.run(MessagingFactory.java:481)
+	at java.lang.Thread.run(Unknown Source)
+2019-05-08 14:53:28  WARN - Completing all pending requests with exception in request response link to $cbs - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-08 14:53:28  WARN - Internal receive link of requestresponselink to '$cbs' closed with error. - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+com.microsoft.azure.servicebus.primitives.ServiceBusException: Error{condition=amqp:connection:framing-error, description='connection aborted', info=null}
+	at com.microsoft.azure.servicebus.primitives.ExceptionUtil.toException(ExceptionUtil.java:113)
+	at com.microsoft.azure.servicebus.primitives.RequestResponseLink$InternalReceiver.onClose(RequestResponseLink.java:630)
+	at com.microsoft.azure.servicebus.amqp.BaseLinkHandler.processOnClose(BaseLinkHandler.java:68)
+	at com.microsoft.azure.servicebus.primitives.MessagingFactory.closeConnection(MessagingFactory.java:373)
+	at com.microsoft.azure.servicebus.primitives.MessagingFactory.onConnectionError(MessagingFactory.java:298)
+	at com.microsoft.azure.servicebus.amqp.ConnectionHandler.onTransportError(ConnectionHandler.java:84)
+	at org.apache.qpid.proton.engine.BaseHandler.handle(BaseHandler.java:191)
+	at org.apache.qpid.proton.engine.impl.EventImpl.dispatch(EventImpl.java:108)
+	at org.apache.qpid.proton.reactor.impl.ReactorImpl.dispatch(ReactorImpl.java:309)
+	at org.apache.qpid.proton.reactor.impl.ReactorImpl.process(ReactorImpl.java:276)
+	at com.microsoft.azure.servicebus.primitives.MessagingFactory$RunReactor.run(MessagingFactory.java:481)
+	at java.lang.Thread.run(Unknown Source)
+2019-05-08 14:53:28  WARN - Completing all pending requests with exception in request response link to $cbs - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-08 14:53:28  INFO - Exception in monitor thread while connecting to server cdb-ms-prod-eastus1-fd19.documents.azure.com:10255 - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+com.mongodb.MongoSocketException: cdb-ms-prod-eastus1-fd19.documents.azure.com
+	at com.mongodb.ServerAddress.getSocketAddress(ServerAddress.java:188)
+	at com.mongodb.internal.connection.SocketStreamHelper.initialize(SocketStreamHelper.java:64)
+	at com.mongodb.internal.connection.SocketStream.open(SocketStream.java:62)
+	at com.mongodb.internal.connection.InternalStreamConnection.open(InternalStreamConnection.java:126)
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitorRunnable.run(DefaultServerMonitor.java:131)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: java.net.UnknownHostException: cdb-ms-prod-eastus1-fd19.documents.azure.com
+	at java.net.Inet6AddressImpl.lookupAllHostAddr(Native Method)
+	at java.net.InetAddress$2.lookupAllHostAddr(Unknown Source)
+	at java.net.InetAddress.getAddressesFromNameService(Unknown Source)
+	at java.net.InetAddress.getAllByName0(Unknown Source)
+	at java.net.InetAddress.getAllByName(Unknown Source)
+	at java.net.InetAddress.getAllByName(Unknown Source)
+	at java.net.InetAddress.getByName(Unknown Source)
+	at com.mongodb.ServerAddress.getSocketAddress(ServerAddress.java:186)
+	... 5 common frames omitted
+2019-05-08 14:53:40  INFO - Opened connection [connectionId{localValue:5, serverValue:-702228337}] to cdb-ms-prod-eastus1-fd19.documents.azure.com:10255 - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-08 14:53:40  INFO - Monitor thread successfully connected to server with description ServerDescription{address=cdb-ms-prod-eastus1-fd19.documents.azure.com:10255, type=REPLICA_SET_PRIMARY, state=CONNECTED, ok=true, version=ServerVersion{versionList=[3, 2, 0]}, minWireVersion=0, maxWireVersion=2, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=null, roundTripTimeNanos=167707612, setName='globaldb', canonicalAddress=cdb-ms-prod-eastus1-fd19.documents.azure.com:10255, hosts=[cdb-ms-prod-eastus1-fd19.documents.azure.com:10255], passives=[], arbiters=[], primary='cdb-ms-prod-eastus1-fd19.documents.azure.com:10255', tagSet=TagSet{[]}, electionId=null, setVersion=1, lastWriteDate=null, lastUpdateTimeNanos=191590448540070} - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-08 14:53:40  INFO - Discovered replica set primary cdb-ms-prod-eastus1-fd19.documents.azure.com:10255 - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-08 14:58:35  INFO - Exception in monitor thread while connecting to server cdb-ms-prod-eastus1-fd19.documents.azure.com:10255 - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+com.mongodb.MongoSocketException: cdb-ms-prod-eastus1-fd19.documents.azure.com
+	at com.mongodb.ServerAddress.getSocketAddress(ServerAddress.java:188)
+	at com.mongodb.internal.connection.SocketStreamHelper.initialize(SocketStreamHelper.java:64)
+	at com.mongodb.internal.connection.SocketStream.open(SocketStream.java:62)
+	at com.mongodb.internal.connection.InternalStreamConnection.open(InternalStreamConnection.java:126)
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitorRunnable.run(DefaultServerMonitor.java:131)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: java.net.UnknownHostException: cdb-ms-prod-eastus1-fd19.documents.azure.com
+	at java.net.Inet6AddressImpl.lookupAllHostAddr(Native Method)
+	at java.net.InetAddress$2.lookupAllHostAddr(Unknown Source)
+	at java.net.InetAddress.getAddressesFromNameService(Unknown Source)
+	at java.net.InetAddress.getAllByName0(Unknown Source)
+	at java.net.InetAddress.getAllByName(Unknown Source)
+	at java.net.InetAddress.getAllByName(Unknown Source)
+	at java.net.InetAddress.getByName(Unknown Source)
+	at com.mongodb.ServerAddress.getSocketAddress(ServerAddress.java:186)
+	... 5 common frames omitted
+2019-05-08 14:58:46  INFO - Opened connection [connectionId{localValue:7, serverValue:1595380722}] to cdb-ms-prod-eastus1-fd19.documents.azure.com:10255 - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-08 14:58:47  INFO - Monitor thread successfully connected to server with description ServerDescription{address=cdb-ms-prod-eastus1-fd19.documents.azure.com:10255, type=REPLICA_SET_PRIMARY, state=CONNECTED, ok=true, version=ServerVersion{versionList=[3, 2, 0]}, minWireVersion=0, maxWireVersion=2, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=null, roundTripTimeNanos=168374743, setName='globaldb', canonicalAddress=cdb-ms-prod-eastus1-fd19.documents.azure.com:10255, hosts=[cdb-ms-prod-eastus1-fd19.documents.azure.com:10255], passives=[], arbiters=[], primary='cdb-ms-prod-eastus1-fd19.documents.azure.com:10255', tagSet=TagSet{[]}, electionId=null, setVersion=1, lastWriteDate=null, lastUpdateTimeNanos=191897241367298} - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-08 14:58:47  INFO - Discovered replica set primary cdb-ms-prod-eastus1-fd19.documents.azure.com:10255 - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-08 14:58:55  INFO - Into preHandle - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-08 14:58:55  INFO - Into createProvider(ProviderDto request) - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-08 14:58:55  INFO - Into updateProvider(ProviderDto providerDto) - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-08 14:58:55  INFO - Into validatePattern(String regex, String pivot) - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-08 14:58:55  INFO - PATTNER^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,6}$ - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-08 14:58:55  INFO - Into assemblerProvider(ProviderDto providerDto) - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-08 14:58:55  INFO - Into updateValidationFunctional(Provider provider) - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-08 14:58:55  INFO - Closed connection [connectionId{localValue:3, serverValue:-1093811464}] to cdb-ms-prod-eastus1-fd19.documents.azure.com:10255 because there was a socket exception raised on another connection from this pool. - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-08 14:58:57  INFO - Opened connection [connectionId{localValue:8, serverValue:-732135475}] to cdb-ms-prod-eastus1-fd19.documents.azure.com:10255 - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-08 14:58:57  INFO - ES NULLO - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-08 14:58:57  INFO - MANTENIMIENTO - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-08 15:03:42  INFO - Exception in monitor thread while connecting to server cdb-ms-prod-eastus1-fd19.documents.azure.com:10255 - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+com.mongodb.MongoSocketException: cdb-ms-prod-eastus1-fd19.documents.azure.com
+	at com.mongodb.ServerAddress.getSocketAddress(ServerAddress.java:188)
+	at com.mongodb.internal.connection.SocketStreamHelper.initialize(SocketStreamHelper.java:64)
+	at com.mongodb.internal.connection.SocketStream.open(SocketStream.java:62)
+	at com.mongodb.internal.connection.InternalStreamConnection.open(InternalStreamConnection.java:126)
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitorRunnable.run(DefaultServerMonitor.java:131)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: java.net.UnknownHostException: cdb-ms-prod-eastus1-fd19.documents.azure.com
+	at java.net.Inet6AddressImpl.lookupAllHostAddr(Native Method)
+	at java.net.InetAddress$2.lookupAllHostAddr(Unknown Source)
+	at java.net.InetAddress.getAddressesFromNameService(Unknown Source)
+	at java.net.InetAddress.getAllByName0(Unknown Source)
+	at java.net.InetAddress.getAllByName(Unknown Source)
+	at java.net.InetAddress.getAllByName(Unknown Source)
+	at java.net.InetAddress.getByName(Unknown Source)
+	at com.mongodb.ServerAddress.getSocketAddress(ServerAddress.java:186)
+	... 5 common frames omitted
+2019-05-08 15:03:53  INFO - Opened connection [connectionId{localValue:10, serverValue:1757700259}] to cdb-ms-prod-eastus1-fd19.documents.azure.com:10255 - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
+2019-05-08 15:03:54  INFO - Monitor thread successfully connected to server with description ServerDescription{address=cdb-ms-prod-eastus1-fd19.documents.azure.com:10255, type=REPLICA_SET_PRIMARY, state=CONNECTED, ok=true, version=ServerVersion{versionList=[3, 2, 0]}, minWireVersion=0, maxWireVersion=2, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=null, roundTripTimeNanos=163876893, setName='globaldb', canonicalAddress=cdb-ms-prod-eastus1-fd19.documents.azure.com:10255, hosts=[cdb-ms-prod-eastus1-fd19.documents.azure.com:10255], passives=[], arbiters=[], primary='cdb-ms-prod-eastus1-fd19.documents.azure.com:10255', tagSet=TagSet{[]}, electionId=null, setVersion=1, lastWriteDate=null, lastUpdateTimeNanos=192204206259316} - txEpd= txRef= cmRef= nodeRef= usrTx= rhsRef= commerce= country= 
