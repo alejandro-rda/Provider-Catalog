@@ -85,6 +85,7 @@ public class ProviderController {
       return responseHandler.getCommandResponse(HttpStatus.CREATED, "provider created");
 
     } catch (IncompleteCommandException | IllegalArgumentException e) {
+      log.info("me ejecuto correctamente");
       return responseHandler.getAppCustomErrorResponse(e.getMessage());
       
     } catch (Exception e) {
@@ -120,7 +121,7 @@ public class ProviderController {
     log.info("Into createProvider(ProviderDto request)");
     try {
       providerAplicationService.updateProvider(request);
-      return responseHandler.getCommandResponse(HttpStatus.ACCEPTED, "provider created");
+      return responseHandler.getCommandResponse(HttpStatus.ACCEPTED, "provider update");
 
     } catch (IncompleteCommandException e) {
       return responseHandler.getResponse(e.getMessage(), HttpStatus.NOT_FOUND);

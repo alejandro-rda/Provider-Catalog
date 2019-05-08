@@ -69,7 +69,7 @@ public class ProviderAplicationService {
     }
     boolean isCreated = commandBus.executeCreate(provider);
     if (!isCreated) {
-      throw new IncompleteCommandException();
+      throw new IncompleteCommandException("Operation Failed");
     }
     log.info("Sucessful Operation");
   }
@@ -92,15 +92,12 @@ public class ProviderAplicationService {
     }
     boolean isUpdate = commandBus.executeUpdate(provider);
     if (!isUpdate) {
-      throw new IncompleteCommandException();
+      throw new IncompleteCommandException("Operation Failed");
     }
     
     log.info("Sucessful Operation");
   }
   
-  
-  
-
   private Notification createValidation(ProviderDto providerDto) {
     Notification notification = new Notification();
     if (Objects.isNull(providerDto.getRut()) || providerDto.getRut().isEmpty()) {
