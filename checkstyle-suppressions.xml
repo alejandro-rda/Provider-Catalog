@@ -4,7 +4,7 @@
     "http://www.puppycrawl.com/dtds/suppressions_1_1.dtd">
 <suppressions>
   <suppress checks="."
-            files="rtl[\\/]tot[\\/]corp[\\/]mrex[\\/]prcn[\\/]catalog[\\/]provider[\\/]"/>
+            files="rtl[\\/]tot[\\/]corp[\\/]mrex[\\/]vndm[\\/]provider[\\/]"/>
 <!--   <suppress checks="." -->
 <!--             files="com[\\/]bcp[\\/]atlas[\\/]services[\\/]channel[\\/]util[\\/]framework[\\/]"/> -->
   <suppress checks="." files="[\\/]test[\\/]"/>
