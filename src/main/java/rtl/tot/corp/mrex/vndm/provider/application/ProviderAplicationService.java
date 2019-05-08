@@ -202,7 +202,6 @@ public class ProviderAplicationService {
   
   private boolean validatePattern(String regex, String pivot) {
     log.info("Into validatePattern(String regex, String pivot)");
-    log.info("PATTNER" + regex);
     Pattern pattern = Pattern.compile(regex, Pattern.CASE_INSENSITIVE);
     Matcher matcher = pattern .matcher(pivot);
     return matcher.find();
