@@ -5,8 +5,8 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import lombok.Builder;
-import lombok.Data;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 
@@ -14,7 +14,6 @@ import lombok.ToString;
 @Getter
 @Builder
 @ToString
-@Data
 @Document(collection = "provider")
 public class Provider {
 
@@ -37,6 +36,9 @@ public class Provider {
   private String comuna;
   private String typeVendor;
   
-  
+ 
+//  public Provider() {
+//    
+//  }
 
 }
