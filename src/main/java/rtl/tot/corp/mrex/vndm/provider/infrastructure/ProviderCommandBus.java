@@ -11,7 +11,7 @@ import rtl.tot.corp.mrex.vndm.provider.domain.publisher.EventType;
 
 @Service
 @Slf4j
-public class CreateProviderCommandBus implements CommandBus {
+public class ProviderCommandBus implements CommandBus {
 
   @Autowired
   EventPublisherService publisher;
