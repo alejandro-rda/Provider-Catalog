@@ -217,7 +217,7 @@ public class ProviderAplicationService {
   
   private Notification createValidationFunctional(Provider provider) {
     Notification notification = new Notification();
-    Provider prov = providerRepository.getProviderByRut(provider.getRut());
+    Provider prov = providerRepository.getProviderByKey(provider.getRut(), provider.getCountryCode());
     if (Objects.nonNull(prov)) {
       notification.addError("Provider is already exists");
     }
@@ -227,7 +227,7 @@ public class ProviderAplicationService {
   private Notification updateValidationFunctional(Provider provider) {
     log.info("Into updateValidationFunctional(Provider provider)");
     Notification notification = new Notification();
-    Provider prov = providerRepository.getProviderByRut(provider.getRut());
+    Provider prov = providerRepository.getProviderByKey(provider.getRut(), provider.getCountryCode());
     if (Objects.isNull(prov)) {
       notification.addError("Provider not exists");
     }

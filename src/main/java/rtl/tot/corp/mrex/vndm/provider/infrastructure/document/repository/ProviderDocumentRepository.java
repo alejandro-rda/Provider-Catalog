@@ -12,5 +12,8 @@ public interface ProviderDocumentRepository extends MongoRepository<Provider, Ob
   
   @Query("{'rut': ?0}")
   public Provider getByRut(String rut);
-
+  
+  @Query("{'rut': ?0, 'countryCode': ?1}")
+  public Provider getProvider(String rut, String countryCode);
+  
 }

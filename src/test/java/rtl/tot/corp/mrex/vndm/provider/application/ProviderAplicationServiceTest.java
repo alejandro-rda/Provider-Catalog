@@ -76,7 +76,7 @@ public class ProviderAplicationServiceTest {
   
   @Test(expected = IllegalArgumentException.class)
   public void createProviderAlreadyProviderExist() throws IncompleteCommandException, Exception {
-    when(providerRepository.getProviderByRut(Mockito.anyString()))
+    when(providerRepository.getProviderByKey(Mockito.anyString(), Mockito.anyString()))
     .thenReturn(Provider.builder().rut("123123123").build());
     when(commandBus.executeCreate(Mockito.any())).thenReturn(true);
     when(env.getMaxLenghtProviderRut()).thenReturn(20);
@@ -121,7 +121,7 @@ public class ProviderAplicationServiceTest {
   //UPDATE
   @Test
   public void updateProviderSucessful() throws IncompleteCommandException, Exception {
-    when(providerRepository.getProviderByRut(Mockito.anyString()))
+    when(providerRepository.getProviderByKey(Mockito.anyString(), Mockito.anyString()))
         .thenReturn(new Provider());
     when(commandBus.executeUpdate(Mockito.any())).thenReturn(true);
     when(env.getMaxLenghtProviderRut()).thenReturn(20);
@@ -184,7 +184,7 @@ public class ProviderAplicationServiceTest {
   
   @Test(expected = IncompleteCommandException.class)
   public void updateProviderCommandIncompleteError() throws IncompleteCommandException, Exception {
-    when(providerRepository.getProviderByRut(Mockito.anyString()))
+    when(providerRepository.getProviderByKey(Mockito.anyString(),Mockito.anyString()))
         .thenReturn(new Provider());
     when(commandBus.executeUpdate(Mockito.any())).thenReturn(false);
     when(env.getMaxLenghtProviderRut()).thenReturn(20);
@@ -238,7 +238,7 @@ public class ProviderAplicationServiceTest {
     providerDto.setZipCode("111111111111111111115555555555555");
     providerDto.setEmail("krugerkrugerkrugerkrugerkrugerkrugerkrugerkrugerkrugerkrugerkrugerkrugerkruger@gmail.c");
     
-    when(providerRepository.getProviderByRut(Mockito.anyString()))
+    when(providerRepository.getProviderByKey(Mockito.anyString(), Mockito.anyString()))
         .thenReturn(new Provider());
     when(commandBus.executeUpdate(Mockito.any())).thenReturn(true);
     when(env.getMaxLenghtProviderRut()).thenReturn(20);

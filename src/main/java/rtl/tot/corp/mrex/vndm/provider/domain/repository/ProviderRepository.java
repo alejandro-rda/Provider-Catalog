@@ -16,4 +16,8 @@ public class ProviderRepository {
     return providerDocumentRepository.getByRut(rut);
   }
   
+  public Provider getProviderByKey(String rut, String countryCode) {
+    return providerDocumentRepository.getProvider(rut, countryCode);
+  }
+  
 }
