@@ -74,7 +74,7 @@ public class ProviderAplicationService {
     }  
     boolean isCreated = commandBus.executeCreate(provider);
     if (!isCreated) {
-      throw new IncompleteCommandException();
+      throw new IncompleteCommandException("Operation Failed");
     }
     cacheRepository.addProviderCache(provider);
     log.info("Sucessful Operation");
@@ -85,7 +85,7 @@ public class ProviderAplicationService {
    *
    * @param providerDto ProviderDto
    */
-  public void updateProvider(ProviderDto providerDto) {
+  public void updateProvider(ProviderDto providerDto) throws IncompleteCommandException, Exception {
     log.info("Into updateProvider(ProviderDto providerDto)");
     Notification notification = this.createValidation(providerDto);
     if (notification.hasErrors()) {
@@ -96,7 +96,12 @@ public class ProviderAplicationService {
     if (notification.hasErrors()) {
       throw new IllegalArgumentException(notification.errorMessage());
     }
-    boolean isUpdate = commandBus.executeUpdate(provider);    
+    boolean isUpdate = commandBus.executeUpdate(provider);
+    if (!isUpdate) {
+      throw new IncompleteCommandException("Operation Failed");
+    }
+    
+    log.info("Sucessful Operation");
   }
   
   /**
@@ -115,7 +120,7 @@ public class ProviderAplicationService {
       return provCache;
     }
     Notification notification = new Notification();
-    Optional<Provider> provDB = providerRepository.getProviders(provider.getRut(),provider.getCountryCode());
+    Optional<Provider> provDB = providerRepository.getProviderByKey(provider.getRut(),provider.getCountryCode());
     if(!provDB.isPresent()){
       notification.addError("Provider not exists");
       throw new IllegalArgumentException(notification.errorMessage());
@@ -129,19 +134,23 @@ public class ProviderAplicationService {
       notification.addError("'rut' can not be null or empty");
     }
 
-    if (Objects.nonNull(providerDto.getRut()) && providerDto.getRut().length() > env.getMaxLenghtProviderRut()) {
+    if (Objects.nonNull(providerDto.getRut()) 
+        && providerDto.getRut().length() > env.getMaxLenghtProviderRut()) {
       notification.addError("Lenght 'rut' can not be more lenght that " + env.getMaxLenghtProviderRut());
     }
 
-    if (Objects.isNull(providerDto.getDvRut()) || providerDto.getDvRut().isEmpty()) {
+    if (Objects.isNull(providerDto.getDvRut()) 
+        || providerDto.getDvRut().isEmpty()) {
       notification.addError("'dvRut' can not be null or empty");
     }
 
-    if (Objects.nonNull(providerDto.getDvRut()) && providerDto.getDvRut().length() > env.getMaxLenghtDvRut()) {
+    if (Objects.nonNull(providerDto.getDvRut()) 
+        && providerDto.getDvRut().length() > env.getMaxLenghtDvRut()) {
       notification.addError("Lenght 'dvRut' can not be more lenght that " + env.getMaxLenghtDvRut());
     }
 
-    if (Objects.isNull(providerDto.getNameVendor()) || providerDto.getNameVendor().isEmpty()) {
+    if (Objects.isNull(providerDto.getNameVendor()) 
+        || providerDto.getNameVendor().isEmpty()) {
       notification.addError("'nameVendor' can not be null or empty");
     }
 
@@ -150,15 +159,18 @@ public class ProviderAplicationService {
       notification.addError("Lenght 'nameVendor' can not be more lenght that " + env.getMaxLenghtNameVendor());
     }
 
-    if (Objects.isNull(providerDto.getAddress()) || providerDto.getAddress().isEmpty()) {
+    if (Objects.isNull(providerDto.getAddress()) 
+        || providerDto.getAddress().isEmpty()) {
       notification.addError("'address' can not be null or empty");
     }
 
-    if (Objects.isNull(providerDto.getAddress()) || providerDto.getAddress().length() > env.getMaxLenghtNameVendor()) {
+    if (Objects.isNull(providerDto.getAddress()) 
+        || providerDto.getAddress().length() > env.getMaxLenghtNameVendor()) {
       notification.addError("Lenght 'address' can not be more lenght that " + env.getMaxLenghtNameVendor());
     }
 
-    if (Objects.isNull(providerDto.getCurrencyCode()) || providerDto.getCurrencyCode().isEmpty()) {
+    if (Objects.isNull(providerDto.getCurrencyCode()) 
+        || providerDto.getCurrencyCode().isEmpty()) {
       notification.addError("'currencyCode' can not be null or empty");
     }
 
@@ -167,19 +179,23 @@ public class ProviderAplicationService {
       notification.addError("Lenght 'currencyCode' can not be more lenght that " + env.getMaxLenghtCurrencyCode());
     }
 
-    if (Objects.nonNull(providerDto.getCity()) && providerDto.getCity().length() > env.getMaxLenghtCity()) {
+    if (Objects.nonNull(providerDto.getCity()) 
+        && providerDto.getCity().length() > env.getMaxLenghtCity()) {
       notification.addError("Lenght 'city' can not be more lenght that " + env.getMaxLenghtCity());
     }
 
-    if (Objects.isNull(providerDto.getCountry()) || providerDto.getCountry().isEmpty()) {
+    if (Objects.isNull(providerDto.getCountry()) 
+        || providerDto.getCountry().isEmpty()) {
       notification.addError("'country' can not be null or empty");
     }
 
-    if (Objects.isNull(providerDto.getCountry()) || providerDto.getCountry().length() > env.getMaxLenghtCountry()) {
+    if (Objects.isNull(providerDto.getCountry()) 
+        || providerDto.getCountry().length() > env.getMaxLenghtCountry()) {
       notification.addError("Lenght 'country' can not be more lenght that " + env.getMaxLenghtCountry());
     }
 
-    if (Objects.isNull(providerDto.getCountryCode()) || providerDto.getCountryCode().isEmpty()) {
+    if (Objects.isNull(providerDto.getCountryCode()) 
+        || providerDto.getCountryCode().isEmpty()) {
       notification.addError("'countryCode' can not be null or empty");
     }
 
@@ -224,7 +240,6 @@ public class ProviderAplicationService {
   
   private boolean validatePattern(String regex, String pivot) {
     log.info("Into validatePattern(String regex, String pivot)");
-    log.info("PATTNER" + regex);
     Pattern pattern = Pattern.compile(regex, Pattern.CASE_INSENSITIVE);
     Matcher matcher = pattern .matcher(pivot);
     return matcher.find();
@@ -232,7 +247,7 @@ public class ProviderAplicationService {
   
   private Notification createValidationFunctional(Provider provider) {
     Notification notification = new Notification();
-    Optional<Provider> prov = providerRepository.getProviders(provider.getRut(),provider.getCountryCode());
+    Optional<Provider> prov = providerRepository.getProviderByKey(provider.getRut(), provider.getCountryCode());
     System.out.println("Verify if exist Provider: "+ prov.toString());
     log.info("Verify if exist Provider: "+ prov.toString());
     if (prov.isPresent()) {
@@ -242,8 +257,9 @@ public class ProviderAplicationService {
   }
   
   private Notification updateValidationFunctional(Provider provider) {
+    log.info("Into updateValidationFunctional(Provider provider)");
     Notification notification = new Notification();
-    Optional<Provider> prov = providerRepository.getProviders(provider.getRut());
+    Optional<Provider> prov = providerRepository.getProviderByKey(provider.getRut(), provider.getCountryCode());
     if (Objects.isNull(prov)) {
       notification.addError("Provider not exists");
     }

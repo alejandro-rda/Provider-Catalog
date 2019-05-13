@@ -15,8 +15,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import corp.falabella.api.response.common.api.controller.ResponseHandler;
+import corp.falabella.api.response.common.application.dto.ResponseCommandDto;
 import corp.falabella.api.response.common.application.dto.ResponseErrorDto;
 import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiResponse;
 import io.swagger.annotations.ApiResponses;
 import lombok.extern.slf4j.Slf4j;
@@ -68,7 +70,12 @@ public class ProviderController {
       value = "/provider", 
       produces = { MediaType.APPLICATION_JSON_UTF8_VALUE }, 
       consumes = { MediaType.APPLICATION_JSON_UTF8_VALUE })
-  
+  @ApiOperation(
+      value = "Crear Proveedor", 
+      produces = MediaType.APPLICATION_JSON_UTF8_VALUE, 
+      consumes = MediaType.APPLICATION_JSON_UTF8_VALUE, 
+      response = ResponseCommandDto.class, 
+      httpMethod = "POST")
   @ApiResponses({ @ApiResponse(code = 201, response = String.class, message = "Producto created"),
       @ApiResponse(code = 400, response = ResponseErrorDto.class, message = "Bad Request"),
       @ApiResponse(code = 401, response = ResponseErrorDto.class, message = "Unauthorized"),
@@ -83,6 +90,7 @@ public class ProviderController {
       return responseHandler.getCommandResponse(HttpStatus.CREATED, "provider created");
 
     } catch (IncompleteCommandException | IllegalArgumentException e) {
+      log.info("me ejecuto correctamente");
       return responseHandler.getAppCustomErrorResponse(e.getMessage());
       
     } catch (Exception e) {
@@ -98,8 +106,12 @@ public class ProviderController {
    * @param request informacion del proveedor a actualizar.
    * @return ResponseCommandDto Informacion de la confirmacion de la actualizacion.
    */
-  @PutMapping(value = "/provider", produces = { MediaType.APPLICATION_JSON_UTF8_VALUE }, consumes = {
-      MediaType.APPLICATION_JSON_UTF8_VALUE })
+  @ApiOperation(
+      value = "Actualizar Proveedor", 
+      produces = MediaType.APPLICATION_JSON_UTF8_VALUE, 
+      consumes = MediaType.APPLICATION_JSON_UTF8_VALUE, 
+      response = ResponseCommandDto.class, 
+      httpMethod = "PUT")
   @ApiResponses({ @ApiResponse(code = 202, response = String.class, message = "Provider successfully updated"),
       @ApiResponse(code = 400, response = ResponseErrorDto.class, message = "Bad Request"),
       @ApiResponse(code = 401, response = ResponseErrorDto.class, message = "Unauthorized"),
@@ -108,19 +120,24 @@ public class ProviderController {
       @ApiResponse(code = 406, response = ResponseErrorDto.class, message = "The provifrt entered already exists"),
       @ApiResponse(code = 500, response = ResponseErrorDto.class, message = "Internal Server Error"),
       @ApiResponse(code = 501, response = ResponseErrorDto.class, message = "Not Implemented") })
+  @PutMapping(value = "/provider", produces = { MediaType.APPLICATION_JSON_UTF8_VALUE }, consumes = {
+      MediaType.APPLICATION_JSON_UTF8_VALUE })
   public ResponseEntity<Object> updateProvider(@RequestBody ProviderDto request) {
     log.info("Into createProvider(ProviderDto request)");
-    // try {
-    // providerAplicationService.createProvider(request);
-    return responseHandler.getCommandResponse(HttpStatus.ACCEPTED, "provider created");
-    //
-    // } catch (IncompleteCommandException | IllegalArgumentException e) {
-    // return responseHandler.getAppCustomErrorResponse(e.getMessage());
-    //
-    // } catch (Exception e) {
-    // log.info("General exception");
-    // return responseHandler.getAppExceptionResponse();
-    // }
+    try {
+      providerAplicationService.updateProvider(request);
+      return responseHandler.getCommandResponse(HttpStatus.ACCEPTED, "provider update");
+
+    } catch (IncompleteCommandException e) {
+      return responseHandler.getResponse(e.getMessage(), HttpStatus.NOT_FOUND);
+
+    } catch (IllegalArgumentException e) {
+      return responseHandler.getAppCustomErrorResponse(e.getMessage());
+
+    } catch (Exception e) {
+      log.info("General exception");
+      return responseHandler.getAppExceptionResponse();
+    }
 
   }
   

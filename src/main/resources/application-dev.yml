@@ -6,6 +6,8 @@ spring:
     name: proveedor-catalog
   data:
     mongodb:
+      #uri: mongodb://cosmosdbsf:lHEVlSpr8jkT8QSWjTEHbwgVx9bbPQ2BpypBK54F61vcCKP0sjnBzON2Z1eHZLBwKKoCPOkfrykR2kZwDQv91A==@cosmosdbsf.documents.azure.com:10255/?ssl=true&replicaSet=globaldb
+      #database: falabellaData
       uri: mongodb://api-tottus-retail:LeOtssdONt4wa9a2m2YpxGkquaDS0vzdJlKw5hsGcrv6sPvYmRU2qJSANRS7pCtWV960XYx0aO99zbB3tVrz6A==@api-tottus-retail.documents.azure.com:10255/?ssl=true&replicaSet=globaldb
       database: tottus
   autoconfigure:

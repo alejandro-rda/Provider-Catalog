@@ -22,14 +22,10 @@ import lombok.ToString;
 @Document(collection = "provider")
 public class Provider implements Serializable {
 
-  /**
-   * 
-   */
   private static final long serialVersionUID = 1L;
 
   @Id
   private ObjectId _id;
-
   private String rut;
   private String dvRut;
   private String nameVendor;

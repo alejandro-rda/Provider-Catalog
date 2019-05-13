@@ -17,9 +17,9 @@ public class ProviderRepository {
   public Optional<Provider> getProviders(String rut) {
     return providerDocumentRepository.getByRut(rut);
   }
-  
-  public Optional<Provider> getProviders(String rut,String countryCode) {
-    return providerDocumentRepository.findByRutAndCountryCode(rut, countryCode);
+ 
+  public Optional<Provider> getProviderByKey(String rut, String countryCode) {
+    return providerDocumentRepository.getProvider(rut, countryCode);
   }
   
 }
