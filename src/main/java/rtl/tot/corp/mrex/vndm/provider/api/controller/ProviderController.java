@@ -1,9 +1,13 @@
 package rtl.tot.corp.mrex.vndm.provider.api.controller;
 
+import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -18,6 +22,7 @@ import io.swagger.annotations.ApiResponses;
 import lombok.extern.slf4j.Slf4j;
 import rtl.tot.corp.mrex.vndm.provider.application.ProviderAplicationService;
 import rtl.tot.corp.mrex.vndm.provider.application.dto.ProviderDto;
+import rtl.tot.corp.mrex.vndm.provider.domain.entity.Provider;
 import rtl.tot.corp.mrex.vndm.provider.domain.exception.IncompleteCommandException;
 
 /**
@@ -116,6 +121,40 @@ public class ProviderController {
     // log.info("General exception");
     // return responseHandler.getAppExceptionResponse();
     // }
+
+  }
+  
+  
+  /**
+   * Servicio para consultar un(os) proveedor(es).
+   *
+   * @param request informacion del rut del proveedor .
+   * @return ResponseCommandDto Informacion del proveedor.
+   */
+  @GetMapping(
+      value = "/provider/{countryCode}/{rut}", 
+      produces = { MediaType.APPLICATION_JSON_UTF8_VALUE }, 
+      consumes = { MediaType.APPLICATION_JSON_UTF8_VALUE })
+  
+  @ApiResponses({ @ApiResponse(code = 201, response = String.class, message = "Producto created"),
+      @ApiResponse(code = 400, response = ResponseErrorDto.class, message = "Bad Request"),
+      @ApiResponse(code = 401, response = ResponseErrorDto.class, message = "Unauthorized"),
+      @ApiResponse(code = 403, response = ResponseErrorDto.class, message = "Forbidden"),
+      @ApiResponse(code = 406, response = ResponseErrorDto.class, message = "The provifrt entered already exists"),
+      @ApiResponse(code = 500, response = ResponseErrorDto.class, message = "Internal Server Error"),
+      @ApiResponse(code = 501, response = ResponseErrorDto.class, message = "Not Implemented") })
+  public ResponseEntity<Object> readProvider(@PathVariable String countryCode, @PathVariable String rut) {
+    try {
+      Optional<Provider> provider=providerAplicationService.readProviders(countryCode,rut);
+      return responseHandler.getCommandResponse(HttpStatus.ACCEPTED, provider.get());
+
+    } catch (IncompleteCommandException | IllegalArgumentException e) {
+      return responseHandler.getAppCustomErrorResponse(e.getMessage());
+      
+    } catch (Exception e) {
+      log.info("General exception");
+      return responseHandler.getAppExceptionResponse();
+    }
 
   }
 }

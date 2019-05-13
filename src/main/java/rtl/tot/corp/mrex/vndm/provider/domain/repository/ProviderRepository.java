@@ -1,5 +1,7 @@
 package rtl.tot.corp.mrex.vndm.provider.domain.repository;
 
+import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -12,8 +14,12 @@ public class ProviderRepository {
   @Autowired
   ProviderDocumentRepository providerDocumentRepository;
   
-  public Provider getProviderByRut(String rut) {
+  public Optional<Provider> getProviders(String rut) {
     return providerDocumentRepository.getByRut(rut);
+  }
+  
+  public Optional<Provider> getProviders(String rut,String countryCode) {
+    return providerDocumentRepository.findByRutAndCountryCode(rut, countryCode);
   }
   
 }

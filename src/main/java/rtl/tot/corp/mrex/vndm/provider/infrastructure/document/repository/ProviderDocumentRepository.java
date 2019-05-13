@@ -1,5 +1,7 @@
 package rtl.tot.corp.mrex.vndm.provider.infrastructure.document.repository;
 
+import java.util.Optional;
+
 import org.bson.types.ObjectId;
 import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.data.mongodb.repository.Query;
@@ -11,6 +13,9 @@ import rtl.tot.corp.mrex.vndm.provider.domain.entity.Provider;
 public interface ProviderDocumentRepository extends MongoRepository<Provider, ObjectId> {
   
   @Query("{'rut': ?0}")
-  public Provider getByRut(String rut);
+  public Optional<Provider> getByRut(String rut);
+
+ // @Query("{'rut': ?0,'countryCode': ?1}")
+  public Optional<Provider> findByRutAndCountryCode(String rut,String countryCode);
 
 }

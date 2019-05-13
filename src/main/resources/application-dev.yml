@@ -6,10 +6,11 @@ spring:
     name: proveedor-catalog
   data:
     mongodb:
-      uri: mongodb://cosmosdbsf:lHEVlSpr8jkT8QSWjTEHbwgVx9bbPQ2BpypBK54F61vcCKP0sjnBzON2Z1eHZLBwKKoCPOkfrykR2kZwDQv91A==@cosmosdbsf.documents.azure.com:10255/?ssl=true&replicaSet=globaldb
-      database: falabellaData
+      uri: mongodb://api-tottus-retail:LeOtssdONt4wa9a2m2YpxGkquaDS0vzdJlKw5hsGcrv6sPvYmRU2qJSANRS7pCtWV960XYx0aO99zbB3tVrz6A==@api-tottus-retail.documents.azure.com:10255/?ssl=true&replicaSet=globaldb
+      database: tottus
   autoconfigure:
     exclude: org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration
+    
 publisher:
   #endpoint: Endpoint=sb://tot-corp-orion-int-qa.servicebus.windows.net/;SharedAccessKeyName=totorionadm;SharedAccessKey=+uHMYKcSeBfapKNgfqLkXuQe8fgpz2GR4GGKkChZB4s=;EntityPath=tot-corp-orion-pricechanges-topic-mid
   endpoint: Endpoint=sb://ttotus-bus.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=/pktePJ8YZk3jyyaxtExbDbn9+V5fEOPPxIXPEkO9rI=;EntityPath=topic-product
@@ -51,9 +52,13 @@ provider:
     type-vendor:
       max-lenght: 20
     
+azure:
+  redis:
+    host: tottus.redis.cache.windows.net
+    key: KFr4tHPRV5s0FOXzF2kMEPXSxDhCJitdEOVdAxseOBc=
+    port: 6380
   
-  
-  
+#debug: true  
   
   
   
