@@ -1,5 +1,7 @@
 package rtl.tot.corp.mrex.vndm.provider.util;
 
+import java.util.Optional;
+
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 
@@ -29,7 +31,7 @@ public class UtilTest {
     return dto;
   }
 
-  public static Provider getProvider() {
+  public static Optional<Provider> getProvider() {
 
     Provider provider = new Provider();
     provider.setRut("1234567890");
@@ -46,7 +48,7 @@ public class UtilTest {
     provider.setEmail("vendor@provider.com");
     provider.setComuna("LIMA");
     provider.setTypeVendor("NAC");
-    return provider;
+    return Optional.of(provider);
   }
   public static ResponseEntity<Object> getOKResponseCommand(HttpStatus status, String message) {
     return new ResponseHandler().getCommandResponse(status, message);

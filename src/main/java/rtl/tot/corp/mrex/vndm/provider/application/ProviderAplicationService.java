@@ -1,6 +1,7 @@
 package rtl.tot.corp.mrex.vndm.provider.application;
 
 import java.util.Objects;
+import java.util.Optional;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -12,6 +13,7 @@ import corp.falabella.api.response.common.application.Notification;
 import lombok.extern.slf4j.Slf4j;
 import rtl.tot.corp.mrex.vndm.provider.application.dto.ProviderDto;
 import rtl.tot.corp.mrex.vndm.provider.config.ApplicationProperties;
+import rtl.tot.corp.mrex.vndm.provider.domain.cache.CacheRepository;
 import rtl.tot.corp.mrex.vndm.provider.domain.command.CommandBus;
 import rtl.tot.corp.mrex.vndm.provider.domain.entity.Provider;
 import rtl.tot.corp.mrex.vndm.provider.domain.exception.IncompleteCommandException;
@@ -47,6 +49,9 @@ public class ProviderAplicationService {
   private ProviderRepository providerRepository;
   
   @Autowired
+  private CacheRepository cacheRepository;
+  
+  @Autowired
   @Qualifier("env")
   private ApplicationProperties env;
   
@@ -66,7 +71,7 @@ public class ProviderAplicationService {
     notification = this.createValidationFunctional(provider);
     if (notification.hasErrors()) {
       throw new IllegalArgumentException(notification.errorMessage());
-    }
+    }  
     boolean isCreated = commandBus.executeCreate(provider);
     if (!isCreated) {
       throw new IncompleteCommandException("Operation Failed");
@@ -98,6 +103,30 @@ public class ProviderAplicationService {
     log.info("Sucessful Operation");
   }
   
+  /**
+   * Consulta proveedor.
+   *
+   * @param rut String
+   * @param countryCode String
+   */
+  
+  public Optional<Provider> readProviders(String countryCode, String rut) throws IncompleteCommandException, Exception {
+    log.info("Into readProvider(String countryCode, String rut)");
+    Provider provider = Provider.builder().countryCode(countryCode).rut(rut).build();
+    Optional<Provider> provCache = cacheRepository.getProvidersCache(provider);
+    log.info("Service: Obtiene Data de Cache ..." + provCache);
+    if (Objects.nonNull(provCache)) {
+      return provCache;
+    }
+    Notification notification = new Notification();
+    Optional<Provider> provDB = providerRepository.getProviderByKey(provider.getRut(), provider.getCountryCode());
+    if (!provDB.isPresent()) {
+      notification.addError("Provider not exists");
+      throw new IllegalArgumentException(notification.errorMessage());
+    }
+    return provDB;
+  }
+
   private Notification createValidation(ProviderDto providerDto) {
     Notification notification = new Notification();
     if (Objects.isNull(providerDto.getRut()) || providerDto.getRut().isEmpty()) {
@@ -217,8 +246,9 @@ public class ProviderAplicationService {
   
   private Notification createValidationFunctional(Provider provider) {
     Notification notification = new Notification();
-    Provider prov = providerRepository.getProviderByKey(provider.getRut(), provider.getCountryCode());
-    if (Objects.nonNull(prov)) {
+    Optional<Provider> prov = providerRepository.getProviderByKey(provider.getRut(), provider.getCountryCode());
+    log.info("Verify if exist Provider: " + prov.toString());
+    if (prov.isPresent()) {
       notification.addError("Provider is already exists");
     }
     return notification;
@@ -227,13 +257,13 @@ public class ProviderAplicationService {
   private Notification updateValidationFunctional(Provider provider) {
     log.info("Into updateValidationFunctional(Provider provider)");
     Notification notification = new Notification();
-    Provider prov = providerRepository.getProviderByKey(provider.getRut(), provider.getCountryCode());
+    Optional<Provider> prov = providerRepository.getProviderByKey(provider.getRut(), provider.getCountryCode());
     if (Objects.isNull(prov)) {
       notification.addError("Provider not exists");
     }
     return notification;
   }
-
+  
   private Provider assemblerProvider(ProviderDto providerDto) {
     log.info("Into assemblerProvider(ProviderDto providerDto)");
     return 

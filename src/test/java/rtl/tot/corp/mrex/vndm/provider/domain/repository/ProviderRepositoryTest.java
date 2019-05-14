@@ -25,7 +25,7 @@ public class ProviderRepositoryTest {
   public void getProviderByRutSucess() {
     when(providerDocumentRepository.getByRut(Mockito.anyString()))
     .thenReturn(UtilTest.getProvider());
-    providerRepository.getProviderByRut("");
+    providerRepository.getProviderByKey("", "");
   }
 
 }

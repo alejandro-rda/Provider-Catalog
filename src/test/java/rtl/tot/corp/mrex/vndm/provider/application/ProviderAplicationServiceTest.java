@@ -2,6 +2,8 @@ package rtl.tot.corp.mrex.vndm.provider.application;
 
 import static org.mockito.Mockito.when;
 
+import java.util.Optional;
+
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
@@ -36,7 +38,7 @@ public class ProviderAplicationServiceTest {
   //CREATE
   @Test
   public void createProviderSucessful() throws IncompleteCommandException, Exception {
-    when(providerRepository.getProviderByRut(Mockito.anyString())).thenReturn(null);
+    when(providerRepository.getProviderByKey(Mockito.anyString(), Mockito.anyString())).thenReturn(null);
     when(commandBus.executeCreate(Mockito.any())).thenReturn(true);
     when(env.getMaxLenghtProviderRut()).thenReturn(20); //
     when(env.getMaxLenghtDvRut()).thenReturn(3); //
@@ -77,7 +79,7 @@ public class ProviderAplicationServiceTest {
   @Test(expected = IllegalArgumentException.class)
   public void createProviderAlreadyProviderExist() throws IncompleteCommandException, Exception {
     when(providerRepository.getProviderByKey(Mockito.anyString(), Mockito.anyString()))
-    .thenReturn(Provider.builder().rut("123123123").build());
+    .thenReturn(Optional.of(Provider.builder().rut("123123123").build()));
     when(commandBus.executeCreate(Mockito.any())).thenReturn(true);
     when(env.getMaxLenghtProviderRut()).thenReturn(20);
     when(env.getMaxLenghtDvRut()).thenReturn(3);
@@ -98,8 +100,8 @@ public class ProviderAplicationServiceTest {
   
   @Test(expected = IncompleteCommandException.class)
   public void createProviderCommandIncompleteError() throws IncompleteCommandException, Exception {
-    when(providerRepository.getProviderByRut(Mockito.anyString()))
-    .thenReturn(null);
+    when(providerRepository.getProviderByKey(Mockito.anyString(),Mockito.anyString()))
+    .thenReturn(Optional.empty());
     when(commandBus.executeCreate(Mockito.any())).thenReturn(false);
     when(env.getMaxLenghtProviderRut()).thenReturn(20);
     when(env.getMaxLenghtDvRut()).thenReturn(3);
@@ -122,7 +124,7 @@ public class ProviderAplicationServiceTest {
   @Test
   public void updateProviderSucessful() throws IncompleteCommandException, Exception {
     when(providerRepository.getProviderByKey(Mockito.anyString(), Mockito.anyString()))
-        .thenReturn(new Provider());
+        .thenReturn(Optional.of(new Provider()));
     when(commandBus.executeUpdate(Mockito.any())).thenReturn(true);
     when(env.getMaxLenghtProviderRut()).thenReturn(20);
     when(env.getMaxLenghtDvRut()).thenReturn(3);
@@ -162,7 +164,7 @@ public class ProviderAplicationServiceTest {
   
   @Test(expected = IllegalArgumentException.class)
   public void updateProviderProviderNotFoundError() throws IncompleteCommandException, Exception {
-    when(providerRepository.getProviderByRut(Mockito.anyString()))
+    when(providerRepository.getProviderByKey(Mockito.anyString(),Mockito.anyString()))
         .thenReturn(null);
     when(commandBus.executeUpdate(Mockito.any())).thenReturn(true);
     when(env.getMaxLenghtProviderRut()).thenReturn(20);
@@ -185,7 +187,7 @@ public class ProviderAplicationServiceTest {
   @Test(expected = IncompleteCommandException.class)
   public void updateProviderCommandIncompleteError() throws IncompleteCommandException, Exception {
     when(providerRepository.getProviderByKey(Mockito.anyString(),Mockito.anyString()))
-        .thenReturn(new Provider());
+        .thenReturn(Optional.of(new Provider()));
     when(commandBus.executeUpdate(Mockito.any())).thenReturn(false);
     when(env.getMaxLenghtProviderRut()).thenReturn(20);
     when(env.getMaxLenghtDvRut()).thenReturn(3);
@@ -206,8 +208,8 @@ public class ProviderAplicationServiceTest {
   
   @Test(expected = IllegalArgumentException.class)
   public void updateProviderIllegalDto() throws IncompleteCommandException, Exception {
-    when(providerRepository.getProviderByRut(Mockito.anyString()))
-        .thenReturn(new Provider());
+    when(providerRepository.getProviderByKey(Mockito.anyString(),Mockito.anyString()))
+        .thenReturn(Optional.of(new Provider()));
     when(commandBus.executeUpdate(Mockito.any())).thenReturn(false);
     when(env.getMaxLenghtProviderRut()).thenReturn(20);
     when(env.getMaxLenghtDvRut()).thenReturn(3);
@@ -239,7 +241,7 @@ public class ProviderAplicationServiceTest {
     providerDto.setEmail("krugerkrugerkrugerkrugerkrugerkrugerkrugerkrugerkrugerkrugerkrugerkrugerkruger@gmail.c");
     
     when(providerRepository.getProviderByKey(Mockito.anyString(), Mockito.anyString()))
-        .thenReturn(new Provider());
+        .thenReturn(Optional.of(new Provider()));
     when(commandBus.executeUpdate(Mockito.any())).thenReturn(true);
     when(env.getMaxLenghtProviderRut()).thenReturn(20);
     when(env.getMaxLenghtDvRut()).thenReturn(3);

@@ -37,7 +37,7 @@ public class EventPublisherServiceTest {
     when(eventProperties.getMimeType()).thenReturn("SDL");
     when(eventPublisher.publish(Mockito.any())).thenReturn(true);
     
-    eventPublisherService.publish(EventType.PROVIDER_CREATED,UtilTest.getProvider());
+    eventPublisherService.publish(EventType.PROVIDER_CREATED,UtilTest.getProvider().get());
   }
   
   @Test
@@ -49,6 +49,6 @@ public class EventPublisherServiceTest {
     when(eventProperties.getMimeType()).thenReturn("SDL");
     when(eventPublisher.publish(Mockito.any())).thenReturn(true);
     
-    eventPublisherService.publish(EventType.PROVIDER_CREATED,UtilTest.getProvider());
+    eventPublisherService.publish(EventType.PROVIDER_CREATED,UtilTest.getProvider().get());
   }
 }
