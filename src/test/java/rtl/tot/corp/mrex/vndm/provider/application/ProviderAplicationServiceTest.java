@@ -38,7 +38,7 @@ public class ProviderAplicationServiceTest {
   //CREATE
   @Test
   public void createProviderSucessful() throws IncompleteCommandException, Exception {
-    when(providerRepository.getProviderByKey(Mockito.anyString(), Mockito.anyString())).thenReturn(null);
+    when(providerRepository.getProviderByKey(Mockito.anyString(), Mockito.anyString())).thenReturn(Optional.empty());
     when(commandBus.executeCreate(Mockito.any())).thenReturn(true);
     when(env.getMaxLenghtProviderRut()).thenReturn(20); //
     when(env.getMaxLenghtDvRut()).thenReturn(3); //
