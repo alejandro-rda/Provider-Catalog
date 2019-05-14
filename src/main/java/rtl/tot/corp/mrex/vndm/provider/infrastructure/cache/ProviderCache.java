@@ -13,7 +13,6 @@ import lombok.extern.slf4j.Slf4j;
 import redis.clients.jedis.Jedis;
 import redis.clients.jedis.JedisShardInfo;
 import rtl.tot.corp.mrex.vndm.provider.domain.entity.Provider;
-import rtl.tot.corp.mrex.vndm.provider.domain.util.Util;
 import rtl.tot.corp.mrex.vndm.provider.infrastructure.configuration.RedisCacheConfiguration;
 
 /**
