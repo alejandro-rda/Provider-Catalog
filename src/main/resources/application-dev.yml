@@ -14,10 +14,12 @@ spring:
     exclude: org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration
 publisher:
   #endpoint: Endpoint=sb://tot-corp-orion-int-qa.servicebus.windows.net/;SharedAccessKeyName=totorionadm;SharedAccessKey=+uHMYKcSeBfapKNgfqLkXuQe8fgpz2GR4GGKkChZB4s=;EntityPath=tot-corp-orion-pricechanges-topic-mid
-  endpoint: Endpoint=sb://ttotus-bus.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=/pktePJ8YZk3jyyaxtExbDbn9+V5fEOPPxIXPEkO9rI=;EntityPath=topic-product
+  #endpoint: Endpoint=sb://ttotus-bus.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=/pktePJ8YZk3jyyaxtExbDbn9+V5fEOPPxIXPEkO9rI=;EntityPath=topic-product
+  endpoint: Endpoint=sb://ttotus-bus.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=/pktePJ8YZk3jyyaxtExbDbn9+V5fEOPPxIXPEkO9rI=;EntityPath=topic-provider-ext
   azure-service-bus:
     #topic: tot-corp-orion-pricechanges-topic-mid
-    topic: topic-product
+    topic: topic-provider-ext
+    #topic: topic-product
 
 provider:
   param:
