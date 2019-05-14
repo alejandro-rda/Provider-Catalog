@@ -76,7 +76,6 @@ public class ProviderAplicationService {
     if (!isCreated) {
       throw new IncompleteCommandException("Operation Failed");
     }
-    cacheRepository.addProviderCache(provider);
     log.info("Sucessful Operation");
   }
   

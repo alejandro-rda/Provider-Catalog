@@ -16,6 +16,25 @@ import rtl.tot.corp.mrex.vndm.provider.domain.entity.Provider;
 import rtl.tot.corp.mrex.vndm.provider.domain.util.Util;
 import rtl.tot.corp.mrex.vndm.provider.infrastructure.configuration.RedisCacheConfiguration;
 
+/**
+ * Clase que expondra los servicios Rest correspondientes al
+ * mantenimiento de proveedores.<br/>
+ * <b>Class</b>: ProviderController<br/>
+ * <b>Copyright</b>: &copy; 2018 Saga Falabella del Peru;.<br/>
+ * <b>Company</b>: Saga Falabella del Peru.<br/>
+ * 
+ * @author rcanchanya <br/>
+ *         <u>Service Provider</u>: kruger <br/>
+ *         <u>Developed by</u>: <br/>
+ *         <ul>
+ *         <li>Ronald Canchanya</li>
+ *         </ul>
+ *         <u>Changes</u>:<br/>
+ *         <ul>
+ *         <li>May 14, 2019 Creaci&oacute;n de Clase.</li>
+ *         </ul>
+ * @version 1.0
+ */
 @Service
 @Slf4j
 public class ProviderCache {
@@ -34,7 +53,12 @@ public class ProviderCache {
         shardInfo.setPassword(this.cacheConfiguration.getKey());
         return new Jedis(shardInfo);
     }
-
+    
+    /**
+     * Obtiene proveedor de Cache.
+     *
+     * @param provider Provider
+     */
     public Optional<Provider>  getProviders(Provider provider) {
         log.info("Attempting to retrieve the providers from cache");
         Jedis client = createClient();
@@ -55,8 +79,13 @@ public class ProviderCache {
         }
         return null;
     }
-       
-    void addProviderCache(Provider provider) {
+    
+    /**
+     * Agrega proveedor a la Cache.
+     *
+     * @param provider Provider
+    */   
+    public void addProviderCache(Provider provider) {
       log.info("Add provider to Cache");
       try {
           String jsonAsString = mapper.writeValueAsString(provider);
