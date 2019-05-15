@@ -166,9 +166,12 @@ public class ProviderController {
       Optional<Provider> provider = providerAplicationService.readProviders(countryCode, rut);
       return responseHandler.getCommandResponse(HttpStatus.OK, provider.get());
 
-    } catch (IncompleteCommandException | IllegalArgumentException e) {
-      return responseHandler.getAppCustomErrorResponse(e.getMessage());
+    } catch (IncompleteCommandException e) {
+      return responseHandler.getResponse(e.getMessage(), HttpStatus.NOT_FOUND);
 
+    } catch (IllegalArgumentException e) {
+      return responseHandler.getAppCustomErrorResponse(e.getMessage());
+      
     } catch (Exception e) {
       log.info("General exception");
       return responseHandler.getAppExceptionResponse();
