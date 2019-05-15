@@ -154,11 +154,11 @@ public class ProviderController {
       produces = { MediaType.APPLICATION_JSON_UTF8_VALUE }, 
       consumes = { MediaType.APPLICATION_JSON_UTF8_VALUE })
   
-  @ApiResponses({ @ApiResponse(code = 200, response = String.class, message = "Producto created"),
+  @ApiResponses({ @ApiResponse(code = 200, response = String.class, message = "Provider information requested"),
       @ApiResponse(code = 400, response = ResponseErrorDto.class, message = "Bad Request"),
       @ApiResponse(code = 401, response = ResponseErrorDto.class, message = "Unauthorized"),
       @ApiResponse(code = 403, response = ResponseErrorDto.class, message = "Forbidden"),
-      @ApiResponse(code = 406, response = ResponseErrorDto.class, message = "The provifrt entered already exists"),
+      @ApiResponse(code = 404, response = ResponseErrorDto.class, message = "Provider Not Found"),
       @ApiResponse(code = 500, response = ResponseErrorDto.class, message = "Internal Server Error"),
       @ApiResponse(code = 501, response = ResponseErrorDto.class, message = "Not Implemented") })
   public ResponseEntity<Object> readProvider(@PathVariable String countryCode, @PathVariable String rut) {

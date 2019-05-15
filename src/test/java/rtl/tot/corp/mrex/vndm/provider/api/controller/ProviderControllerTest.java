@@ -3,6 +3,8 @@ package rtl.tot.corp.mrex.vndm.provider.api.controller;
 import static org.mockito.Mockito.doThrow;
 import static org.mockito.Mockito.when;
 
+import java.util.Optional;
+
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
@@ -89,5 +91,39 @@ public class ProviderControllerTest {
         .thenReturn(UtilTest.getExceptionGeneral());
 
     providerController.updateProvider(UtilTest.getProviderDto());
+  }
+  
+  //GET
+  @Test
+  public void readProvider() throws IncompleteCommandException, Exception {
+    Mockito.doReturn(Optional.empty()).when(providerAplicationService).
+    readProviders(UtilTest.getProviderDto().getRut(),UtilTest.getProviderDto().getCountryCode());
+    when(responseHandler.getCommandResponse(HttpStatus.OK, "Provider information requested"))
+    .thenReturn(UtilTest.getOKResponseCommand(HttpStatus.OK, "Provider information requested"));
+    providerController.readProvider(UtilTest.getProviderDto().getRut(),UtilTest.getProviderDto().getCountryCode());
+  }
+  
+  @Test
+  public void readProviderIncompleteCommandError() throws IncompleteCommandException, Exception {
+    doThrow(IncompleteCommandException.class).when(providerAplicationService).readProviders(UtilTest.getProviderDto().getRut(),UtilTest.getProviderDto().getCountryCode());
+    when(responseHandler.getAppCustomErrorResponse(Mockito.anyString()))
+        .thenReturn(UtilTest.getAppCustomErrorResponse("Operation Failed"));
+    providerController.readProvider(UtilTest.getProviderDto().getRut(),UtilTest.getProviderDto().getCountryCode());
+  }
+  
+  @Test
+  public void readProviderIleglArgumentError() throws IncompleteCommandException, Exception {
+    doThrow(IllegalArgumentException.class).when(providerAplicationService).readProviders(Mockito.any(),Mockito.any());
+    when(responseHandler.getAppCustomErrorResponse(Mockito.anyString()))
+        .thenReturn(UtilTest.getAppCustomErrorResponse("Operation Failed"));
+    providerController.readProvider(UtilTest.getProviderDto().getRut(),UtilTest.getProviderDto().getCountryCode());
+  }
+
+  @Test
+  public void readGeneralError() throws IncompleteCommandException, Exception {
+    doThrow(Exception.class).when(providerAplicationService).readProviders(Mockito.any(),Mockito.any());
+    when(responseHandler.getAppCustomErrorResponse(Mockito.anyString()))
+        .thenReturn(UtilTest.getExceptionGeneral());
+    providerController.readProvider(UtilTest.getProviderDto().getRut(),UtilTest.getProviderDto().getCountryCode());
   }
 }
