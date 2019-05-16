@@ -15,7 +15,9 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 import corp.falabella.api.response.common.api.controller.ResponseHandler;
 import rtl.tot.corp.mrex.vndm.provider.application.ProviderAplicationService;
+import rtl.tot.corp.mrex.vndm.provider.domain.entity.Provider;
 import rtl.tot.corp.mrex.vndm.provider.domain.exception.IncompleteCommandException;
+import rtl.tot.corp.mrex.vndm.provider.domain.exception.NotFoundException;
 import rtl.tot.corp.mrex.vndm.provider.util.UtilTest;
 
 @RunWith(SpringRunner.class)
@@ -95,8 +97,8 @@ public class ProviderControllerTest {
   
   //GET
   @Test
-  public void readProvider() throws IncompleteCommandException, Exception {
-    Mockito.doReturn(Optional.empty()).when(providerAplicationService).
+  public void readProvider() throws NotFoundException, Exception {
+    Mockito.doReturn(UtilTest.getProvider()).when(providerAplicationService).
     readProviders(UtilTest.getProviderDto().getRut(),UtilTest.getProviderDto().getCountryCode());
     when(responseHandler.getCommandResponse(HttpStatus.OK, "Provider information requested"))
     .thenReturn(UtilTest.getOKResponseCommand(HttpStatus.OK, "Provider information requested"));
@@ -104,15 +106,15 @@ public class ProviderControllerTest {
   }
   
   @Test
-  public void readProviderIncompleteCommandError() throws IncompleteCommandException, Exception {
-    doThrow(IncompleteCommandException.class).when(providerAplicationService).readProviders(UtilTest.getProviderDto().getRut(),UtilTest.getProviderDto().getCountryCode());
-    when(responseHandler.getAppCustomErrorResponse(Mockito.anyString()))
-        .thenReturn(UtilTest.getAppCustomErrorResponse("Operation Failed"));
+  public void readProviderNotFoundError() throws NotFoundException, Exception {
+    doThrow(NotFoundException.class).when(providerAplicationService).readProviders(UtilTest.getProviderDto().getRut(),UtilTest.getProviderDto().getCountryCode());
+    when(responseHandler.getCommandResponse(HttpStatus.OK, "provider update"))
+        .thenReturn(UtilTest.getOKResponseCommand(HttpStatus.NOT_FOUND, "Operation Failed"));
     providerController.readProvider(UtilTest.getProviderDto().getRut(),UtilTest.getProviderDto().getCountryCode());
   }
   
   @Test
-  public void readProviderIleglArgumentError() throws IncompleteCommandException, Exception {
+  public void readProviderIleglArgumentError() throws NotFoundException, Exception {
     doThrow(IllegalArgumentException.class).when(providerAplicationService).readProviders(Mockito.any(),Mockito.any());
     when(responseHandler.getAppCustomErrorResponse(Mockito.anyString()))
         .thenReturn(UtilTest.getAppCustomErrorResponse("Operation Failed"));
@@ -120,7 +122,7 @@ public class ProviderControllerTest {
   }
 
   @Test
-  public void readGeneralError() throws IncompleteCommandException, Exception {
+  public void readGeneralError() throws NotFoundException, Exception {
     doThrow(Exception.class).when(providerAplicationService).readProviders(Mockito.any(),Mockito.any());
     when(responseHandler.getAppCustomErrorResponse(Mockito.anyString()))
         .thenReturn(UtilTest.getExceptionGeneral());

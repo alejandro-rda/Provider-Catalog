@@ -1,5 +1,6 @@
 package rtl.tot.corp.mrex.vndm.provider.application;
 
+import static org.mockito.Mockito.doThrow;
 import static org.mockito.Mockito.when;
 
 import java.util.Optional;
@@ -13,9 +14,11 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 import rtl.tot.corp.mrex.vndm.provider.application.dto.ProviderDto;
 import rtl.tot.corp.mrex.vndm.provider.config.ApplicationProperties;
+import rtl.tot.corp.mrex.vndm.provider.domain.cache.CacheRepository;
 import rtl.tot.corp.mrex.vndm.provider.domain.command.CommandBus;
 import rtl.tot.corp.mrex.vndm.provider.domain.entity.Provider;
 import rtl.tot.corp.mrex.vndm.provider.domain.exception.IncompleteCommandException;
+import rtl.tot.corp.mrex.vndm.provider.domain.exception.NotFoundException;
 import rtl.tot.corp.mrex.vndm.provider.domain.repository.ProviderRepository;
 import rtl.tot.corp.mrex.vndm.provider.util.UtilTest;
 
@@ -33,12 +36,15 @@ public class ProviderAplicationServiceTest {
   ProviderRepository providerRepository;
   
   @Mock
+  CacheRepository cacheRepository;
+  
+  @Mock
   ApplicationProperties env;
   
   //CREATE
   @Test
   public void createProviderSucessful() throws IncompleteCommandException, Exception {
-    when(providerRepository.getProviderByKey(Mockito.anyString(), Mockito.anyString())).thenReturn(Optional.empty());
+    when(providerRepository.getProviderByKey(Mockito.anyString(), Mockito.anyString())).thenReturn(null);
     when(commandBus.executeCreate(Mockito.any())).thenReturn(true);
     when(env.getMaxLenghtProviderRut()).thenReturn(20); //
     when(env.getMaxLenghtDvRut()).thenReturn(3); //
@@ -260,4 +266,22 @@ public class ProviderAplicationServiceTest {
     providerAplicationService.updateProvider(providerDto);
   }
   
+  //GET
+  @Test
+  public void readProviderIfExistCacheSuccessful() throws  NotFoundException, Exception{
+    Provider provider=new Provider();
+    provider.setRut("123");
+    provider.setCountryCode("PE");
+    when(cacheRepository.getProvidersCache(provider)).thenReturn(UtilTest.getProvider());
+    providerAplicationService.readProviders(UtilTest.getProvider().get().getCountryCode(), UtilTest.getProvider().get().getRut());
+  }
+  
+  @Test
+  public void readProviderIfNotExistCacheSuccessful() throws  NotFoundException, Exception{
+    when(cacheRepository.getProvidersCache(UtilTest.getProvider().get())).
+    thenReturn(Optional.empty());
+    when(providerRepository.getProviderByKey(UtilTest.getProvider().get().getCountryCode(), UtilTest.getProvider().get().getRut()))
+    .thenReturn(Optional.of(new Provider()));
+    providerAplicationService.readProviders(UtilTest.getProvider().get().getCountryCode(), UtilTest.getProvider().get().getRut());
+  }
 }

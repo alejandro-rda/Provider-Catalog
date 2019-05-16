@@ -40,6 +40,7 @@ dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-data-mongodb'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
     compile "redis.clients:jedis:2.9.0"
+//  compile group: 'org.springframework.boot', name: 'spring-boot-starter-data-redis', version: '2.1.3.RELEASE'
     
     implementation 'corp.falabella.event:event-adapter-azureservicebus-support:0.0.1'
     implementation 'corp.falabella.response:falabella-rest-response:1.0.0'

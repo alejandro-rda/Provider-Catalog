@@ -17,6 +17,7 @@ import rtl.tot.corp.mrex.vndm.provider.domain.cache.CacheRepository;
 import rtl.tot.corp.mrex.vndm.provider.domain.command.CommandBus;
 import rtl.tot.corp.mrex.vndm.provider.domain.entity.Provider;
 import rtl.tot.corp.mrex.vndm.provider.domain.exception.IncompleteCommandException;
+import rtl.tot.corp.mrex.vndm.provider.domain.exception.NotFoundException;
 import rtl.tot.corp.mrex.vndm.provider.domain.repository.ProviderRepository;
 
 /**
@@ -110,12 +111,12 @@ public class ProviderAplicationService {
    * @param countryCode String
    */
   
-  public Optional<Provider> readProviders(String countryCode, String rut) throws IncompleteCommandException, Exception {
+  public Optional<Provider> readProviders(String countryCode,String rut) throws NotFoundException, Exception {
     log.info("Into readProvider(String countryCode, String rut)");
     Provider provider = Provider.builder().countryCode(countryCode).rut(rut).build();
     Optional<Provider> provCache = cacheRepository.getProvidersCache(provider);
     log.info("Service: Obtiene Data de Cache ..." + provCache);
-    if (Objects.nonNull(provCache)) {
+    if (provCache.isPresent()) {
       return provCache;
     }
     Notification notification = new Notification();

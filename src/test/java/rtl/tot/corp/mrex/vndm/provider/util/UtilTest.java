@@ -57,7 +57,7 @@ public class UtilTest {
   public static ResponseEntity<Object> getAppCustomErrorResponse(String errorMessage) {
     return new ResponseHandler().getAppCustomErrorResponse(errorMessage);
   }
-
+  
   public static ResponseEntity<Object> getExceptionGeneral() {
     return new ResponseHandler().getAppExceptionResponse();
   }

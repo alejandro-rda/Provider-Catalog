@@ -7,10 +7,10 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -26,6 +26,7 @@ import rtl.tot.corp.mrex.vndm.provider.application.ProviderAplicationService;
 import rtl.tot.corp.mrex.vndm.provider.application.dto.ProviderDto;
 import rtl.tot.corp.mrex.vndm.provider.domain.entity.Provider;
 import rtl.tot.corp.mrex.vndm.provider.domain.exception.IncompleteCommandException;
+import rtl.tot.corp.mrex.vndm.provider.domain.exception.NotFoundException;
 
 /**
  * Clase que expondra los servicios Rest correspondientes al
@@ -150,7 +151,7 @@ public class ProviderController {
    * @return ResponseCommandDto Informacion del proveedor.
    */
   @GetMapping(
-      value = "/provider/{countryCode}/{rut}", 
+      value = "/provider/{rut}", 
       produces = { MediaType.APPLICATION_JSON_UTF8_VALUE }, 
       consumes = { MediaType.APPLICATION_JSON_UTF8_VALUE })
   
@@ -161,17 +162,14 @@ public class ProviderController {
       @ApiResponse(code = 404, response = ResponseErrorDto.class, message = "Provider Not Found"),
       @ApiResponse(code = 500, response = ResponseErrorDto.class, message = "Internal Server Error"),
       @ApiResponse(code = 501, response = ResponseErrorDto.class, message = "Not Implemented") })
-  public ResponseEntity<Object> readProvider(@PathVariable String countryCode, @PathVariable String rut) {
+  public ResponseEntity<Object> readProvider(@RequestHeader(name="country")String countyCodeOrigin, String rut) {
     try {
-      Optional<Provider> provider = providerAplicationService.readProviders(countryCode, rut);
-      return responseHandler.getCommandResponse(HttpStatus.OK, provider.get());
-
-    } catch (IncompleteCommandException e) {
-      return responseHandler.getResponse(e.getMessage(), HttpStatus.NOT_FOUND);
-
+      Optional<Provider> provider = providerAplicationService.readProviders(countyCodeOrigin, rut);
+      return responseHandler.getCommandResponse(HttpStatus.OK,provider);
+    } catch (NotFoundException e) {
+      return responseHandler.getCommandResponse(HttpStatus.NOT_FOUND, e.getMessage());
     } catch (IllegalArgumentException e) {
       return responseHandler.getAppCustomErrorResponse(e.getMessage());
-      
     } catch (Exception e) {
       log.info("General exception");
       return responseHandler.getAppExceptionResponse();
