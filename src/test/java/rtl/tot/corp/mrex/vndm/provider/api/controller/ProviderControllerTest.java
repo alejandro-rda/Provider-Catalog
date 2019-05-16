@@ -99,7 +99,7 @@ public class ProviderControllerTest {
   @Test
   public void readProvider() throws NotFoundException, Exception {
     Mockito.doReturn(UtilTest.getProvider()).when(providerAplicationService).
-    readProviders(UtilTest.getProviderDto().getRut(),UtilTest.getProviderDto().getCountryCode());
+    readProvider(UtilTest.getProviderDto().getRut(),UtilTest.getProviderDto().getCountryCode());
     when(responseHandler.getCommandResponse(HttpStatus.OK, "Provider information requested"))
     .thenReturn(UtilTest.getOKResponseCommand(HttpStatus.OK, "Provider information requested"));
     providerController.readProvider(UtilTest.getProviderDto().getRut(),UtilTest.getProviderDto().getCountryCode());
@@ -107,7 +107,7 @@ public class ProviderControllerTest {
   
   @Test
   public void readProviderNotFoundError() throws NotFoundException, Exception {
-    doThrow(NotFoundException.class).when(providerAplicationService).readProviders(UtilTest.getProviderDto().getRut(),UtilTest.getProviderDto().getCountryCode());
+    doThrow(NotFoundException.class).when(providerAplicationService).readProvider(UtilTest.getProviderDto().getRut(),UtilTest.getProviderDto().getCountryCode());
     when(responseHandler.getCommandResponse(HttpStatus.OK, "provider update"))
         .thenReturn(UtilTest.getOKResponseCommand(HttpStatus.NOT_FOUND, "Operation Failed"));
     providerController.readProvider(UtilTest.getProviderDto().getRut(),UtilTest.getProviderDto().getCountryCode());
@@ -115,7 +115,7 @@ public class ProviderControllerTest {
   
   @Test
   public void readProviderIleglArgumentError() throws NotFoundException, Exception {
-    doThrow(IllegalArgumentException.class).when(providerAplicationService).readProviders(Mockito.any(),Mockito.any());
+    doThrow(IllegalArgumentException.class).when(providerAplicationService).readProvider(Mockito.any(),Mockito.any());
     when(responseHandler.getAppCustomErrorResponse(Mockito.anyString()))
         .thenReturn(UtilTest.getAppCustomErrorResponse("Operation Failed"));
     providerController.readProvider(UtilTest.getProviderDto().getRut(),UtilTest.getProviderDto().getCountryCode());
@@ -123,9 +123,16 @@ public class ProviderControllerTest {
 
   @Test
   public void readGeneralError() throws NotFoundException, Exception {
-    doThrow(Exception.class).when(providerAplicationService).readProviders(Mockito.any(),Mockito.any());
+    doThrow(Exception.class)
+    .when(providerAplicationService)
+    .readProvider(Mockito.any(),Mockito.any());
     when(responseHandler.getAppCustomErrorResponse(Mockito.anyString()))
         .thenReturn(UtilTest.getExceptionGeneral());
-    providerController.readProvider(UtilTest.getProviderDto().getRut(),UtilTest.getProviderDto().getCountryCode());
+    providerController.readProvider(
+        UtilTest.getProviderDto().getRut(),
+        UtilTest.getProviderDto().getCountryCode());
   }
+
+
+
 }

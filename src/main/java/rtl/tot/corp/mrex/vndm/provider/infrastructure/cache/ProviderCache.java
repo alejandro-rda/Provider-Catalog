@@ -58,10 +58,10 @@ public class ProviderCache {
    *
    * @param provider Provider
    */
-  public Optional<Provider> getProviders(Provider provider) {
+  public Optional<Provider> getProviders(String rut,String countryCodeOrigin) {
     log.info("Attempting to retrieve the providers from cache");
     Jedis client = createClient();
-    String resultString = client.get(Util.generateKey(provider.getRut(), provider.getCountryCode()));
+    String resultString = client.get(Util.generateKey(rut, countryCodeOrigin));
     client.close();
     log.info("Cache Data Returned: " + resultString);
     if (Objects.nonNull(resultString)) {

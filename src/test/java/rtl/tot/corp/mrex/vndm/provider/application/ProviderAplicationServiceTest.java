@@ -44,7 +44,7 @@ public class ProviderAplicationServiceTest {
   //CREATE
   @Test
   public void createProviderSucessful() throws IncompleteCommandException, Exception {
-    when(providerRepository.getProviderByKey(Mockito.anyString(), Mockito.anyString())).thenReturn(null);
+    when(providerRepository.getProviderByKey(Mockito.anyString(), Mockito.anyString())).thenReturn(Optional.empty());
     when(commandBus.executeCreate(Mockito.any())).thenReturn(true);
     when(env.getMaxLenghtProviderRut()).thenReturn(20); //
     when(env.getMaxLenghtDvRut()).thenReturn(3); //
@@ -60,7 +60,7 @@ public class ProviderAplicationServiceTest {
     when(env.getMaxLenghtZipCode()).thenReturn(30); //
     when(env.getMaxLenghtEmail()).thenReturn(50); //
     when(env.getFormatEmail()).thenReturn("^[A-Z0-9._%+-]+@[A-Z0-9.-]+\\.[A-Z]{2,6}$"); //
-    providerAplicationService.createProvider(UtilTest.getProviderDto());
+    providerAplicationService.createProvider(UtilTest.getProviderDto()); 
   }
   
   @Test(expected = IllegalArgumentException.class)
@@ -272,16 +272,16 @@ public class ProviderAplicationServiceTest {
     Provider provider=new Provider();
     provider.setRut("123");
     provider.setCountryCode("PE");
-    when(cacheRepository.getProvidersCache(provider)).thenReturn(UtilTest.getProvider());
-    providerAplicationService.readProviders(UtilTest.getProvider().get().getCountryCode(), UtilTest.getProvider().get().getRut());
+    when(cacheRepository.getProvidersCache(Mockito.anyString(),Mockito.anyString())).thenReturn(UtilTest.getProvider());
+    providerAplicationService.readProvider(UtilTest.getProvider().get().getCountryCode(), UtilTest.getProvider().get().getRut());
   }
-  
+   
   @Test
   public void readProviderIfNotExistCacheSuccessful() throws  NotFoundException, Exception{
-    when(cacheRepository.getProvidersCache(UtilTest.getProvider().get())).
+    when(cacheRepository.getProvidersCache(Mockito.anyString(),Mockito.anyString())).
     thenReturn(Optional.empty());
-    when(providerRepository.getProviderByKey(UtilTest.getProvider().get().getCountryCode(), UtilTest.getProvider().get().getRut()))
+    when(providerRepository.getProviderByKey(Mockito.anyString(),Mockito.anyString()))
     .thenReturn(Optional.of(new Provider()));
-    providerAplicationService.readProviders(UtilTest.getProvider().get().getCountryCode(), UtilTest.getProvider().get().getRut());
+    providerAplicationService.readProvider(UtilTest.getProvider().get().getCountryCode(), UtilTest.getProvider().get().getRut());
   }
 }

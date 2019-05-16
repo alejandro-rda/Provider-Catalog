@@ -7,6 +7,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -162,10 +163,10 @@ public class ProviderController {
       @ApiResponse(code = 404, response = ResponseErrorDto.class, message = "Provider Not Found"),
       @ApiResponse(code = 500, response = ResponseErrorDto.class, message = "Internal Server Error"),
       @ApiResponse(code = 501, response = ResponseErrorDto.class, message = "Not Implemented") })
-  public ResponseEntity<Object> readProvider(@RequestHeader(name="country")String countyCodeOrigin, String rut) {
+  public ResponseEntity<Object> readProvider(@PathVariable(name = "rut") String rut, @RequestHeader(name = "country") String countyCodeOrigin) {
     try {
-      Optional<Provider> provider = providerAplicationService.readProviders(countyCodeOrigin, rut);
-      return responseHandler.getCommandResponse(HttpStatus.OK,provider);
+      Optional<Provider> provider = providerAplicationService.readProvider(rut,countyCodeOrigin);
+      return responseHandler.getCommandResponse(HttpStatus.OK, provider);
     } catch (NotFoundException e) {
       return responseHandler.getCommandResponse(HttpStatus.NOT_FOUND, e.getMessage());
     } catch (IllegalArgumentException e) {

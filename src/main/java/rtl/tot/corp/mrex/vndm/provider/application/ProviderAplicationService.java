@@ -111,19 +111,18 @@ public class ProviderAplicationService {
    * @param countryCode String
    */
   
-  public Optional<Provider> readProviders(String countryCode,String rut) throws NotFoundException, Exception {
+  public Optional<Provider> readProvider(String rut,String countryCode) throws IllegalArgumentException,NotFoundException, Exception {
     log.info("Into readProvider(String countryCode, String rut)");
-    Provider provider = Provider.builder().countryCode(countryCode).rut(rut).build();
-    Optional<Provider> provCache = cacheRepository.getProvidersCache(provider);
-    log.info("Service: Obtiene Data de Cache ..." + provCache);
+    Optional<Provider> provCache = cacheRepository.getProvidersCache(rut,countryCode);
+//    log.info("Service: Obtiene Data de Cache ..." + provCache.get());
     if (provCache.isPresent()) {
       return provCache;
     }
     Notification notification = new Notification();
-    Optional<Provider> provDB = providerRepository.getProviderByKey(provider.getRut(), provider.getCountryCode());
+    Optional<Provider> provDB = providerRepository.getProviderByKey(rut, countryCode);
     if (!provDB.isPresent()) {
       notification.addError("Provider not exists");
-      throw new IllegalArgumentException(notification.errorMessage());
+      throw new NotFoundException(notification.errorMessage());
     }
     return provDB;
   }

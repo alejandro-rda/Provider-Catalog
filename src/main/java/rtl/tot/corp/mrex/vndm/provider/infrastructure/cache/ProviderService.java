@@ -42,8 +42,8 @@ public class ProviderService implements CacheRepository {
    * @param provider Provider
    */
   @Override
-  public Optional<Provider> getProvidersCache(Provider provider) {
-    Optional<Provider> providers = cacheProveedor.getProviders(provider);
+  public Optional<Provider> getProvidersCache(String rut, String countryCodeOrigin) {
+    Optional<Provider> providers = cacheProveedor.getProviders(rut,countryCodeOrigin);
     if (Objects.nonNull(providers)) {
       log.info("Serving the provider from cache");
       return providers;
