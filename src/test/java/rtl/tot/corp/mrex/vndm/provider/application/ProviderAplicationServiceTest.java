@@ -268,7 +268,7 @@ public class ProviderAplicationServiceTest {
   
   //GET
   @Test
-  public void readProviderIfExistCacheSuccessful() throws  NotFoundException, Exception{
+  public void readProviderExistInCacheSuccessful() throws  NotFoundException, Exception{
     Provider provider=new Provider();
     provider.setRut("123");
     provider.setCountryCode("PE");
@@ -277,11 +277,20 @@ public class ProviderAplicationServiceTest {
   }
    
   @Test
-  public void readProviderIfNotExistCacheSuccessful() throws  NotFoundException, Exception{
+  public void readProviderNotExistInCache() throws  NotFoundException, Exception{
     when(cacheRepository.getProvidersCache(Mockito.anyString(),Mockito.anyString())).
     thenReturn(Optional.empty());
     when(providerRepository.getProviderByKey(Mockito.anyString(),Mockito.anyString()))
     .thenReturn(Optional.of(new Provider()));
+    providerAplicationService.readProvider(UtilTest.getProvider().get().getCountryCode(), UtilTest.getProvider().get().getRut());
+  }
+  
+  @Test
+  public void readProviderNotExistProviderInDB() throws  NotFoundException, Exception{
+    when(cacheRepository.getProvidersCache(Mockito.anyString(),Mockito.anyString())).
+    thenReturn(Optional.empty());
+    when(providerRepository.getProviderByKey(Mockito.anyString(),Mockito.anyString()))
+    .thenReturn(Optional.empty());
     providerAplicationService.readProvider(UtilTest.getProvider().get().getCountryCode(), UtilTest.getProvider().get().getRut());
   }
 }

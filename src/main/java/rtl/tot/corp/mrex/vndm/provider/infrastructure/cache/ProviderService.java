@@ -49,7 +49,7 @@ public class ProviderService implements CacheRepository {
       return providers;
     }
     log.info("Cache Retorna Vacio");
-    return null;
+    return Optional.empty();
   }
   
   /**
